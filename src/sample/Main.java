@@ -22,9 +22,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
         primaryStage.setTitle("CMPILER MP IDE");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 876, 570));
         primaryStage.show();
     }
 
@@ -32,11 +32,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
         // lexer();
-        parser();
     }
 
     private static void lexer() {
-        String path = "test_cases/Final_Test_Case.txt";
+        String path = "test_cases/parser_test_1.txt";
         String content = "";
 
         try {
@@ -78,36 +77,6 @@ public class Main extends Application {
                     System.out.println(token.getTokens().get(i).getText() + ": IDENTIFIER");
             }
         }
-
-    }
-
-    private static void parser() throws ParseCancellationException {
-
-        String path  = "test_cases/Final_Test_Case.txt";
-        String content = "";
-
-        try {
-            content = new String(Files.readAllBytes(Paths.get(path)));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        CodePointCharStream inputStream = fromString(content);
-
-        GrammarLexer lexer = new GrammarLexer(inputStream);
-        lexer.removeErrorListener(ConsoleErrorListener.INSTANCE);
-        CommonTokenStream commonTokenStream = new CommonTokenStream(lexer);
-        GrammarParser parser = new GrammarParser(commonTokenStream);
-        GrammarErrorListener listener = new GrammarErrorListener();
-        parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
-
-        parser.addErrorListener(listener);
-        ParseTree tree = parser.compilationUnit();
-        MyVisitor visitor = new MyVisitor();
-        visitor.visit(tree);
-
-        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree);
-//        viewer.open();
 
     }
 }

@@ -113,62 +113,62 @@ public class MyVisitor extends GrammarBaseVisitor<Object> {
 //    @Override public Object visitBlockError(GrammarParser.BlockErrorContext ctx) { return visitChildren(ctx); }
 
     @Override public Object visitScanMissingIdentifierError(GrammarParser.ScanMissingIdentifierErrorContext ctx) {
-        System.out.println("Missing identifier at line " + ctx.getStart().getLine());
+        Controller.errors.add("Missing identifier at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitExpressionAdditionError(GrammarParser.ExpressionAdditionErrorContext ctx) {
-        System.out.println("A literal cannot be followed by '++' at line " + ctx.getStart().getLine());
+        Controller.errors.add("A literal cannot be followed by '++' at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitExpressionSubtractionError(GrammarParser.ExpressionSubtractionErrorContext ctx) {
-        System.out.println("A literal cannot be followed by '--' at line " + ctx.getStart().getLine());
+        Controller.errors.add("A literal cannot be followed by '--' at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitReturnMissingError(GrammarParser.ReturnMissingErrorContext ctx) {
-        System.out.println("Expected ';' at line " + ctx.getStart().getLine());
+        Controller.errors.add("Expected ';' at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitReturnPrimitiveTypeError(GrammarParser.ReturnPrimitiveTypeErrorContext ctx) {
-        System.out.println("Cannot return an explicit data type at line " + ctx.getStart().getLine());
+        Controller.errors.add("Cannot return an explicit data type at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitExcessLParenExpression(GrammarParser.ExcessLParenExpressionContext ctx) {
-        System.out.println("Excess '(' found at line " + ctx.getStart().getLine());
+        Controller.errors.add("Excess '(' found at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitExcessRParenExpression(GrammarParser.ExcessRParenExpressionContext ctx) {
-        System.out.println("Excess ')' found at line " + ctx.getStart().getLine());
+        Controller.errors.add("Excess ')' found at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitWrongLocalVariableDeclaration(GrammarParser.WrongLocalVariableDeclarationContext ctx) {
-        System.out.println("Extra ';' found at line " + ctx.getStart().getLine());
+        Controller.errors.add("Extra ';' found at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitWrongPrintStatement(GrammarParser.WrongPrintStatementContext ctx) {
-        System.out.println("Unexpected operator at line " + ctx.getStart().getLine());
+        Controller.errors.add("Unexpected operator at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitWrongBlockStatement(GrammarParser.WrongBlockStatementContext ctx) {
-        System.out.println("Missing '}' at line " + ctx.getStart().getLine());
+        Controller.errors.add("Missing '}' at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitPrintMissingQuotesError(GrammarParser.PrintMissingQuotesErrorContext ctx) {
-        System.out.println("Missing double quotes at line " + ctx.getStart().getLine());
+        Controller.errors.add("Missing double quotes at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
     @Override public Object visitPrimaryError(GrammarParser.PrimaryErrorContext ctx) {
-        System.out.println("Extra opening or parenthesis at line " + ctx.getStart().getLine());
+        Controller.errors.add("Extra opening or parenthesis at line " + ctx.getStart().getLine());
         return visitChildren(ctx);
     }
 
