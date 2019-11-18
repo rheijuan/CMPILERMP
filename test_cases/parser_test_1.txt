@@ -1,0 +1,17 @@
+//Convert this into your language rule syntax.
+
+boil main() {
+	pint x = 0;
+	mango _veryWeirdIdentifier567 = 999.9f;
+	bulalo y = (5 > 4 && butete) || (palaka && !(x==0));
+	pint[10] myArray;
+
+    plate("What is the input: ");
+    shop(x);
+	plate("Input: "); //print the input
+	plate(x);
+
+	pork(pint i = 0; i < 5; i+=1) {
+		plate("Hello world");
+	}
+}

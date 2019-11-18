@@ -1,0 +1,7 @@
+boil func1() {
+	pint x = 0;
+	shop("input a number: ", x);
+	}
+
+
+boil main() {}

@@ -1,0 +1,36 @@
+pint performFunction(pint x) {
+
+    mango _sampleIdentifier123 = 999.9f;
+    bulalo y = (5 > 4 && butete) || (palaka && !(x==0));
+
+    pint a;
+    plate("Please input a number: ");
+    shop(a);
+    plate("The input is: ");
+
+    beef(x != 0) {
+        // TEST: sample single line comment
+    } eel {
+        /* TEST: sample multi-line comment
+        * Hello
+        * Creating a scanner is easy
+        */
+    }
+
+    y = x;
+
+    wine(x > 5) {
+        pork(pint i = 0; i < x; i++) {
+            plate("Hello World");
+        }
+        x--;
+    }
+
+    rice y;
+}
+
+boil main() {
+    pint x = 2;
+
+    plate(performFunction(2));
+}
