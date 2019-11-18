@@ -2,46 +2,72 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="876.0" style="-fx-background-color: #121212; -fx-border-radius: 50%;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <AnchorPane prefHeight="570.0" prefWidth="876.0">
+      <TextArea fx:id="codeTextArea" layoutX="35.0" layoutY="48.0" prefHeight="442.0" prefWidth="387.0" />
+      <TextArea fx:id="errorTextArea" layoutX="456.0" layoutY="379.0" prefHeight="112.0" prefWidth="378.0" />
+      <Label layoutX="459.0" layoutY="334.0" text="Errors" textFill="#c5bdbd">
+         <font>
+            <Font name="Roboto" size="26.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="459.0" layoutY="48.0" onAction="#execute" prefHeight="50.0" prefWidth="81.0" style="-fx-background-color: #FEFEFA;" text="Run" textFill="#121212">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="575.0" layoutY="48.0" onAction="#showInstructions" prefHeight="50.0" prefWidth="126.0" style="-fx-background-color: #FEFEFA;" text="Instructions" textFill="#121212">
+         <font>
+            <Font size="16.0" />
+         </font></JFXButton>
+      <Label layoutX="35.0" layoutY="14.0" text="Code" textFill="#c5bdbd">
+         <font>
+            <Font name="Roboto" size="26.0" />
+         </font>
+      </Label>
+      <ListView layoutX="456.0" layoutY="163.0" prefHeight="151.0" prefWidth="377.0" />
+      <Label layoutX="459.0" layoutY="117.0" prefHeight="34.0" prefWidth="166.0" text="Code Outline" textFill="#c5bdbd">
+         <font>
+            <Font name="Roboto" size="26.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="727.0" layoutY="48.0" onAction="#rename" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #FEFEFA;" text="Rename" textFill="#121212">
+         <font>
+            <Font size="16.0" />
+         </font></JFXButton>
+      <TextArea layoutX="35.0" layoutY="536.0" prefHeight="102.0" prefWidth="796.0" />
+      <Label layoutX="35.0" layoutY="502.0" text="Output" textFill="#c5bdbd">
+         <font>
+            <Font name="Roboto" size="26.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="renameAnchorPane" layoutX="209.0" layoutY="173.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="281.0" prefWidth="500.0" style="-fx-background-color: #121212;">
          <children>
-            <TextArea fx:id="codeTextArea" layoutX="52.0" layoutY="46.0" prefHeight="490.0" prefWidth="406.0" />
-            <TextArea fx:id="errorTextArea" layoutX="501.0" layoutY="336.0" prefHeight="200.0" prefWidth="338.0" />
-            <Label layoutX="501.0" layoutY="291.0" text="Errors">
+            <Label layoutX="150.0" layoutY="25.0" text="Rename a function" textFill="#c5bdbd">
                <font>
-                  <Font name="Roboto" size="26.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <JFXButton layoutX="501.0" layoutY="46.0" onAction="#execute" prefHeight="50.0" prefWidth="94.0" text="Run">
+            <Label layoutX="63.0" layoutY="87.0" text="Name of Function" textFill="#c5bdbd">
                <font>
                   <Font size="16.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../gui/run.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
+            </Label>
+            <Label layoutX="63.0" layoutY="147.0" prefHeight="0.0" prefWidth="95.0" text="New Name" textFill="#c5bdbd">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="functionTextArea" layoutX="213.0" layoutY="81.0" prefHeight="18.0" prefWidth="200.0" />
+            <TextArea fx:id="replacementTextArea" layoutX="213.0" layoutY="140.0" prefHeight="18.0" prefWidth="200.0" />
+            <JFXButton layoutX="127.0" layoutY="209.0" onAction="#rename" prefHeight="35.0" prefWidth="95.0" style="-fx-background-color: #FEFEFA;" text="OK" textFill="#121212" />
+            <JFXButton layoutX="279.0" layoutY="209.0" onAction="#cancelRename" prefHeight="35.0" prefWidth="95.0" style="-fx-background-color: #FEFEFA;" text="CANCEL" textFill="#121212" />
          </children>
       </AnchorPane>
    </children>
-</GridPane>
+</AnchorPane>
