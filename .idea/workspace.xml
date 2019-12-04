@@ -2,45 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/antlr4/KaonListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/antlr4/KaonVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Tester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/TheVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/GUI.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/GUIDemo1.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/Grammar.g4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/Grammar.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/Grammar.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/GrammarLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/GrammarLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CMPILERMPGUI/sample/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/DataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DataType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GUIDemo1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GUIDemo1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Grammar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/Kaon.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Grammar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/Kaon.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Grammar.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/Kaon.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarErrorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KaonErrorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/KaonLexer.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/KaonLexer.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GrammarVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MethodBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MethodBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MyVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SymbolTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/SyntaxError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SyntaxError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Variable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_cases/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases/sample.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_cases/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonVisitor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,12 +108,6 @@
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\src\sample" />
-      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\src\view" />
-      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\grammar" />
-      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\src\ANTLR4" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="sample" />
     </key>
@@ -155,6 +116,12 @@
       <recent name="C:\Users\rheij\Documents\GitHub\CMPILERMP\lib" />
       <recent name="C:\Users\rheij\Documents\GitHub\CMPILERMPGUI\test_cases" />
       <recent name="C:\Users\rheij\Documents\GitHub\CMPILERMPGUI\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\src\sample" />
+      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\src\view" />
+      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\grammar" />
+      <recent name="C:\Users\Don\Documents\GitHub\CMPILER-Interpreter-System\src\ANTLR4" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -304,7 +271,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Controller.java</url>
-          <line>45</line>
+          <line>42</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

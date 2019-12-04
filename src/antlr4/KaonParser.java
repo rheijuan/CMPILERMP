@@ -1,4 +1,3 @@
-// Generated from C:/Users/Don/Documents/GitHub/CMPILER-Interpreter-System/src/sample\Kaon.g4 by ANTLR 4.7.2
 package antlr4;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
