@@ -16,7 +16,7 @@ import static org.antlr.v4.runtime.CharStreams.fromFileName;
 public class Tester {
     public static void main(String[] args) throws IOException {
 
-        CharStream inputStream = fromFileName("C:\\Users\\Don\\Documents\\GitHub\\CMPILER-Interpreter-System\\test_cases\\test.txt");
+        CharStream inputStream = fromFileName("test_cases/test.txt");
         // CodePointCharStream inputStream = fromString("");
 
         KaonLexer lexer = new KaonLexer(inputStream);
