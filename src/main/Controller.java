@@ -1,5 +1,7 @@
-package sample;
+package main;
 
+import antlr4.KaonLexer;
+import antlr4.KaonParser;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
@@ -18,15 +20,17 @@ import java.util.ResourceBundle;
 import static org.antlr.v4.runtime.CharStreams.fromString;
 
 public class Controller implements Initializable {
-
-    @FXML TextArea codeTextArea;
-    @FXML TextArea errorTextArea;
-
-    @FXML AnchorPane renameAnchorPane;
-    @FXML TextArea functionTextArea;
-    @FXML TextArea replacementTextArea;
-
     static ArrayList<String> errors;
+    @FXML
+    TextArea codeTextArea;
+    @FXML
+    TextArea errorTextArea;
+    @FXML
+    AnchorPane renameAnchorPane;
+    @FXML
+    TextArea functionTextArea;
+    @FXML
+    TextArea replacementTextArea;
 
     @FXML
     private void execute() {
@@ -53,27 +57,27 @@ public class Controller implements Initializable {
     private void parse() {
         String code = codeTextArea.getText();
 
-        if(!code.equals("")) {
+        if (!code.equals("")) {
             CodePointCharStream inputStream = fromString(code);
 
-            GrammarLexer lexer = new GrammarLexer(inputStream);
+            KaonLexer lexer = new KaonLexer(inputStream);
             lexer.removeErrorListener(ConsoleErrorListener.INSTANCE);
             CommonTokenStream commonTokenStream = new CommonTokenStream(lexer);
-            GrammarParser parser = new GrammarParser(commonTokenStream);
-            GrammarErrorListener listener = new GrammarErrorListener();
+            KaonParser parser = new KaonParser(commonTokenStream);
+            KaonErrorListener listener = new KaonErrorListener();
             parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
 
             parser.addErrorListener(listener);
             ParseTree tree = parser.compilationUnit();
-            MyVisitor visitor = new MyVisitor();
+            TheVisitor visitor = new TheVisitor();
             visitor.visit(tree);
 
-            TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree);
+            TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
             // viewer.open();
 
-            if(errors.size() > 0) {
+            if (errors.size() > 0) {
                 errorTextArea.setText("");
-                for(String err : errors)
+                for (String err : errors)
                     errorTextArea.appendText(err + "\n");
                 errors.clear();
             }
@@ -86,36 +90,36 @@ public class Controller implements Initializable {
     private void lex() {
         String code = codeTextArea.getText();
 
-        GrammarLexer lexer = new GrammarLexer(fromString(code));
+        KaonLexer lexer = new KaonLexer(fromString(code));
         CommonTokenStream token = new CommonTokenStream(lexer);
-        GrammarParser parser = new GrammarParser(token);
+        KaonParser parser = new KaonParser(token);
 
         ParseTree tree = parser.compilationUnit();
-        MyVisitor visitor = new MyVisitor();
+        TheVisitor visitor = new TheVisitor();
         visitor.visit(tree);
 
         token.fill();
 
         // ORIGINAL LOOP
-        for(int i = 0; i < token.getTokens().size(); i++) {
-            for(int j = 1; j <= lexer.getVocabulary().getMaxTokenType(); j++) {
+        for (int i = 0; i < token.getTokens().size(); i++) {
+            for (int j = 1; j <= lexer.getVocabulary().getMaxTokenType(); j++) {
 
-                if(token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 1 && token.getTokens().get(i).getType() <= 36)
+                if (token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 1 && token.getTokens().get(i).getType() <= 36)
                     System.out.println(lexer.getVocabulary().getDisplayName(j) + ": KEYWORDS");
 
-                else if(token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 37 && token.getTokens().get(i).getType() <= 46)
+                else if (token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 37 && token.getTokens().get(i).getType() <= 46)
                     System.out.println(token.getTokens().get(i).getText() + ": LITERAL");
 
-                else if(token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 47 && token.getTokens().get(i).getType() <= 55)
+                else if (token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 47 && token.getTokens().get(i).getType() <= 55)
                     System.out.println(lexer.getVocabulary().getDisplayName(j) + ": SEPARATOR");
 
-                else if(token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 56 && token.getTokens().get(i).getType() <= 89)
+                else if (token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 56 && token.getTokens().get(i).getType() <= 89)
                     System.out.println(lexer.getVocabulary().getDisplayName(j) + ": OPERATOR");
 
-                else if(token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 95 && token.getTokens().get(i).getType() <= 96)
+                else if (token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() >= 95 && token.getTokens().get(i).getType() <= 96)
                     System.out.println(token.getTokens().get(i).getText() + ": COMMENTS");
 
-                else if(token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() == 97)
+                else if (token.getTokens().get(i).getType() == j && token.getTokens().get(i).getType() == 97)
                     System.out.println(token.getTokens().get(i).getText() + ": IDENTIFIER");
             }
         }

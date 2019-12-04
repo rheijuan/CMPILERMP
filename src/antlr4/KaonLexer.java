@@ -1,16 +1,13 @@
-// Generated from C:/Users/rheij/Documents/GitHub/CMPILERMPGUI/src/sample\Grammar.g4 by ANTLR 4.7.2
-package sample;
+// Generated from C:/Users/Don/Documents/GitHub/CMPILER-Interpreter-System/src/sample\Kaon.g4 by ANTLR 4.7.2
+package antlr4;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class GrammarLexer extends Lexer {
+public class KaonLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -134,13 +131,13 @@ public class GrammarLexer extends Lexer {
 	}
 
 
-	public GrammarLexer(CharStream input) {
+	public KaonLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Grammar.g4"; }
+	public String getGrammarFileName() { return "Kaon.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="876.0" style="-fx-background-color: #121212; -fx-border-radius: 50%;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="876.0" style="-fx-background-color: #121212; -fx-border-radius: 50%;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
    <children>
       <TextArea fx:id="codeTextArea" layoutX="35.0" layoutY="48.0" prefHeight="442.0" prefWidth="387.0" />
       <TextArea fx:id="errorTextArea" layoutX="456.0" layoutY="379.0" prefHeight="112.0" prefWidth="378.0" />

@@ -1,4 +1,4 @@
-grammar Grammar;
+grammar Kaon;
 
 compilationUnit
     : methodDeclaration* EOF

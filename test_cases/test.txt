@@ -1,7 +1,7 @@
-/* This is a comment */
-
 boil main() {
-    pint x = 0
-    beef(x == 0)
-        x = 100
+    pint x = 0;
+    mango y = 123.22;
+    adobo xxx = 9381293;
+
+    plate(asd);
 }

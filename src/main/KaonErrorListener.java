@@ -1,4 +1,4 @@
-package sample;
+package main;
 
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.RecognitionException;
@@ -7,7 +7,7 @@ import org.antlr.v4.runtime.misc.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GrammarErrorListener extends BaseErrorListener {
+public class KaonErrorListener extends BaseErrorListener {
 
     private final List<SyntaxError> syntaxErrors = new ArrayList<>();
 

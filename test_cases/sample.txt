@@ -9,9 +9,9 @@ pint performFunction(pint x) {
     plate("The input is: ");
 
     beef(x != 0) {
-        // TEST: sample single line comment
+        // TEST: main single line comment
     } eel {
-        /* TEST: sample multi-line comment
+        /* TEST: main multi-line comment
         * Hello
         * Creating a scanner is easy
         */

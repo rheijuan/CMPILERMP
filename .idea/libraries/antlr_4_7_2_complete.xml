@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="antlr-4.7.2-complete">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/antlr-4.7.2-complete.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jfoenix-9.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

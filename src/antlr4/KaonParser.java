@@ -1,16 +1,13 @@
-// Generated from C:/Users/rheij/Documents/GitHub/CMPILERMPGUI/src/sample\Grammar.g4 by ANTLR 4.7.2
-package sample;
+// Generated from C:/Users/Don/Documents/GitHub/CMPILER-Interpreter-System/src/sample\Kaon.g4 by ANTLR 4.7.2
+package antlr4;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class GrammarParser extends Parser {
+public class KaonParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -155,7 +152,7 @@ public class GrammarParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Grammar.g4"; }
+	public String getGrammarFileName() { return "Kaon.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -166,13 +163,13 @@ public class GrammarParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public GrammarParser(TokenStream input) {
+	public KaonParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	public static class CompilationUnitContext extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(GrammarParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(KaonParser.EOF, 0); }
 		public List<MethodDeclarationContext> methodDeclaration() {
 			return getRuleContexts(MethodDeclarationContext.class);
 		}
@@ -185,15 +182,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_compilationUnit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterCompilationUnit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterCompilationUnit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitCompilationUnit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitCompilationUnit(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitCompilationUnit(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitCompilationUnit(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -235,7 +232,7 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class VariableModifierContext extends ParserRuleContext {
-		public TerminalNode FINAL() { return getToken(GrammarParser.FINAL, 0); }
+		public TerminalNode FINAL() { return getToken(KaonParser.FINAL, 0); }
 		public AnnotationContext annotation() {
 			return getRuleContext(AnnotationContext.class,0);
 		}
@@ -245,15 +242,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variableModifier; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterVariableModifier(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableModifier(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitVariableModifier(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableModifier(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitVariableModifier(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableModifier(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -295,17 +292,17 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class TypeParametersContext extends ParserRuleContext {
-		public TerminalNode LT() { return getToken(GrammarParser.LT, 0); }
+		public TerminalNode LT() { return getToken(KaonParser.LT, 0); }
 		public List<TypeParameterContext> typeParameter() {
 			return getRuleContexts(TypeParameterContext.class);
 		}
 		public TypeParameterContext typeParameter(int i) {
 			return getRuleContext(TypeParameterContext.class,i);
 		}
-		public TerminalNode GT() { return getToken(GrammarParser.GT, 0); }
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public TerminalNode GT() { return getToken(KaonParser.GT, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public TypeParametersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -313,15 +310,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeParameters; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeParameters(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeParameters(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeParameters(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeParameters(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeParameters(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeParameters(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -369,7 +366,7 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class TypeParameterContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
 		public TypeBoundContext typeBound() {
 			return getRuleContext(TypeBoundContext.class,0);
 		}
@@ -385,15 +382,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeParameter; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeParameter(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeParameter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeParameter(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeParameter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeParameter(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeParameter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -443,9 +440,9 @@ public class GrammarParser extends Parser {
 		public TypeTypeContext typeType(int i) {
 			return getRuleContext(TypeTypeContext.class,i);
 		}
-		public List<TerminalNode> BITAND() { return getTokens(GrammarParser.BITAND); }
+		public List<TerminalNode> BITAND() { return getTokens(KaonParser.BITAND); }
 		public TerminalNode BITAND(int i) {
-			return getToken(GrammarParser.BITAND, i);
+			return getToken(KaonParser.BITAND, i);
 		}
 		public TypeBoundContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -453,15 +450,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeBound; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeBound(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeBound(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeBound(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeBound(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeBound(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeBound(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -508,22 +505,22 @@ public class GrammarParser extends Parser {
 		public TypeTypeOrVoidContext typeTypeOrVoid() {
 			return getRuleContext(TypeTypeOrVoidContext.class,0);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
 		public FormalParametersContext formalParameters() {
 			return getRuleContext(FormalParametersContext.class,0);
 		}
 		public MethodBodyContext methodBody() {
 			return getRuleContext(MethodBodyContext.class,0);
 		}
-		public List<TerminalNode> LBRACK() { return getTokens(GrammarParser.LBRACK); }
+		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
 		public TerminalNode LBRACK(int i) {
-			return getToken(GrammarParser.LBRACK, i);
+			return getToken(KaonParser.LBRACK, i);
 		}
-		public List<TerminalNode> RBRACK() { return getTokens(GrammarParser.RBRACK); }
+		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
 		public TerminalNode RBRACK(int i) {
-			return getToken(GrammarParser.RBRACK, i);
+			return getToken(KaonParser.RBRACK, i);
 		}
-		public TerminalNode THROWS() { return getToken(GrammarParser.THROWS, 0); }
+		public TerminalNode THROWS() { return getToken(KaonParser.THROWS, 0); }
 		public QualifiedNameListContext qualifiedNameList() {
 			return getRuleContext(QualifiedNameListContext.class,0);
 		}
@@ -533,15 +530,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterMethodDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterMethodDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitMethodDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitMethodDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitMethodDeclaration(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitMethodDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -606,22 +603,22 @@ public class GrammarParser extends Parser {
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
-		public TerminalNode SEMI() { return getToken(GrammarParser.SEMI, 0); }
+		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
 		public MethodBodyContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_methodBody; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterMethodBody(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterMethodBody(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitMethodBody(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitMethodBody(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitMethodBody(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitMethodBody(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -666,22 +663,22 @@ public class GrammarParser extends Parser {
 		public TypeTypeContext typeType() {
 			return getRuleContext(TypeTypeContext.class,0);
 		}
-		public TerminalNode VOID() { return getToken(GrammarParser.VOID, 0); }
+		public TerminalNode VOID() { return getToken(KaonParser.VOID, 0); }
 		public TypeTypeOrVoidContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_typeTypeOrVoid; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeTypeOrVoid(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeTypeOrVoid(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeTypeOrVoid(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeTypeOrVoid(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeTypeOrVoid(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeTypeOrVoid(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -739,10 +736,10 @@ public class GrammarParser extends Parser {
 		public ConstantDeclaratorContext constantDeclarator(int i) {
 			return getRuleContext(ConstantDeclaratorContext.class,i);
 		}
-		public TerminalNode SEMI() { return getToken(GrammarParser.SEMI, 0); }
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public ConstDeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -750,15 +747,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_constDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterConstDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterConstDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitConstDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitConstDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitConstDeclaration(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitConstDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -806,18 +803,18 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ConstantDeclaratorContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
-		public TerminalNode ASSIGN() { return getToken(GrammarParser.ASSIGN, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
 		public VariableInitializerContext variableInitializer() {
 			return getRuleContext(VariableInitializerContext.class,0);
 		}
-		public List<TerminalNode> LBRACK() { return getTokens(GrammarParser.LBRACK); }
+		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
 		public TerminalNode LBRACK(int i) {
-			return getToken(GrammarParser.LBRACK, i);
+			return getToken(KaonParser.LBRACK, i);
 		}
-		public List<TerminalNode> RBRACK() { return getTokens(GrammarParser.RBRACK); }
+		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
 		public TerminalNode RBRACK(int i) {
-			return getToken(GrammarParser.RBRACK, i);
+			return getToken(KaonParser.RBRACK, i);
 		}
 		public ConstantDeclaratorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -825,15 +822,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_constantDeclarator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterConstantDeclarator(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterConstantDeclarator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitConstantDeclarator(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitConstantDeclarator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitConstantDeclarator(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitConstantDeclarator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -881,7 +878,7 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class InterfaceMethodDeclarationContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
 		public FormalParametersContext formalParameters() {
 			return getRuleContext(FormalParametersContext.class,0);
 		}
@@ -900,15 +897,15 @@ public class GrammarParser extends Parser {
 		public InterfaceMethodModifierContext interfaceMethodModifier(int i) {
 			return getRuleContext(InterfaceMethodModifierContext.class,i);
 		}
-		public List<TerminalNode> LBRACK() { return getTokens(GrammarParser.LBRACK); }
+		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
 		public TerminalNode LBRACK(int i) {
-			return getToken(GrammarParser.LBRACK, i);
+			return getToken(KaonParser.LBRACK, i);
 		}
-		public List<TerminalNode> RBRACK() { return getTokens(GrammarParser.RBRACK); }
+		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
 		public TerminalNode RBRACK(int i) {
-			return getToken(GrammarParser.RBRACK, i);
+			return getToken(KaonParser.RBRACK, i);
 		}
-		public TerminalNode THROWS() { return getToken(GrammarParser.THROWS, 0); }
+		public TerminalNode THROWS() { return getToken(KaonParser.THROWS, 0); }
 		public QualifiedNameListContext qualifiedNameList() {
 			return getRuleContext(QualifiedNameListContext.class,0);
 		}
@@ -924,15 +921,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_interfaceMethodDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterInterfaceMethodDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterInterfaceMethodDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitInterfaceMethodDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitInterfaceMethodDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitInterfaceMethodDeclaration(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitInterfaceMethodDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1051,24 +1048,24 @@ public class GrammarParser extends Parser {
 		public AnnotationContext annotation() {
 			return getRuleContext(AnnotationContext.class,0);
 		}
-		public TerminalNode DEFAULT() { return getToken(GrammarParser.DEFAULT, 0); }
-		public TerminalNode STATIC() { return getToken(GrammarParser.STATIC, 0); }
-		public TerminalNode STRICTFP() { return getToken(GrammarParser.STRICTFP, 0); }
+		public TerminalNode DEFAULT() { return getToken(KaonParser.DEFAULT, 0); }
+		public TerminalNode STATIC() { return getToken(KaonParser.STATIC, 0); }
+		public TerminalNode STRICTFP() { return getToken(KaonParser.STRICTFP, 0); }
 		public InterfaceMethodModifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_interfaceMethodModifier; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterInterfaceMethodModifier(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterInterfaceMethodModifier(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitInterfaceMethodModifier(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitInterfaceMethodModifier(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitInterfaceMethodModifier(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitInterfaceMethodModifier(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1136,15 +1133,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_genericInterfaceMethodDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterGenericInterfaceMethodDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterGenericInterfaceMethodDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitGenericInterfaceMethodDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitGenericInterfaceMethodDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitGenericInterfaceMethodDeclaration(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitGenericInterfaceMethodDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1179,9 +1176,9 @@ public class GrammarParser extends Parser {
 		public VariableDeclaratorContext variableDeclarator(int i) {
 			return getRuleContext(VariableDeclaratorContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public VariableDeclaratorsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1189,15 +1186,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variableDeclarators; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterVariableDeclarators(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableDeclarators(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitVariableDeclarators(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableDeclarators(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitVariableDeclarators(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableDeclarators(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1244,7 +1241,7 @@ public class GrammarParser extends Parser {
 		public VariableDeclaratorIdContext variableDeclaratorId() {
 			return getRuleContext(VariableDeclaratorIdContext.class,0);
 		}
-		public TerminalNode ASSIGN() { return getToken(GrammarParser.ASSIGN, 0); }
+		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
 		public VariableInitializerContext variableInitializer() {
 			return getRuleContext(VariableInitializerContext.class,0);
 		}
@@ -1254,15 +1251,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variableDeclarator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterVariableDeclarator(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableDeclarator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitVariableDeclarator(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableDeclarator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitVariableDeclarator(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableDeclarator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1302,14 +1299,14 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class VariableDeclaratorIdContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
-		public List<TerminalNode> LBRACK() { return getTokens(GrammarParser.LBRACK); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
 		public TerminalNode LBRACK(int i) {
-			return getToken(GrammarParser.LBRACK, i);
+			return getToken(KaonParser.LBRACK, i);
 		}
-		public List<TerminalNode> RBRACK() { return getTokens(GrammarParser.RBRACK); }
+		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
 		public TerminalNode RBRACK(int i) {
-			return getToken(GrammarParser.RBRACK, i);
+			return getToken(KaonParser.RBRACK, i);
 		}
 		public VariableDeclaratorIdContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1317,15 +1314,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variableDeclaratorId; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterVariableDeclaratorId(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableDeclaratorId(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitVariableDeclaratorId(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableDeclaratorId(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitVariableDeclaratorId(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableDeclaratorId(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1381,15 +1378,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variableInitializer; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterVariableInitializer(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableInitializer(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitVariableInitializer(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableInitializer(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitVariableInitializer(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableInitializer(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1458,17 +1455,17 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ArrayInitializerContext extends ParserRuleContext {
-		public TerminalNode LBRACE() { return getToken(GrammarParser.LBRACE, 0); }
-		public TerminalNode RBRACE() { return getToken(GrammarParser.RBRACE, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
 		public List<VariableInitializerContext> variableInitializer() {
 			return getRuleContexts(VariableInitializerContext.class);
 		}
 		public VariableInitializerContext variableInitializer(int i) {
 			return getRuleContext(VariableInitializerContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public ArrayInitializerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1476,15 +1473,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_arrayInitializer; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterArrayInitializer(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterArrayInitializer(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitArrayInitializer(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitArrayInitializer(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitArrayInitializer(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitArrayInitializer(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1553,9 +1550,9 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ClassOrInterfaceTypeContext extends ParserRuleContext {
-		public List<TerminalNode> IDENTIFIER() { return getTokens(GrammarParser.IDENTIFIER); }
+		public List<TerminalNode> IDENTIFIER() { return getTokens(KaonParser.IDENTIFIER); }
 		public TerminalNode IDENTIFIER(int i) {
-			return getToken(GrammarParser.IDENTIFIER, i);
+			return getToken(KaonParser.IDENTIFIER, i);
 		}
 		public List<TypeArgumentsContext> typeArguments() {
 			return getRuleContexts(TypeArgumentsContext.class);
@@ -1563,9 +1560,9 @@ public class GrammarParser extends Parser {
 		public TypeArgumentsContext typeArguments(int i) {
 			return getRuleContext(TypeArgumentsContext.class,i);
 		}
-		public List<TerminalNode> DOT() { return getTokens(GrammarParser.DOT); }
+		public List<TerminalNode> DOT() { return getTokens(KaonParser.DOT); }
 		public TerminalNode DOT(int i) {
-			return getToken(GrammarParser.DOT, i);
+			return getToken(KaonParser.DOT, i);
 		}
 		public ClassOrInterfaceTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1573,15 +1570,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classOrInterfaceType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterClassOrInterfaceType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterClassOrInterfaceType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitClassOrInterfaceType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitClassOrInterfaceType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitClassOrInterfaceType(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitClassOrInterfaceType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1648,22 +1645,22 @@ public class GrammarParser extends Parser {
 		public TypeTypeContext typeType() {
 			return getRuleContext(TypeTypeContext.class,0);
 		}
-		public TerminalNode QUESTION() { return getToken(GrammarParser.QUESTION, 0); }
+		public TerminalNode QUESTION() { return getToken(KaonParser.QUESTION, 0); }
 		public TypeArgumentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_typeArgument; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeArgument(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeArgument(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeArgument(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeArgument(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeArgument(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeArgument(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1729,9 +1726,9 @@ public class GrammarParser extends Parser {
 		public QualifiedNameContext qualifiedName(int i) {
 			return getRuleContext(QualifiedNameContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public QualifiedNameListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1739,15 +1736,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_qualifiedNameList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterQualifiedNameList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterQualifiedNameList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitQualifiedNameList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitQualifiedNameList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitQualifiedNameList(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitQualifiedNameList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1791,8 +1788,8 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class FormalParametersContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public FormalParameterListContext formalParameterList() {
 			return getRuleContext(FormalParameterListContext.class,0);
 		}
@@ -1802,15 +1799,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_formalParameters; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterFormalParameters(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFormalParameters(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitFormalParameters(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFormalParameters(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitFormalParameters(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFormalParameters(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1856,9 +1853,9 @@ public class GrammarParser extends Parser {
 		public FormalParameterContext formalParameter(int i) {
 			return getRuleContext(FormalParameterContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public LastFormalParameterContext lastFormalParameter() {
 			return getRuleContext(LastFormalParameterContext.class,0);
@@ -1869,15 +1866,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_formalParameterList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterFormalParameterList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFormalParameterList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitFormalParameterList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFormalParameterList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitFormalParameterList(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFormalParameterList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1967,15 +1964,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_formalParameter; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterFormalParameter(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFormalParameter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitFormalParameter(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFormalParameter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitFormalParameter(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFormalParameter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2022,7 +2019,7 @@ public class GrammarParser extends Parser {
 		public TypeTypeContext typeType() {
 			return getRuleContext(TypeTypeContext.class,0);
 		}
-		public TerminalNode ELLIPSIS() { return getToken(GrammarParser.ELLIPSIS, 0); }
+		public TerminalNode ELLIPSIS() { return getToken(KaonParser.ELLIPSIS, 0); }
 		public VariableDeclaratorIdContext variableDeclaratorId() {
 			return getRuleContext(VariableDeclaratorIdContext.class,0);
 		}
@@ -2038,15 +2035,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lastFormalParameter; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterLastFormalParameter(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterLastFormalParameter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitLastFormalParameter(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitLastFormalParameter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitLastFormalParameter(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitLastFormalParameter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2092,13 +2089,13 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class QualifiedNameContext extends ParserRuleContext {
-		public List<TerminalNode> IDENTIFIER() { return getTokens(GrammarParser.IDENTIFIER); }
+		public List<TerminalNode> IDENTIFIER() { return getTokens(KaonParser.IDENTIFIER); }
 		public TerminalNode IDENTIFIER(int i) {
-			return getToken(GrammarParser.IDENTIFIER, i);
+			return getToken(KaonParser.IDENTIFIER, i);
 		}
-		public List<TerminalNode> DOT() { return getTokens(GrammarParser.DOT); }
+		public List<TerminalNode> DOT() { return getTokens(KaonParser.DOT); }
 		public TerminalNode DOT(int i) {
-			return getToken(GrammarParser.DOT, i);
+			return getToken(KaonParser.DOT, i);
 		}
 		public QualifiedNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2106,15 +2103,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_qualifiedName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterQualifiedName(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterQualifiedName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitQualifiedName(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitQualifiedName(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitQualifiedName(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitQualifiedName(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2164,25 +2161,25 @@ public class GrammarParser extends Parser {
 		public FloatLiteralContext floatLiteral() {
 			return getRuleContext(FloatLiteralContext.class,0);
 		}
-		public TerminalNode CHAR_LITERAL() { return getToken(GrammarParser.CHAR_LITERAL, 0); }
-		public TerminalNode STRING_LITERAL() { return getToken(GrammarParser.STRING_LITERAL, 0); }
-		public TerminalNode BOOL_LITERAL() { return getToken(GrammarParser.BOOL_LITERAL, 0); }
-		public TerminalNode NULL_LITERAL() { return getToken(GrammarParser.NULL_LITERAL, 0); }
+		public TerminalNode CHAR_LITERAL() { return getToken(KaonParser.CHAR_LITERAL, 0); }
+		public TerminalNode STRING_LITERAL() { return getToken(KaonParser.STRING_LITERAL, 0); }
+		public TerminalNode BOOL_LITERAL() { return getToken(KaonParser.BOOL_LITERAL, 0); }
+		public TerminalNode NULL_LITERAL() { return getToken(KaonParser.NULL_LITERAL, 0); }
 		public LiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_literal; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterLiteral(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitLiteral(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitLiteral(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2256,25 +2253,25 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class IntegerLiteralContext extends ParserRuleContext {
-		public TerminalNode DECIMAL_LITERAL() { return getToken(GrammarParser.DECIMAL_LITERAL, 0); }
-		public TerminalNode HEX_LITERAL() { return getToken(GrammarParser.HEX_LITERAL, 0); }
-		public TerminalNode OCT_LITERAL() { return getToken(GrammarParser.OCT_LITERAL, 0); }
-		public TerminalNode BINARY_LITERAL() { return getToken(GrammarParser.BINARY_LITERAL, 0); }
+		public TerminalNode DECIMAL_LITERAL() { return getToken(KaonParser.DECIMAL_LITERAL, 0); }
+		public TerminalNode HEX_LITERAL() { return getToken(KaonParser.HEX_LITERAL, 0); }
+		public TerminalNode OCT_LITERAL() { return getToken(KaonParser.OCT_LITERAL, 0); }
+		public TerminalNode BINARY_LITERAL() { return getToken(KaonParser.BINARY_LITERAL, 0); }
 		public IntegerLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_integerLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterIntegerLiteral(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIntegerLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitIntegerLiteral(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIntegerLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitIntegerLiteral(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIntegerLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2310,23 +2307,23 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class FloatLiteralContext extends ParserRuleContext {
-		public TerminalNode FLOAT_LITERAL() { return getToken(GrammarParser.FLOAT_LITERAL, 0); }
-		public TerminalNode HEX_FLOAT_LITERAL() { return getToken(GrammarParser.HEX_FLOAT_LITERAL, 0); }
+		public TerminalNode FLOAT_LITERAL() { return getToken(KaonParser.FLOAT_LITERAL, 0); }
+		public TerminalNode HEX_FLOAT_LITERAL() { return getToken(KaonParser.HEX_FLOAT_LITERAL, 0); }
 		public FloatLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_floatLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterFloatLiteral(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFloatLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitFloatLiteral(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFloatLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitFloatLiteral(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFloatLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2362,12 +2359,12 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class AnnotationContext extends ParserRuleContext {
-		public TerminalNode AT() { return getToken(GrammarParser.AT, 0); }
+		public TerminalNode AT() { return getToken(KaonParser.AT, 0); }
 		public QualifiedNameContext qualifiedName() {
 			return getRuleContext(QualifiedNameContext.class,0);
 		}
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public ElementValuePairsContext elementValuePairs() {
 			return getRuleContext(ElementValuePairsContext.class,0);
 		}
@@ -2380,15 +2377,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_annotation; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterAnnotation(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterAnnotation(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitAnnotation(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitAnnotation(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitAnnotation(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitAnnotation(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2452,9 +2449,9 @@ public class GrammarParser extends Parser {
 		public ElementValuePairContext elementValuePair(int i) {
 			return getRuleContext(ElementValuePairContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public ElementValuePairsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2462,15 +2459,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_elementValuePairs; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterElementValuePairs(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterElementValuePairs(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitElementValuePairs(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitElementValuePairs(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitElementValuePairs(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitElementValuePairs(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2514,8 +2511,8 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ElementValuePairContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
-		public TerminalNode ASSIGN() { return getToken(GrammarParser.ASSIGN, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
 		public ElementValueContext elementValue() {
 			return getRuleContext(ElementValueContext.class,0);
 		}
@@ -2525,15 +2522,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_elementValuePair; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterElementValuePair(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterElementValuePair(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitElementValuePair(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitElementValuePair(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitElementValuePair(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitElementValuePair(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2579,15 +2576,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_elementValue; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterElementValue(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterElementValue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitElementValue(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitElementValue(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitElementValue(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitElementValue(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2663,17 +2660,17 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ElementValueArrayInitializerContext extends ParserRuleContext {
-		public TerminalNode LBRACE() { return getToken(GrammarParser.LBRACE, 0); }
-		public TerminalNode RBRACE() { return getToken(GrammarParser.RBRACE, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
 		public List<ElementValueContext> elementValue() {
 			return getRuleContexts(ElementValueContext.class);
 		}
 		public ElementValueContext elementValue(int i) {
 			return getRuleContext(ElementValueContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public ElementValueArrayInitializerContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2681,15 +2678,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_elementValueArrayInitializer; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterElementValueArrayInitializer(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterElementValueArrayInitializer(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitElementValueArrayInitializer(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitElementValueArrayInitializer(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitElementValueArrayInitializer(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitElementValueArrayInitializer(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2758,7 +2755,7 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class DefaultValueContext extends ParserRuleContext {
-		public TerminalNode DEFAULT() { return getToken(GrammarParser.DEFAULT, 0); }
+		public TerminalNode DEFAULT() { return getToken(KaonParser.DEFAULT, 0); }
 		public ElementValueContext elementValue() {
 			return getRuleContext(ElementValueContext.class,0);
 		}
@@ -2768,15 +2765,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_defaultValue; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterDefaultValue(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterDefaultValue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitDefaultValue(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitDefaultValue(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitDefaultValue(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitDefaultValue(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2805,8 +2802,8 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class BlockContext extends ParserRuleContext {
-		public TerminalNode LBRACE() { return getToken(GrammarParser.LBRACE, 0); }
-		public TerminalNode RBRACE() { return getToken(GrammarParser.RBRACE, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
 		public List<BlockStatementContext> blockStatement() {
 			return getRuleContexts(BlockStatementContext.class);
 		}
@@ -2822,15 +2819,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterBlock(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitBlock(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitBlock(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitBlock(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitBlock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2887,7 +2884,7 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class WrongBlockStatementContext extends ParserRuleContext {
-		public TerminalNode LBRACE() { return getToken(GrammarParser.LBRACE, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
 		public List<BlockStatementContext> blockStatement() {
 			return getRuleContexts(BlockStatementContext.class);
 		}
@@ -2900,15 +2897,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_wrongBlockStatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterWrongBlockStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterWrongBlockStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitWrongBlockStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitWrongBlockStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitWrongBlockStatement(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitWrongBlockStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2957,7 +2954,7 @@ public class GrammarParser extends Parser {
 		public LocalVariableDeclarationContext localVariableDeclaration() {
 			return getRuleContext(LocalVariableDeclarationContext.class,0);
 		}
-		public TerminalNode SEMI() { return getToken(GrammarParser.SEMI, 0); }
+		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
 		public WrongLocalVariableDeclarationContext wrongLocalVariableDeclaration() {
 			return getRuleContext(WrongLocalVariableDeclarationContext.class,0);
 		}
@@ -2970,15 +2967,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_blockStatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterBlockStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterBlockStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitBlockStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitBlockStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitBlockStatement(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitBlockStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3045,15 +3042,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_wrongLocalVariableDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterWrongLocalVariableDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterWrongLocalVariableDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitWrongLocalVariableDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitWrongLocalVariableDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitWrongLocalVariableDeclaration(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitWrongLocalVariableDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3109,15 +3106,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_localVariableDeclaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterLocalVariableDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterLocalVariableDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitLocalVariableDeclaration(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitLocalVariableDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitLocalVariableDeclaration(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitLocalVariableDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3152,7 +3149,7 @@ public class GrammarParser extends Parser {
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
-		public TerminalNode IF() { return getToken(GrammarParser.IF, 0); }
+		public TerminalNode IF() { return getToken(KaonParser.IF, 0); }
 		public List<StatementContext> statement() {
 			return getRuleContexts(StatementContext.class);
 		}
@@ -3168,26 +3165,26 @@ public class GrammarParser extends Parser {
 		public ExcessRParenExpressionContext excessRParenExpression() {
 			return getRuleContext(ExcessRParenExpressionContext.class,0);
 		}
-		public TerminalNode ELSE() { return getToken(GrammarParser.ELSE, 0); }
-		public TerminalNode FOR() { return getToken(GrammarParser.FOR, 0); }
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode ELSE() { return getToken(KaonParser.ELSE, 0); }
+		public TerminalNode FOR() { return getToken(KaonParser.FOR, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public ForControlContext forControl() {
 			return getRuleContext(ForControlContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
-		public TerminalNode PRINT() { return getToken(GrammarParser.PRINT, 0); }
-		public TerminalNode SEMI() { return getToken(GrammarParser.SEMI, 0); }
-		public List<TerminalNode> STRING_LITERAL() { return getTokens(GrammarParser.STRING_LITERAL); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public TerminalNode PRINT() { return getToken(KaonParser.PRINT, 0); }
+		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
+		public List<TerminalNode> STRING_LITERAL() { return getTokens(KaonParser.STRING_LITERAL); }
 		public TerminalNode STRING_LITERAL(int i) {
-			return getToken(GrammarParser.STRING_LITERAL, i);
+			return getToken(KaonParser.STRING_LITERAL, i);
 		}
-		public List<TerminalNode> IDENTIFIER() { return getTokens(GrammarParser.IDENTIFIER); }
+		public List<TerminalNode> IDENTIFIER() { return getTokens(KaonParser.IDENTIFIER); }
 		public TerminalNode IDENTIFIER(int i) {
-			return getToken(GrammarParser.IDENTIFIER, i);
+			return getToken(KaonParser.IDENTIFIER, i);
 		}
-		public List<TerminalNode> ADD() { return getTokens(GrammarParser.ADD); }
+		public List<TerminalNode> ADD() { return getTokens(KaonParser.ADD); }
 		public TerminalNode ADD(int i) {
-			return getToken(GrammarParser.ADD, i);
+			return getToken(KaonParser.ADD, i);
 		}
 		public WrongPrintStatementContext wrongPrintStatement() {
 			return getRuleContext(WrongPrintStatementContext.class,0);
@@ -3195,10 +3192,10 @@ public class GrammarParser extends Parser {
 		public ScanMissingIdentifierErrorContext scanMissingIdentifierError() {
 			return getRuleContext(ScanMissingIdentifierErrorContext.class,0);
 		}
-		public TerminalNode SCAN() { return getToken(GrammarParser.SCAN, 0); }
-		public TerminalNode WHILE() { return getToken(GrammarParser.WHILE, 0); }
-		public TerminalNode DO() { return getToken(GrammarParser.DO, 0); }
-		public TerminalNode TRY() { return getToken(GrammarParser.TRY, 0); }
+		public TerminalNode SCAN() { return getToken(KaonParser.SCAN, 0); }
+		public TerminalNode WHILE() { return getToken(KaonParser.WHILE, 0); }
+		public TerminalNode DO() { return getToken(KaonParser.DO, 0); }
+		public TerminalNode TRY() { return getToken(KaonParser.TRY, 0); }
 		public FinallyBlockContext finallyBlock() {
 			return getRuleContext(FinallyBlockContext.class,0);
 		}
@@ -3211,9 +3208,9 @@ public class GrammarParser extends Parser {
 		public ResourceSpecificationContext resourceSpecification() {
 			return getRuleContext(ResourceSpecificationContext.class,0);
 		}
-		public TerminalNode SWITCH() { return getToken(GrammarParser.SWITCH, 0); }
-		public TerminalNode LBRACE() { return getToken(GrammarParser.LBRACE, 0); }
-		public TerminalNode RBRACE() { return getToken(GrammarParser.RBRACE, 0); }
+		public TerminalNode SWITCH() { return getToken(KaonParser.SWITCH, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
 		public List<SwitchBlockStatementGroupContext> switchBlockStatementGroup() {
 			return getRuleContexts(SwitchBlockStatementGroupContext.class);
 		}
@@ -3226,8 +3223,8 @@ public class GrammarParser extends Parser {
 		public SwitchLabelContext switchLabel(int i) {
 			return getRuleContext(SwitchLabelContext.class,i);
 		}
-		public TerminalNode SYNCHRONIZED() { return getToken(GrammarParser.SYNCHRONIZED, 0); }
-		public TerminalNode RETURN() { return getToken(GrammarParser.RETURN, 0); }
+		public TerminalNode SYNCHRONIZED() { return getToken(KaonParser.SYNCHRONIZED, 0); }
+		public TerminalNode RETURN() { return getToken(KaonParser.RETURN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -3237,25 +3234,25 @@ public class GrammarParser extends Parser {
 		public ReturnMissingErrorContext returnMissingError() {
 			return getRuleContext(ReturnMissingErrorContext.class,0);
 		}
-		public TerminalNode THROW() { return getToken(GrammarParser.THROW, 0); }
-		public TerminalNode BREAK() { return getToken(GrammarParser.BREAK, 0); }
-		public TerminalNode CONTINUE() { return getToken(GrammarParser.CONTINUE, 0); }
-		public TerminalNode COLON() { return getToken(GrammarParser.COLON, 0); }
+		public TerminalNode THROW() { return getToken(KaonParser.THROW, 0); }
+		public TerminalNode BREAK() { return getToken(KaonParser.BREAK, 0); }
+		public TerminalNode CONTINUE() { return getToken(KaonParser.CONTINUE, 0); }
+		public TerminalNode COLON() { return getToken(KaonParser.COLON, 0); }
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitStatement(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3798,24 +3795,24 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ScanMissingIdentifierErrorContext extends ParserRuleContext {
-		public TerminalNode SCAN() { return getToken(GrammarParser.SCAN, 0); }
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode SCAN() { return getToken(KaonParser.SCAN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public ScanMissingIdentifierErrorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_scanMissingIdentifierError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterScanMissingIdentifierError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterScanMissingIdentifierError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitScanMissingIdentifierError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitScanMissingIdentifierError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitScanMissingIdentifierError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitScanMissingIdentifierError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3853,37 +3850,37 @@ public class GrammarParser extends Parser {
 		public PrimaryContext primary(int i) {
 			return getRuleContext(PrimaryContext.class,i);
 		}
-		public List<TerminalNode> AND() { return getTokens(GrammarParser.AND); }
+		public List<TerminalNode> AND() { return getTokens(KaonParser.AND); }
 		public TerminalNode AND(int i) {
-			return getToken(GrammarParser.AND, i);
+			return getToken(KaonParser.AND, i);
 		}
-		public List<TerminalNode> OR() { return getTokens(GrammarParser.OR); }
+		public List<TerminalNode> OR() { return getTokens(KaonParser.OR); }
 		public TerminalNode OR(int i) {
-			return getToken(GrammarParser.OR, i);
+			return getToken(KaonParser.OR, i);
 		}
-		public List<TerminalNode> LE() { return getTokens(GrammarParser.LE); }
+		public List<TerminalNode> LE() { return getTokens(KaonParser.LE); }
 		public TerminalNode LE(int i) {
-			return getToken(GrammarParser.LE, i);
+			return getToken(KaonParser.LE, i);
 		}
-		public List<TerminalNode> GE() { return getTokens(GrammarParser.GE); }
+		public List<TerminalNode> GE() { return getTokens(KaonParser.GE); }
 		public TerminalNode GE(int i) {
-			return getToken(GrammarParser.GE, i);
+			return getToken(KaonParser.GE, i);
 		}
-		public List<TerminalNode> GT() { return getTokens(GrammarParser.GT); }
+		public List<TerminalNode> GT() { return getTokens(KaonParser.GT); }
 		public TerminalNode GT(int i) {
-			return getToken(GrammarParser.GT, i);
+			return getToken(KaonParser.GT, i);
 		}
-		public List<TerminalNode> LT() { return getTokens(GrammarParser.LT); }
+		public List<TerminalNode> LT() { return getTokens(KaonParser.LT); }
 		public TerminalNode LT(int i) {
-			return getToken(GrammarParser.LT, i);
+			return getToken(KaonParser.LT, i);
 		}
-		public List<TerminalNode> EQUAL() { return getTokens(GrammarParser.EQUAL); }
+		public List<TerminalNode> EQUAL() { return getTokens(KaonParser.EQUAL); }
 		public TerminalNode EQUAL(int i) {
-			return getToken(GrammarParser.EQUAL, i);
+			return getToken(KaonParser.EQUAL, i);
 		}
-		public List<TerminalNode> NOTEQUAL() { return getTokens(GrammarParser.NOTEQUAL); }
+		public List<TerminalNode> NOTEQUAL() { return getTokens(KaonParser.NOTEQUAL); }
 		public TerminalNode NOTEQUAL(int i) {
-			return getToken(GrammarParser.NOTEQUAL, i);
+			return getToken(KaonParser.NOTEQUAL, i);
 		}
 		public CompareExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3891,15 +3888,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_compareExpression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterCompareExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterCompareExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitCompareExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitCompareExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitCompareExpression(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitCompareExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3983,25 +3980,25 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class PrintMissingQuotesErrorContext extends ParserRuleContext {
-		public TerminalNode PRINT() { return getToken(GrammarParser.PRINT, 0); }
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
-		public TerminalNode ERROR_STRING_LITERAL() { return getToken(GrammarParser.ERROR_STRING_LITERAL, 0); }
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode PRINT() { return getToken(KaonParser.PRINT, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode ERROR_STRING_LITERAL() { return getToken(KaonParser.ERROR_STRING_LITERAL, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public PrintMissingQuotesErrorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_printMissingQuotesError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterPrintMissingQuotesError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrintMissingQuotesError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitPrintMissingQuotesError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrintMissingQuotesError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitPrintMissingQuotesError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrintMissingQuotesError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4034,30 +4031,30 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class WrongPrintStatementContext extends ParserRuleContext {
-		public TerminalNode PRINT() { return getToken(GrammarParser.PRINT, 0); }
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
-		public List<TerminalNode> ADD() { return getTokens(GrammarParser.ADD); }
+		public TerminalNode PRINT() { return getToken(KaonParser.PRINT, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public List<TerminalNode> ADD() { return getTokens(KaonParser.ADD); }
 		public TerminalNode ADD(int i) {
-			return getToken(GrammarParser.ADD, i);
+			return getToken(KaonParser.ADD, i);
 		}
-		public List<TerminalNode> IDENTIFIER() { return getTokens(GrammarParser.IDENTIFIER); }
+		public List<TerminalNode> IDENTIFIER() { return getTokens(KaonParser.IDENTIFIER); }
 		public TerminalNode IDENTIFIER(int i) {
-			return getToken(GrammarParser.IDENTIFIER, i);
+			return getToken(KaonParser.IDENTIFIER, i);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
-		public TerminalNode SEMI() { return getToken(GrammarParser.SEMI, 0); }
-		public TerminalNode STRING_LITERAL() { return getToken(GrammarParser.STRING_LITERAL, 0); }
-		public List<TerminalNode> SUB() { return getTokens(GrammarParser.SUB); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
+		public TerminalNode STRING_LITERAL() { return getToken(KaonParser.STRING_LITERAL, 0); }
+		public List<TerminalNode> SUB() { return getTokens(KaonParser.SUB); }
 		public TerminalNode SUB(int i) {
-			return getToken(GrammarParser.SUB, i);
+			return getToken(KaonParser.SUB, i);
 		}
-		public List<TerminalNode> DIV() { return getTokens(GrammarParser.DIV); }
+		public List<TerminalNode> DIV() { return getTokens(KaonParser.DIV); }
 		public TerminalNode DIV(int i) {
-			return getToken(GrammarParser.DIV, i);
+			return getToken(KaonParser.DIV, i);
 		}
-		public List<TerminalNode> MUL() { return getTokens(GrammarParser.MUL); }
+		public List<TerminalNode> MUL() { return getTokens(KaonParser.MUL); }
 		public TerminalNode MUL(int i) {
-			return getToken(GrammarParser.MUL, i);
+			return getToken(KaonParser.MUL, i);
 		}
 		public WrongPrintStatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4065,15 +4062,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_wrongPrintStatement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterWrongPrintStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterWrongPrintStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitWrongPrintStatement(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitWrongPrintStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitWrongPrintStatement(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitWrongPrintStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4143,26 +4140,26 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ReturnPrimitiveTypeErrorContext extends ParserRuleContext {
-		public TerminalNode RETURN() { return getToken(GrammarParser.RETURN, 0); }
+		public TerminalNode RETURN() { return getToken(KaonParser.RETURN, 0); }
 		public PrimitiveTypeContext primitiveType() {
 			return getRuleContext(PrimitiveTypeContext.class,0);
 		}
-		public TerminalNode SEMI() { return getToken(GrammarParser.SEMI, 0); }
+		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
 		public ReturnPrimitiveTypeErrorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_returnPrimitiveTypeError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterReturnPrimitiveTypeError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterReturnPrimitiveTypeError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitReturnPrimitiveTypeError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitReturnPrimitiveTypeError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitReturnPrimitiveTypeError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitReturnPrimitiveTypeError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4208,7 +4205,7 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ReturnMissingErrorContext extends ParserRuleContext {
-		public TerminalNode RETURN() { return getToken(GrammarParser.RETURN, 0); }
+		public TerminalNode RETURN() { return getToken(KaonParser.RETURN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -4218,15 +4215,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_returnMissingError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterReturnMissingError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterReturnMissingError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitReturnMissingError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitReturnMissingError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitReturnMissingError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitReturnMissingError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4263,30 +4260,30 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ForErrorContext extends ParserRuleContext {
-		public TerminalNode FOR() { return getToken(GrammarParser.FOR, 0); }
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode FOR() { return getToken(KaonParser.FOR, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public ForControlContext forControl() {
 			return getRuleContext(ForControlContext.class,0);
 		}
 		public StatementContext statement() {
 			return getRuleContext(StatementContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public ForErrorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_forError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterForError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterForError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitForError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitForError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitForError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitForError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4338,13 +4335,13 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class CatchClauseContext extends ParserRuleContext {
-		public TerminalNode CATCH() { return getToken(GrammarParser.CATCH, 0); }
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode CATCH() { return getToken(KaonParser.CATCH, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public CatchTypeContext catchType() {
 			return getRuleContext(CatchTypeContext.class,0);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
@@ -4360,15 +4357,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_catchClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterCatchClause(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterCatchClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitCatchClause(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitCatchClause(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitCatchClause(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitCatchClause(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4426,9 +4423,9 @@ public class GrammarParser extends Parser {
 		public QualifiedNameContext qualifiedName(int i) {
 			return getRuleContext(QualifiedNameContext.class,i);
 		}
-		public List<TerminalNode> BITOR() { return getTokens(GrammarParser.BITOR); }
+		public List<TerminalNode> BITOR() { return getTokens(KaonParser.BITOR); }
 		public TerminalNode BITOR(int i) {
-			return getToken(GrammarParser.BITOR, i);
+			return getToken(KaonParser.BITOR, i);
 		}
 		public CatchTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4436,15 +4433,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_catchType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterCatchType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterCatchType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitCatchType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitCatchType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitCatchType(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitCatchType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4488,7 +4485,7 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class FinallyBlockContext extends ParserRuleContext {
-		public TerminalNode FINALLY() { return getToken(GrammarParser.FINALLY, 0); }
+		public TerminalNode FINALLY() { return getToken(KaonParser.FINALLY, 0); }
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
@@ -4498,15 +4495,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_finallyBlock; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterFinallyBlock(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFinallyBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitFinallyBlock(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFinallyBlock(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitFinallyBlock(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFinallyBlock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4535,27 +4532,27 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ResourceSpecificationContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public ResourcesContext resources() {
 			return getRuleContext(ResourcesContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
-		public TerminalNode SEMI() { return getToken(GrammarParser.SEMI, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
 		public ResourceSpecificationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_resourceSpecification; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterResourceSpecification(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterResourceSpecification(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitResourceSpecification(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitResourceSpecification(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitResourceSpecification(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitResourceSpecification(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4603,9 +4600,9 @@ public class GrammarParser extends Parser {
 		public ResourceContext resource(int i) {
 			return getRuleContext(ResourceContext.class,i);
 		}
-		public List<TerminalNode> SEMI() { return getTokens(GrammarParser.SEMI); }
+		public List<TerminalNode> SEMI() { return getTokens(KaonParser.SEMI); }
 		public TerminalNode SEMI(int i) {
-			return getToken(GrammarParser.SEMI, i);
+			return getToken(KaonParser.SEMI, i);
 		}
 		public ResourcesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4613,15 +4610,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_resources; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterResources(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterResources(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitResources(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitResources(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitResources(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitResources(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4673,7 +4670,7 @@ public class GrammarParser extends Parser {
 		public VariableDeclaratorIdContext variableDeclaratorId() {
 			return getRuleContext(VariableDeclaratorIdContext.class,0);
 		}
-		public TerminalNode ASSIGN() { return getToken(GrammarParser.ASSIGN, 0); }
+		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -4689,15 +4686,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_resource; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterResource(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterResource(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitResource(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitResource(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitResource(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitResource(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4763,15 +4760,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_switchBlockStatementGroup; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterSwitchBlockStatementGroup(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterSwitchBlockStatementGroup(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitSwitchBlockStatementGroup(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitSwitchBlockStatementGroup(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitSwitchBlockStatementGroup(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitSwitchBlockStatementGroup(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4827,28 +4824,28 @@ public class GrammarParser extends Parser {
 	public static class SwitchLabelContext extends ParserRuleContext {
 		public ExpressionContext constantExpression;
 		public Token enumConstantName;
-		public TerminalNode CASE() { return getToken(GrammarParser.CASE, 0); }
-		public TerminalNode COLON() { return getToken(GrammarParser.COLON, 0); }
+		public TerminalNode CASE() { return getToken(KaonParser.CASE, 0); }
+		public TerminalNode COLON() { return getToken(KaonParser.COLON, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
-		public TerminalNode DEFAULT() { return getToken(GrammarParser.DEFAULT, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode DEFAULT() { return getToken(KaonParser.DEFAULT, 0); }
 		public SwitchLabelContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_switchLabel; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterSwitchLabel(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterSwitchLabel(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitSwitchLabel(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitSwitchLabel(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitSwitchLabel(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitSwitchLabel(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -4914,9 +4911,9 @@ public class GrammarParser extends Parser {
 		public EnhancedForControlContext enhancedForControl() {
 			return getRuleContext(EnhancedForControlContext.class,0);
 		}
-		public List<TerminalNode> SEMI() { return getTokens(GrammarParser.SEMI); }
+		public List<TerminalNode> SEMI() { return getTokens(KaonParser.SEMI); }
 		public TerminalNode SEMI(int i) {
-			return getToken(GrammarParser.SEMI, i);
+			return getToken(KaonParser.SEMI, i);
 		}
 		public ForInitContext forInit() {
 			return getRuleContext(ForInitContext.class,0);
@@ -4933,15 +4930,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_forControl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterForControl(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterForControl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitForControl(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitForControl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitForControl(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitForControl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5026,15 +5023,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_forInit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterForInit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterForInit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitForInit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitForInit(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitForInit(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitForInit(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5080,7 +5077,7 @@ public class GrammarParser extends Parser {
 		public VariableDeclaratorIdContext variableDeclaratorId() {
 			return getRuleContext(VariableDeclaratorIdContext.class,0);
 		}
-		public TerminalNode COLON() { return getToken(GrammarParser.COLON, 0); }
+		public TerminalNode COLON() { return getToken(KaonParser.COLON, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -5096,15 +5093,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_enhancedForControl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterEnhancedForControl(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterEnhancedForControl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitEnhancedForControl(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitEnhancedForControl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitEnhancedForControl(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitEnhancedForControl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5152,26 +5149,26 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ParExpressionContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public ParExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_parExpression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterParExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterParExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitParExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitParExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitParExpression(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitParExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5202,29 +5199,29 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ExcessLParenExpressionContext extends ParserRuleContext {
-		public List<TerminalNode> LPAREN() { return getTokens(GrammarParser.LPAREN); }
+		public List<TerminalNode> LPAREN() { return getTokens(KaonParser.LPAREN); }
 		public TerminalNode LPAREN(int i) {
-			return getToken(GrammarParser.LPAREN, i);
+			return getToken(KaonParser.LPAREN, i);
 		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public ExcessLParenExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_excessLParenExpression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterExcessLParenExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExcessLParenExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitExcessLParenExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExcessLParenExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitExcessLParenExpression(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExcessLParenExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5257,13 +5254,13 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ExcessRParenExpressionContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public List<TerminalNode> RPAREN() { return getTokens(GrammarParser.RPAREN); }
+		public List<TerminalNode> RPAREN() { return getTokens(KaonParser.RPAREN); }
 		public TerminalNode RPAREN(int i) {
-			return getToken(GrammarParser.RPAREN, i);
+			return getToken(KaonParser.RPAREN, i);
 		}
 		public ExcessRParenExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5271,15 +5268,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_excessRParenExpression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterExcessRParenExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExcessRParenExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitExcessRParenExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExcessRParenExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitExcessRParenExpression(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExcessRParenExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5318,9 +5315,9 @@ public class GrammarParser extends Parser {
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public ExpressionListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5328,15 +5325,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expressionList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterExpressionList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpressionList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitExpressionList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpressionList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitExpressionList(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpressionList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5380,9 +5377,9 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class MethodCallContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public ExpressionListContext expressionList() {
 			return getRuleContext(ExpressionListContext.class,0);
 		}
@@ -5392,15 +5389,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodCall; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterMethodCall(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterMethodCall(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitMethodCall(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitMethodCall(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitMethodCall(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitMethodCall(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -5454,24 +5451,24 @@ public class GrammarParser extends Parser {
 		public MethodCallContext methodCall() {
 			return getRuleContext(MethodCallContext.class,0);
 		}
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public TypeTypeContext typeType() {
 			return getRuleContext(TypeTypeContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode ADD() { return getToken(GrammarParser.ADD, 0); }
-		public TerminalNode SUB() { return getToken(GrammarParser.SUB, 0); }
-		public TerminalNode INC() { return getToken(GrammarParser.INC, 0); }
-		public TerminalNode DEC() { return getToken(GrammarParser.DEC, 0); }
-		public TerminalNode TILDE() { return getToken(GrammarParser.TILDE, 0); }
-		public TerminalNode BANG() { return getToken(GrammarParser.BANG, 0); }
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
+		public TerminalNode ADD() { return getToken(KaonParser.ADD, 0); }
+		public TerminalNode SUB() { return getToken(KaonParser.SUB, 0); }
+		public TerminalNode INC() { return getToken(KaonParser.INC, 0); }
+		public TerminalNode DEC() { return getToken(KaonParser.DEC, 0); }
+		public TerminalNode TILDE() { return getToken(KaonParser.TILDE, 0); }
+		public TerminalNode BANG() { return getToken(KaonParser.BANG, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
 		public ExpressionErrorContext expressionError() {
 			return getRuleContext(ExpressionErrorContext.class,0);
 		}
@@ -5481,62 +5478,62 @@ public class GrammarParser extends Parser {
 		public ExpressionSubtractionErrorContext expressionSubtractionError() {
 			return getRuleContext(ExpressionSubtractionErrorContext.class,0);
 		}
-		public TerminalNode COLONCOLON() { return getToken(GrammarParser.COLONCOLON, 0); }
+		public TerminalNode COLONCOLON() { return getToken(KaonParser.COLONCOLON, 0); }
 		public TypeArgumentsContext typeArguments() {
 			return getRuleContext(TypeArgumentsContext.class,0);
 		}
-		public TerminalNode MUL() { return getToken(GrammarParser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(GrammarParser.DIV, 0); }
-		public TerminalNode MOD() { return getToken(GrammarParser.MOD, 0); }
-		public List<TerminalNode> LT() { return getTokens(GrammarParser.LT); }
+		public TerminalNode MUL() { return getToken(KaonParser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(KaonParser.DIV, 0); }
+		public TerminalNode MOD() { return getToken(KaonParser.MOD, 0); }
+		public List<TerminalNode> LT() { return getTokens(KaonParser.LT); }
 		public TerminalNode LT(int i) {
-			return getToken(GrammarParser.LT, i);
+			return getToken(KaonParser.LT, i);
 		}
-		public List<TerminalNode> GT() { return getTokens(GrammarParser.GT); }
+		public List<TerminalNode> GT() { return getTokens(KaonParser.GT); }
 		public TerminalNode GT(int i) {
-			return getToken(GrammarParser.GT, i);
+			return getToken(KaonParser.GT, i);
 		}
-		public TerminalNode LE() { return getToken(GrammarParser.LE, 0); }
-		public TerminalNode GE() { return getToken(GrammarParser.GE, 0); }
-		public TerminalNode EQUAL() { return getToken(GrammarParser.EQUAL, 0); }
-		public TerminalNode NOTEQUAL() { return getToken(GrammarParser.NOTEQUAL, 0); }
-		public TerminalNode BITAND() { return getToken(GrammarParser.BITAND, 0); }
-		public TerminalNode CARET() { return getToken(GrammarParser.CARET, 0); }
-		public TerminalNode BITOR() { return getToken(GrammarParser.BITOR, 0); }
-		public TerminalNode AND() { return getToken(GrammarParser.AND, 0); }
-		public TerminalNode OR() { return getToken(GrammarParser.OR, 0); }
-		public TerminalNode COLON() { return getToken(GrammarParser.COLON, 0); }
-		public TerminalNode QUESTION() { return getToken(GrammarParser.QUESTION, 0); }
-		public TerminalNode ASSIGN() { return getToken(GrammarParser.ASSIGN, 0); }
-		public TerminalNode ADD_ASSIGN() { return getToken(GrammarParser.ADD_ASSIGN, 0); }
-		public TerminalNode SUB_ASSIGN() { return getToken(GrammarParser.SUB_ASSIGN, 0); }
-		public TerminalNode MUL_ASSIGN() { return getToken(GrammarParser.MUL_ASSIGN, 0); }
-		public TerminalNode DIV_ASSIGN() { return getToken(GrammarParser.DIV_ASSIGN, 0); }
-		public TerminalNode AND_ASSIGN() { return getToken(GrammarParser.AND_ASSIGN, 0); }
-		public TerminalNode OR_ASSIGN() { return getToken(GrammarParser.OR_ASSIGN, 0); }
-		public TerminalNode XOR_ASSIGN() { return getToken(GrammarParser.XOR_ASSIGN, 0); }
-		public TerminalNode RSHIFT_ASSIGN() { return getToken(GrammarParser.RSHIFT_ASSIGN, 0); }
-		public TerminalNode URSHIFT_ASSIGN() { return getToken(GrammarParser.URSHIFT_ASSIGN, 0); }
-		public TerminalNode LSHIFT_ASSIGN() { return getToken(GrammarParser.LSHIFT_ASSIGN, 0); }
-		public TerminalNode MOD_ASSIGN() { return getToken(GrammarParser.MOD_ASSIGN, 0); }
-		public TerminalNode DOT() { return getToken(GrammarParser.DOT, 0); }
-		public TerminalNode LBRACK() { return getToken(GrammarParser.LBRACK, 0); }
-		public TerminalNode RBRACK() { return getToken(GrammarParser.RBRACK, 0); }
+		public TerminalNode LE() { return getToken(KaonParser.LE, 0); }
+		public TerminalNode GE() { return getToken(KaonParser.GE, 0); }
+		public TerminalNode EQUAL() { return getToken(KaonParser.EQUAL, 0); }
+		public TerminalNode NOTEQUAL() { return getToken(KaonParser.NOTEQUAL, 0); }
+		public TerminalNode BITAND() { return getToken(KaonParser.BITAND, 0); }
+		public TerminalNode CARET() { return getToken(KaonParser.CARET, 0); }
+		public TerminalNode BITOR() { return getToken(KaonParser.BITOR, 0); }
+		public TerminalNode AND() { return getToken(KaonParser.AND, 0); }
+		public TerminalNode OR() { return getToken(KaonParser.OR, 0); }
+		public TerminalNode COLON() { return getToken(KaonParser.COLON, 0); }
+		public TerminalNode QUESTION() { return getToken(KaonParser.QUESTION, 0); }
+		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
+		public TerminalNode ADD_ASSIGN() { return getToken(KaonParser.ADD_ASSIGN, 0); }
+		public TerminalNode SUB_ASSIGN() { return getToken(KaonParser.SUB_ASSIGN, 0); }
+		public TerminalNode MUL_ASSIGN() { return getToken(KaonParser.MUL_ASSIGN, 0); }
+		public TerminalNode DIV_ASSIGN() { return getToken(KaonParser.DIV_ASSIGN, 0); }
+		public TerminalNode AND_ASSIGN() { return getToken(KaonParser.AND_ASSIGN, 0); }
+		public TerminalNode OR_ASSIGN() { return getToken(KaonParser.OR_ASSIGN, 0); }
+		public TerminalNode XOR_ASSIGN() { return getToken(KaonParser.XOR_ASSIGN, 0); }
+		public TerminalNode RSHIFT_ASSIGN() { return getToken(KaonParser.RSHIFT_ASSIGN, 0); }
+		public TerminalNode URSHIFT_ASSIGN() { return getToken(KaonParser.URSHIFT_ASSIGN, 0); }
+		public TerminalNode LSHIFT_ASSIGN() { return getToken(KaonParser.LSHIFT_ASSIGN, 0); }
+		public TerminalNode MOD_ASSIGN() { return getToken(KaonParser.MOD_ASSIGN, 0); }
+		public TerminalNode DOT() { return getToken(KaonParser.DOT, 0); }
+		public TerminalNode LBRACK() { return getToken(KaonParser.LBRACK, 0); }
+		public TerminalNode RBRACK() { return getToken(KaonParser.RBRACK, 0); }
 		public ExpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitExpression(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6014,16 +6011,16 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class PrimaryErrorContext extends ParserRuleContext {
-		public List<TerminalNode> LPAREN() { return getTokens(GrammarParser.LPAREN); }
+		public List<TerminalNode> LPAREN() { return getTokens(KaonParser.LPAREN); }
 		public TerminalNode LPAREN(int i) {
-			return getToken(GrammarParser.LPAREN, i);
+			return getToken(KaonParser.LPAREN, i);
 		}
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public List<TerminalNode> RPAREN() { return getTokens(GrammarParser.RPAREN); }
+		public List<TerminalNode> RPAREN() { return getTokens(KaonParser.RPAREN); }
 		public TerminalNode RPAREN(int i) {
-			return getToken(GrammarParser.RPAREN, i);
+			return getToken(KaonParser.RPAREN, i);
 		}
 		public PrimaryErrorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6031,15 +6028,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_primaryError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterPrimaryError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrimaryError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitPrimaryError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrimaryError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitPrimaryError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrimaryError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6123,8 +6120,8 @@ public class GrammarParser extends Parser {
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
 		}
-		public TerminalNode INC() { return getToken(GrammarParser.INC, 0); }
-		public TerminalNode DEC() { return getToken(GrammarParser.DEC, 0); }
+		public TerminalNode INC() { return getToken(KaonParser.INC, 0); }
+		public TerminalNode DEC() { return getToken(KaonParser.DEC, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -6134,15 +6131,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expressionError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterExpressionError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpressionError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitExpressionError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpressionError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitExpressionError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpressionError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6221,22 +6218,22 @@ public class GrammarParser extends Parser {
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
 		}
-		public TerminalNode INC() { return getToken(GrammarParser.INC, 0); }
+		public TerminalNode INC() { return getToken(KaonParser.INC, 0); }
 		public ExpressionAdditionErrorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressionAdditionError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterExpressionAdditionError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpressionAdditionError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitExpressionAdditionError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpressionAdditionError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitExpressionAdditionError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpressionAdditionError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6269,22 +6266,22 @@ public class GrammarParser extends Parser {
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
 		}
-		public TerminalNode DEC() { return getToken(GrammarParser.DEC, 0); }
+		public TerminalNode DEC() { return getToken(KaonParser.DEC, 0); }
 		public ExpressionSubtractionErrorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expressionSubtractionError; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterExpressionSubtractionError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpressionSubtractionError(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitExpressionSubtractionError(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpressionSubtractionError(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitExpressionSubtractionError(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpressionSubtractionError(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6313,34 +6310,34 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class PrimaryContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public LiteralContext literal() {
 			return getRuleContext(LiteralContext.class,0);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(GrammarParser.IDENTIFIER, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
 		public TypeTypeOrVoidContext typeTypeOrVoid() {
 			return getRuleContext(TypeTypeOrVoidContext.class,0);
 		}
-		public TerminalNode DOT() { return getToken(GrammarParser.DOT, 0); }
+		public TerminalNode DOT() { return getToken(KaonParser.DOT, 0); }
 		public PrimaryContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_primary; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterPrimary(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitPrimary(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitPrimary(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6419,13 +6416,13 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ArrayCreatorRestContext extends ParserRuleContext {
-		public List<TerminalNode> LBRACK() { return getTokens(GrammarParser.LBRACK); }
+		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
 		public TerminalNode LBRACK(int i) {
-			return getToken(GrammarParser.LBRACK, i);
+			return getToken(KaonParser.LBRACK, i);
 		}
-		public List<TerminalNode> RBRACK() { return getTokens(GrammarParser.RBRACK); }
+		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
 		public TerminalNode RBRACK(int i) {
-			return getToken(GrammarParser.RBRACK, i);
+			return getToken(KaonParser.RBRACK, i);
 		}
 		public ArrayInitializerContext arrayInitializer() {
 			return getRuleContext(ArrayInitializerContext.class,0);
@@ -6442,15 +6439,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_arrayCreatorRest; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterArrayCreatorRest(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterArrayCreatorRest(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitArrayCreatorRest(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitArrayCreatorRest(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitArrayCreatorRest(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitArrayCreatorRest(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6586,9 +6583,9 @@ public class GrammarParser extends Parser {
 		public TypeTypeContext typeType(int i) {
 			return getRuleContext(TypeTypeContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public TypeListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6596,15 +6593,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeList(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6651,17 +6648,17 @@ public class GrammarParser extends Parser {
 		public PrimitiveTypeContext primitiveType() {
 			return getRuleContext(PrimitiveTypeContext.class,0);
 		}
-		public List<TerminalNode> LBRACK() { return getTokens(GrammarParser.LBRACK); }
+		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
 		public TerminalNode LBRACK(int i) {
-			return getToken(GrammarParser.LBRACK, i);
+			return getToken(KaonParser.LBRACK, i);
 		}
-		public List<TerminalNode> DECIMAL_LITERAL() { return getTokens(GrammarParser.DECIMAL_LITERAL); }
+		public List<TerminalNode> DECIMAL_LITERAL() { return getTokens(KaonParser.DECIMAL_LITERAL); }
 		public TerminalNode DECIMAL_LITERAL(int i) {
-			return getToken(GrammarParser.DECIMAL_LITERAL, i);
+			return getToken(KaonParser.DECIMAL_LITERAL, i);
 		}
-		public List<TerminalNode> RBRACK() { return getTokens(GrammarParser.RBRACK); }
+		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
 		public TerminalNode RBRACK(int i) {
-			return getToken(GrammarParser.RBRACK, i);
+			return getToken(KaonParser.RBRACK, i);
 		}
 		public TypeTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6669,15 +6666,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeType(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6723,29 +6720,29 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class PrimitiveTypeContext extends ParserRuleContext {
-		public TerminalNode BOOLEAN() { return getToken(GrammarParser.BOOLEAN, 0); }
-		public TerminalNode CHAR() { return getToken(GrammarParser.CHAR, 0); }
-		public TerminalNode BYTE() { return getToken(GrammarParser.BYTE, 0); }
-		public TerminalNode SHORT() { return getToken(GrammarParser.SHORT, 0); }
-		public TerminalNode INT() { return getToken(GrammarParser.INT, 0); }
-		public TerminalNode LONG() { return getToken(GrammarParser.LONG, 0); }
-		public TerminalNode FLOAT() { return getToken(GrammarParser.FLOAT, 0); }
-		public TerminalNode DOUBLE() { return getToken(GrammarParser.DOUBLE, 0); }
+		public TerminalNode BOOLEAN() { return getToken(KaonParser.BOOLEAN, 0); }
+		public TerminalNode CHAR() { return getToken(KaonParser.CHAR, 0); }
+		public TerminalNode BYTE() { return getToken(KaonParser.BYTE, 0); }
+		public TerminalNode SHORT() { return getToken(KaonParser.SHORT, 0); }
+		public TerminalNode INT() { return getToken(KaonParser.INT, 0); }
+		public TerminalNode LONG() { return getToken(KaonParser.LONG, 0); }
+		public TerminalNode FLOAT() { return getToken(KaonParser.FLOAT, 0); }
+		public TerminalNode DOUBLE() { return getToken(KaonParser.DOUBLE, 0); }
 		public PrimitiveTypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_primitiveType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterPrimitiveType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrimitiveType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitPrimitiveType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrimitiveType(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitPrimitiveType(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrimitiveType(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6781,17 +6778,17 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class TypeArgumentsContext extends ParserRuleContext {
-		public TerminalNode LT() { return getToken(GrammarParser.LT, 0); }
+		public TerminalNode LT() { return getToken(KaonParser.LT, 0); }
 		public List<TypeArgumentContext> typeArgument() {
 			return getRuleContexts(TypeArgumentContext.class);
 		}
 		public TypeArgumentContext typeArgument(int i) {
 			return getRuleContext(TypeArgumentContext.class,i);
 		}
-		public TerminalNode GT() { return getToken(GrammarParser.GT, 0); }
-		public List<TerminalNode> COMMA() { return getTokens(GrammarParser.COMMA); }
+		public TerminalNode GT() { return getToken(KaonParser.GT, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(GrammarParser.COMMA, i);
+			return getToken(KaonParser.COMMA, i);
 		}
 		public TypeArgumentsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -6799,15 +6796,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeArguments; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterTypeArguments(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeArguments(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitTypeArguments(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeArguments(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitTypeArguments(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeArguments(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -6855,8 +6852,8 @@ public class GrammarParser extends Parser {
 	}
 
 	public static class ArgumentsContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(GrammarParser.LPAREN, 0); }
-		public TerminalNode RPAREN() { return getToken(GrammarParser.RPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
 		public ExpressionListContext expressionList() {
 			return getRuleContext(ExpressionListContext.class,0);
 		}
@@ -6866,15 +6863,15 @@ public class GrammarParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_arguments; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).enterArguments(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterArguments(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GrammarListener ) ((GrammarListener)listener).exitArguments(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitArguments(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GrammarVisitor ) return ((GrammarVisitor<? extends T>)visitor).visitArguments(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitArguments(this);
 			else return visitor.visitChildren(this);
 		}
 	}
