@@ -1,0 +1,16 @@
+boil main() {
+
+    pint x = 1000, z = 200;
+    mango amp = 1.4;
+
+    pint a = 1 + 300;
+
+    x = a;
+
+    beef(x == a) {
+        // plate("aaa");
+    }
+
+    // plate("aaa");
+    // plate("i am trying my best");
+}
