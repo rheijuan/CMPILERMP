@@ -22,11 +22,327 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="JavaFxApplication" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.6003063">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="Tester.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/Tester.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="186">
+                  <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Kaon.g4" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/grammar/Kaon.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="331">
+                  <caret line="452" column="32" lean-forward="true" selection-start-line="452" selection-start-column="32" selection-end-line="453" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="KaonParser.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/antlr4/KaonParser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="714">
+                  <caret line="2935" column="13" lean-forward="true" selection-start-line="2935" selection-start-column="13" selection-end-line="2935" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#98320#98321#0" expanded="true" />
+                    <element signature="e#98386#98387#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Symbol.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/symbol_table/Symbol.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#297#298#0" expanded="true" />
+                    <element signature="e#324#325#0" expanded="true" />
+                    <element signature="e#355#356#0" expanded="true" />
+                    <element signature="e#382#383#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="VariableSymbol.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/symbol_table/VariableSymbol.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+                  <folding>
+                    <element signature="e#648#649#0" expanded="true" />
+                    <element signature="e#748#749#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/symbol_table/SymbolTable.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#126#142#0" expanded="true" />
+                    <element signature="e#877#878#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TypeSymbol.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/symbol_table/TypeSymbol.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#106#107#0" expanded="true" />
+                    <element signature="e#133#134#0" expanded="true" />
+                    <element signature="e#95#96#0" expanded="true" />
+                    <element signature="e#119#120#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TheVisitor.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/TheVisitor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="281">
+                  <caret line="218" column="40" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="40" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#7308#7309#0" expanded="true" />
+                    <element signature="e#7355#7356#0" expanded="true" />
+                    <element signature="e#7442#7443#0" expanded="true" />
+                    <element signature="e#7492#7493#0" expanded="true" />
+                    <element signature="e#7575#7576#0" expanded="true" />
+                    <element signature="e#7623#7624#0" expanded="true" />
+                    <element signature="e#7712#7713#0" expanded="true" />
+                    <element signature="e#7763#7764#0" expanded="true" />
+                    <element signature="e#8013#8014#0" expanded="true" />
+                    <element signature="e#8061#8062#0" expanded="true" />
+                    <element signature="e#8142#8143#0" expanded="true" />
+                    <element signature="e#8189#8190#0" expanded="true" />
+                    <element signature="e#8455#8456#0" expanded="true" />
+                    <element signature="e#8505#8506#0" expanded="true" />
+                    <element signature="e#8590#8591#0" expanded="true" />
+                    <element signature="e#8639#8640#0" expanded="true" />
+                    <element signature="e#8718#8719#0" expanded="true" />
+                    <element signature="e#8764#8765#0" expanded="true" />
+                    <element signature="e#9185#9186#0" expanded="true" />
+                    <element signature="e#9238#9239#0" expanded="true" />
+                    <element signature="e#9323#9324#0" expanded="true" />
+                    <element signature="e#9372#9373#0" expanded="true" />
+                    <element signature="e#10343#10344#0" expanded="true" />
+                    <element signature="e#10389#10390#0" expanded="true" />
+                    <element signature="e#10622#10623#0" expanded="true" />
+                    <element signature="e#10669#10670#0" expanded="true" />
+                    <element signature="e#10750#10751#0" expanded="true" />
+                    <element signature="e#10797#10798#0" expanded="true" />
+                    <element signature="e#10888#10889#0" expanded="true" />
+                    <element signature="e#10940#10941#0" expanded="true" />
+                    <element signature="e#11031#11032#0" expanded="true" />
+                    <element signature="e#11083#11084#0" expanded="true" />
+                    <element signature="e#11166#11167#0" expanded="true" />
+                    <element signature="e#11214#11215#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="test.txt" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test_cases/test.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="parser_test_3.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test_cases/parser_test_3.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="275">
+                  <caret line="9" column="22" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>new sym</find>
+      <find>visitExpression</find>
+      <find>localVariable</find>
+      <find>visitParExpre</find>
+      <find>visitExpressio</find>
+      <find>statement</find>
+      <find>blockstatement</find>
+      <find>plate</find>
+      <find>beef</find>
+      <find>variablesy</find>
+    </findStrings>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1UZ85kD8QLEtIdTnEa4JXcLPJse" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/symbol_table/Symbol.java" />
+        <option value="$PROJECT_DIR$/src/symbol_table/TypeSymbol.java" />
+        <option value="$PROJECT_DIR$/src/symbol_table/SymbolTable.java" />
+        <option value="$PROJECT_DIR$/src/symbol_table/VariableSymbol.java" />
+        <option value="$PROJECT_DIR$/src/main/TheVisitor.java" />
+        <option value="$PROJECT_DIR$/test_cases/parser_test_3.txt" />
+        <option value="$PROJECT_DIR$/src/main/Tester.java" />
+        <option value="$PROJECT_DIR$/test_cases/test.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="606" />
+    <option name="width" value="1322" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectId" id="1TmKiyFtjoxXW0cALhCTnHv6zPb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Java Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Implementation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="grammar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="symbol_table" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java Implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java Implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="test_cases" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -72,10 +388,53 @@
       <created>1575552575817</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575552575817</updated>
-      <workItem from="1575552577435" duration="5106000" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1574059964838" duration="621000" />
+      <workItem from="1574061901947" duration="4668000" />
+      <workItem from="1574074027409" duration="3519000" />
+      <workItem from="1575538780869" duration="12988000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12988000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="bottom" id="Tool Output" order="1" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.33333334" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5010776" side_tool="true" weight="0.32914925" />
+      <window_info anchor="right" id="Maven Projects" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.66810346" visible="true" weight="0.32965517" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4989224" weight="0.32914925" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="0" />
+      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.14973958" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="6" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info id="UI Designer" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="right" id="Commander" order="6" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -90,5 +449,236 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Controller.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/symbol_table/Symbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_cases/parser_test_3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/symbol_table/TypeSymbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="e#106#107#0" expanded="true" />
+            <element signature="e#133#134#0" expanded="true" />
+            <element signature="e#95#96#0" expanded="true" />
+            <element signature="e#119#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/Kaon.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="452" column="32" lean-forward="true" selection-start-line="452" selection-start-column="32" selection-end-line="453" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/antlr4/KaonParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="2935" column="13" lean-forward="true" selection-start-line="2935" selection-start-column="13" selection-end-line="2935" selection-end-column="13" />
+          <folding>
+            <element signature="e#98320#98321#0" expanded="true" />
+            <element signature="e#98386#98387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/TheVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="218" column="40" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7308#7309#0" expanded="true" />
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7442#7443#0" expanded="true" />
+            <element signature="e#7492#7493#0" expanded="true" />
+            <element signature="e#7575#7576#0" expanded="true" />
+            <element signature="e#7623#7624#0" expanded="true" />
+            <element signature="e#7712#7713#0" expanded="true" />
+            <element signature="e#7763#7764#0" expanded="true" />
+            <element signature="e#8013#8014#0" expanded="true" />
+            <element signature="e#8061#8062#0" expanded="true" />
+            <element signature="e#8142#8143#0" expanded="true" />
+            <element signature="e#8189#8190#0" expanded="true" />
+            <element signature="e#8455#8456#0" expanded="true" />
+            <element signature="e#8505#8506#0" expanded="true" />
+            <element signature="e#8590#8591#0" expanded="true" />
+            <element signature="e#8639#8640#0" expanded="true" />
+            <element signature="e#8718#8719#0" expanded="true" />
+            <element signature="e#8764#8765#0" expanded="true" />
+            <element signature="e#9185#9186#0" expanded="true" />
+            <element signature="e#9238#9239#0" expanded="true" />
+            <element signature="e#9323#9324#0" expanded="true" />
+            <element signature="e#9372#9373#0" expanded="true" />
+            <element signature="e#10343#10344#0" expanded="true" />
+            <element signature="e#10389#10390#0" expanded="true" />
+            <element signature="e#10622#10623#0" expanded="true" />
+            <element signature="e#10669#10670#0" expanded="true" />
+            <element signature="e#10750#10751#0" expanded="true" />
+            <element signature="e#10797#10798#0" expanded="true" />
+            <element signature="e#10888#10889#0" expanded="true" />
+            <element signature="e#10940#10941#0" expanded="true" />
+            <element signature="e#11031#11032#0" expanded="true" />
+            <element signature="e#11083#11084#0" expanded="true" />
+            <element signature="e#11166#11167#0" expanded="true" />
+            <element signature="e#11214#11215#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/symbol_table/SymbolTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding>
+            <element signature="e#126#142#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_cases/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/symbol_table/VariableSymbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>CMPILERMPGUI</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>antlr-4.7.2-complete</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
