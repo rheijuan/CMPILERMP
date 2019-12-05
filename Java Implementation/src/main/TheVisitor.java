@@ -10,6 +10,7 @@ import symbol_table.VariableSymbol;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TheVisitor extends KaonBaseVisitor {
     public List<Symbol> symbolTable = new ArrayList<>();
@@ -195,10 +196,17 @@ public class TheVisitor extends KaonBaseVisitor {
     }
 
     @Override
-    public Object visitBlockStatement(KaonParser.BlockStatementContext ctx) {;
-        if(ctx.getText().contains("plate"))
+    public Object visitBlockStatement(KaonParser.BlockStatementContext ctx) {
+        if (ctx.getText().contains("plate")) {
             System.out.println(ctx.getText().substring(6, ctx.getText().length() - 2));
-        return super.visitBlockStatement(ctx);
+        } else if (ctx.getText().contains("shop")) {
+            System.out.print("> ");
+            Scanner sc = new Scanner(System.in);
+            String input = sc.nextLine();
+
+            System.out.println("[DEBUG] " + input);
+        }
+            return super.visitBlockStatement(ctx);
     }
 
     @Override
@@ -215,7 +223,7 @@ public class TheVisitor extends KaonBaseVisitor {
     @Override
     public Object visitStatement(KaonParser.StatementContext ctx) {
         String text = ctx.getText();
-        if(text.contains("beef")) {
+        if (text.contains("beef")) {
             this.visit(ctx.parExpression());
         }
         return super.visitStatement(ctx);
@@ -310,14 +318,15 @@ public class TheVisitor extends KaonBaseVisitor {
         try {
             Double.parseDouble(text);
             numeric = true;
-        }catch(NumberFormatException ignored) {}
+        } catch (NumberFormatException ignored) {
+        }
 
-        if(numeric) {
+        if (numeric) {
             return text;
-        } else if(text.contains("==")) {
+        } else if (text.contains("==")) {
             Object variables = this.visit((ParseTree) ctx.expression());
 
-        } else if(text.contains("+") || text.contains("-") || text.contains("*") || text.contains("/")) {
+        } else if (text.contains("+") || text.contains("-") || text.contains("*") || text.contains("/")) {
             Expression expr = new Expression(text);
             System.out.println(expr.eval());
         } else {
@@ -442,8 +451,8 @@ public class TheVisitor extends KaonBaseVisitor {
     public void printTable() {
         System.out.println("SymbolName \t SymbolType \t Value");
         for (Symbol s : symbolTable) {
-            if(s instanceof VariableSymbol)
-             System.out.println(s.toString());
+            if (s instanceof VariableSymbol)
+                System.out.println(s.toString());
         }
     }
 }

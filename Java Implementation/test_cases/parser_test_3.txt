@@ -7,8 +7,6 @@ boil testOne() {
 	pork(pint i; i < 10; i++) { //syntax error #1
 		plate("Hello " +x+); //syntax error #2
 
-	 
-	
 	//syntax error #3 (missing curly brace)
 }
 
