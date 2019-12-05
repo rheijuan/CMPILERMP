@@ -9,10 +9,12 @@ import symbol_table.VariableSymbol;
 
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class TheVisitor extends KaonBaseVisitor {
-    public List<Symbol> symbolTable = new ArrayList<>();
+    private HashMap<String, Symbol> symbolTable = new HashMap<>();
+    private HashMap<String, String> valueMap = new HashMap<>();
 
     @Override
     public Object visitCompilationUnit(KaonParser.CompilationUnitContext ctx) {
@@ -86,17 +88,27 @@ public class TheVisitor extends KaonBaseVisitor {
 
     @Override
     public Object visitVariableDeclarator(KaonParser.VariableDeclaratorContext ctx) {
-        return super.visitVariableDeclarator(ctx);
+        String context = ctx.getText();
+        if(context.contains("=")) {
+            String identifiers = this.visit(ctx.variableDeclaratorId()).toString();
+            String value = this.visit(ctx.variableInitializer()).toString();
+
+            identifiers = identifiers.replaceAll("[^a-zA-Z0-9]", "");
+            valueMap.put(identifiers, value);
+        }
+        return this.visit(ctx.variableDeclaratorId());
     }
 
     @Override
     public Object visitVariableDeclaratorId(KaonParser.VariableDeclaratorIdContext ctx) {
-        return super.visitVariableDeclaratorId(ctx);
+        ArrayList<String> variables = new ArrayList<>();
+        variables.add(ctx.getText());
+        return variables;
     }
 
     @Override
     public Object visitVariableInitializer(KaonParser.VariableInitializerContext ctx) {
-        return super.visitVariableInitializer(ctx);
+        return this.visit(ctx.expression());
     }
 
     @Override
@@ -203,13 +215,22 @@ public class TheVisitor extends KaonBaseVisitor {
 
     @Override
     public Object visitLocalVariableDeclaration(KaonParser.LocalVariableDeclarationContext ctx) {
-        Object temp = this.visit(ctx.variableDeclarators());
-        Object type = this.visit(ctx.typeType());
+        String variable = this.visit(ctx.variableDeclarators()).toString();
+        String type = this.visit(ctx.typeType()).toString();
 
+        variable = variable.replaceAll("[^a-zA-Z0-9]", "");
+        String varValue = "";
+
+        if(valueMap.size() > 0) {
+            if(valueMap.containsKey(variable))
+                varValue = valueMap.get(variable);
+        }
+
+        VariableSymbol vs = new VariableSymbol(variable, type, false, varValue);
+
+        symbolTable.put(variable, vs);
 
         return 0;
-//        symbolTable.add(new VariableSymbol(ctx.getChild(0).getChild(0).getText(), ctx.getChild(1).getChild(0).getChild(0).getText(), false, ctx.getText().substring(ctx.getText().lastIndexOf("=") + 1, ctx.getText().length())));
-        // return super.visitLocalVariableDeclaration(ctx);
     }
 
     @Override
@@ -316,15 +337,15 @@ public class TheVisitor extends KaonBaseVisitor {
             return text;
         } else if(text.contains("==")) {
             Object variables = this.visit((ParseTree) ctx.expression());
-
+        } else if(text.contains("=")) {
+            System.out.println("HEYY");
+//            Object variables = this.visit(ctx.expression());
         } else if(text.contains("+") || text.contains("-") || text.contains("*") || text.contains("/")) {
+            System.out.println();
             Expression expr = new Expression(text);
-            System.out.println(expr.eval());
-        } else {
-
         }
 
-        return super.visitExpression(ctx);
+        return text;
     }
 
     @Override
@@ -349,6 +370,11 @@ public class TheVisitor extends KaonBaseVisitor {
 
     @Override
     public Object visitTypeType(KaonParser.TypeTypeContext ctx) {
+        if(ctx.getChild(0) instanceof KaonParser.PrimitiveTypeContext) {
+            return ctx.getText();
+        } else {
+            System.out.println("Array");
+        }
         return super.visitTypeType(ctx);
     }
 
@@ -439,11 +465,11 @@ public class TheVisitor extends KaonBaseVisitor {
         return visitChildren(ctx);
     }
 
-    public void printTable() {
-        System.out.println("SymbolName \t SymbolType \t Value");
-        for (Symbol s : symbolTable) {
-            if(s instanceof VariableSymbol)
-             System.out.println(s.toString());
-        }
-    }
+//    public void printTable() {
+//        System.out.println("SymbolName \t SymbolType \t Value");
+//        for (Symbol s : symbolTable) {
+//            if(s instanceof VariableSymbol)
+//                System.out.println(s.toString());
+//        }
+//    }
 }

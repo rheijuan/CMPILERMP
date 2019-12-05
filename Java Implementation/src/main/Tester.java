@@ -31,9 +31,9 @@ public class Tester {
         TheVisitor visitor = new TheVisitor();
         visitor.visit(tree);
 
-        visitor.printTable();
+//        visitor.printTable();
 
-        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
-        viewer.open();
+//        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
+//        viewer.open();
     }
 }

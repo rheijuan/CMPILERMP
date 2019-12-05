@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/antlr-4.7.2-complete.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfoenix-9.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/evalex.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

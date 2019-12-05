@@ -1,3 +1,7 @@
 boil main() {
-    pint x = 1+1;
+    pint x = 6000;
+    mango hello = 1.2;
+    chicharon l = 's';
+
+    x = 100 + 1;
 }
