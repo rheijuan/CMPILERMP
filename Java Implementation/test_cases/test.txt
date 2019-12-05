@@ -1,7 +1,3 @@
 boil main() {
-    pint x = 0;
-    mango y = 123.22;
-    adobo xxx = 9381293;
-
-    plate(asd);
+    pint x = 1+1;
 }

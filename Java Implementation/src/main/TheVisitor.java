@@ -2,8 +2,12 @@ package main;
 
 import antlr4.KaonBaseVisitor;
 import antlr4.KaonParser;
-import model.Symbol;
+import com.udojava.evalex.Expression;
+import org.antlr.v4.runtime.tree.ParseTree;
+import symbol_table.Symbol;
+import symbol_table.VariableSymbol;
 
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -199,12 +203,21 @@ public class TheVisitor extends KaonBaseVisitor {
 
     @Override
     public Object visitLocalVariableDeclaration(KaonParser.LocalVariableDeclarationContext ctx) {
-        symbolTable.add(new Symbol(ctx.getChild(0).getChild(0).getText(), ctx.getChild(1).getChild(0).getChild(0).getText(), ctx.getText().lastIndexOf("=") + 1));
-        return super.visitLocalVariableDeclaration(ctx);
+        Object temp = this.visit(ctx.variableDeclarators());
+        Object type = this.visit(ctx.typeType());
+
+
+        return 0;
+//        symbolTable.add(new VariableSymbol(ctx.getChild(0).getChild(0).getText(), ctx.getChild(1).getChild(0).getChild(0).getText(), false, ctx.getText().substring(ctx.getText().lastIndexOf("=") + 1, ctx.getText().length())));
+        // return super.visitLocalVariableDeclaration(ctx);
     }
 
     @Override
     public Object visitStatement(KaonParser.StatementContext ctx) {
+        String text = ctx.getText();
+        if(text.contains("beef")) {
+            this.visit(ctx.parExpression());
+        }
         return super.visitStatement(ctx);
     }
 
@@ -275,7 +288,8 @@ public class TheVisitor extends KaonBaseVisitor {
 
     @Override
     public Object visitParExpression(KaonParser.ParExpressionContext ctx) {
-        return super.visitParExpression(ctx);
+        Object temp = this.visit(ctx.expression());
+        return temp;
     }
 
     @Override
@@ -290,6 +304,26 @@ public class TheVisitor extends KaonBaseVisitor {
 
     @Override
     public Object visitExpression(KaonParser.ExpressionContext ctx) {
+        String text = ctx.getText();
+        boolean numeric = false;
+
+        try {
+            Double.parseDouble(text);
+            numeric = true;
+        }catch(NumberFormatException ignored) {}
+
+        if(numeric) {
+            return text;
+        } else if(text.contains("==")) {
+            Object variables = this.visit((ParseTree) ctx.expression());
+
+        } else if(text.contains("+") || text.contains("-") || text.contains("*") || text.contains("/")) {
+            Expression expr = new Expression(text);
+            System.out.println(expr.eval());
+        } else {
+
+        }
+
         return super.visitExpression(ctx);
     }
 
@@ -407,8 +441,9 @@ public class TheVisitor extends KaonBaseVisitor {
 
     public void printTable() {
         System.out.println("SymbolName \t SymbolType \t Value");
-        for (Symbol symbol : symbolTable) {
-            System.out.println(symbol.getName() + " \t " + symbol.getType() + " \t " + symbol.getValue());
+        for (Symbol s : symbolTable) {
+            if(s instanceof VariableSymbol)
+             System.out.println(s.toString());
         }
     }
 }

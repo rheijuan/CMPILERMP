@@ -34,6 +34,6 @@ public class Tester {
         visitor.printTable();
 
         TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
-        // viewer.open();
+        viewer.open();
     }
 }
