@@ -4,4 +4,7 @@ boil main() {
     mango a = 1.3;
 
     a = 1 + 1;
+
+    beef(1 == 3)
+        plate("beef");
 }

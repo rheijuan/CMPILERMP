@@ -97,10 +97,11 @@ public class MrVisitor extends KaonBaseVisitor {
 
     @Override public Object visitBlockStatement(KaonParser.BlockStatementContext ctx) {
         String context = ctx.getText();
-
         if(context.contains("garnish")) {
             // Pushing a constant variable into the symbol table
             return this.visit(ctx.constDeclaration());
+        } else if(context.contains("beef")) {
+            return this.visit(ctx.statement());
         } else if(context.contains("=")) {
             // Pushing a variable into the symbol table
 //            return this.visit(ctx.localVariableDeclaration());
@@ -126,9 +127,21 @@ public class MrVisitor extends KaonBaseVisitor {
 
     @Override public Object visitStatement(KaonParser.StatementContext ctx) {
         String context = ctx.getText();
-        if(context.contains("=")) {
+        if(context.contains("beef")) {
+            String expression = this.visit(ctx.parExpression()).toString();
+            Expression expr = new Expression(expression);
 
-            Object values = this.visitExpression(ctx.expression(0));
+            String result = expr.eval().toString();
+
+            if(result.equals("0"))
+                System.out.println("False");
+            else
+                System.out.println("True");
+
+            return expression;
+        } else if(context.contains("=")) {
+
+            Object values = this.visitExpression(ctx.expression());
 
             // TODO: Look for the varible in the lookup table and update value
 
@@ -136,8 +149,6 @@ public class MrVisitor extends KaonBaseVisitor {
 
             String name = parsedValues.get(0);
             String newValue = parsedValues.get(1);
-
-            System.out.println("New value of " + name + " is now " + newValue);
 
         }
         return visitChildren(ctx);
@@ -147,7 +158,9 @@ public class MrVisitor extends KaonBaseVisitor {
 
     @Override public Object visitForInit(KaonParser.ForInitContext ctx) { return visitChildren(ctx); }
 
-    @Override public Object visitParExpression(KaonParser.ParExpressionContext ctx) { return visitChildren(ctx); }
+    @Override public Object visitParExpression(KaonParser.ParExpressionContext ctx) {
+        return ctx.getText();
+    }
 
     @Override public Object visitExpressionList(KaonParser.ExpressionListContext ctx) { return visitChildren(ctx); }
 
@@ -155,7 +168,9 @@ public class MrVisitor extends KaonBaseVisitor {
 
     @Override public Object visitExpression(KaonParser.ExpressionContext ctx) {
         String context = ctx.getText();
-        if(context.contains("=")) {
+        if(context.contains("==")) {
+            System.out.println("Hello");
+        } else if(context.contains("=")) {
             String name = this.visitExpression(ctx.expression(0)).toString();
             String varValue = this.visitExpression(ctx.expression(1)).toString();
 
@@ -175,7 +190,14 @@ public class MrVisitor extends KaonBaseVisitor {
         return ctx.getText();
     }
 
-    @Override public Object visitPrimary(KaonParser.PrimaryContext ctx) { return visitChildren(ctx); }
+    @Override public Object visitPrimary(KaonParser.PrimaryContext ctx) {
+        String context = ctx.getText();
+
+        if(context.contains("+") || context.contains("-") || context.contains("*") || context.contains("/") || context.contains("%")) {
+            return this.visit(ctx.expression());
+        } else
+            return ctx.getText();
+    }
 
     @Override public Object visitTypeType(KaonParser.TypeTypeContext ctx) { return visitChildren(ctx); }
 

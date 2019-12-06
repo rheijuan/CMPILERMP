@@ -136,12 +136,11 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLocalVariableDeclaration(KaonParser.LocalVariableDeclarationContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code ElseStmt}
-	 * labeled alternative in {@link KaonParser#elseStatement}.
+	 * Visit a parse tree produced by {@link KaonParser#elseStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitElseStmt(KaonParser.ElseStmtContext ctx);
+	T visitElseStatement(KaonParser.ElseStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link KaonParser#statement}.
 	 * @param ctx the parse tree

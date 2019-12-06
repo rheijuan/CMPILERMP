@@ -217,17 +217,15 @@ public interface KaonListener extends ParseTreeListener {
 	 */
 	void exitLocalVariableDeclaration(KaonParser.LocalVariableDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ElseStmt}
-	 * labeled alternative in {@link KaonParser#elseStatement}.
+	 * Enter a parse tree produced by {@link KaonParser#elseStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterElseStmt(KaonParser.ElseStmtContext ctx);
+	void enterElseStatement(KaonParser.ElseStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ElseStmt}
-	 * labeled alternative in {@link KaonParser#elseStatement}.
+	 * Exit a parse tree produced by {@link KaonParser#elseStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitElseStmt(KaonParser.ElseStmtContext ctx);
+	void exitElseStatement(KaonParser.ElseStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link KaonParser#statement}.
 	 * @param ctx the parse tree

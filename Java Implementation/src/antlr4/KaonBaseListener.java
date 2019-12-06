@@ -267,13 +267,13 @@ public class KaonBaseListener implements KaonListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElseStmt(KaonParser.ElseStmtContext ctx) { }
+	@Override public void enterElseStatement(KaonParser.ElseStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElseStmt(KaonParser.ElseStmtContext ctx) { }
+	@Override public void exitElseStatement(KaonParser.ElseStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

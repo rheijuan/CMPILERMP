@@ -96,13 +96,12 @@ localVariableDeclaration
     ;
 
 elseStatement
-    : ELSE statement #ElseStmt
+    : ELSE statement
     ;
 
 statement
     : blockLabel=block
     | IF parExpression statement (elseStatement)?
-    | IF '(' expression bop=('==' | '!=') expression ')' (elseStatement)?
     | FOR '(' forControl ')' statement
     | WHILE parExpression statement
     | DO statement WHILE parExpression ';'

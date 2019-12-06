@@ -2,29 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40a79d4f-3447-42ca-8358-924b305406a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/antlr4/Kaon.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/antlr4/Kaon.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/antlr4/KaonLexer.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/antlr4/KaonLexer.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/MrVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java Implementation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java Implementation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grammar/Kaon.g4" beforeDir="false" afterPath="$PROJECT_DIR$/grammar/Kaon.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/Kaon.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/Kaon.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/KaonLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammar/KaonLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java Implementation/antlr4/Kaon.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java Implementation/antlr4/Kaon.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/Kaon.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/Kaon.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/antlr4/KaonVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/KaonErrorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/antlr4/KaonErrorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SyntaxError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SyntaxError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Tester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/TheVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TheVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MrVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MrVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_cases/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
@@ -110,7 +99,7 @@
     <property name="$PROJECT_DIR$/grammar/Kaon.g4::/output-dir" value="C:\Users\rheij\Documents\GitHub\CMPILERMP\Java Implementation\src\antlr4" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jfoenix-9.0.8.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/antlr4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -118,6 +107,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rheij\Documents\GitHub\CMPILERMP\Java Implementation\src\antlr4" />
+      <recent name="C:\Users\rheij\Documents\GitHub\CMPILERMP\Java Implementation\src\sad" />
       <recent name="C:\Users\rheij\Documents\GitHub\CMPILERMP\Java Implementation\src\main" />
     </key>
   </component>
@@ -172,6 +162,7 @@
       <workItem from="1575560429696" duration="24000" />
       <workItem from="1575566263452" duration="199000" />
       <workItem from="1575567824914" duration="9608000" />
+      <workItem from="1575598490250" duration="6725000" />
     </task>
     <servers />
   </component>
@@ -200,7 +191,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Controller.java</url>
-          <line>44</line>
+          <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
