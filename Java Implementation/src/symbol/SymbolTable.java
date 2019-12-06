@@ -6,9 +6,16 @@ public class SymbolTable {
     private HashMap<String, Symbol> symbols;
 
     public SymbolTable() {
+        symbols = new HashMap<String, Symbol>();
+    }
+
+    public void init(){
         System.out.println("Initializing Symbol Table...");
 
-        symbols = new HashMap<String, Symbol>();
+        this.store(new PrimitiveTypeSymbol("chicharon"));
+        this.store(new PrimitiveTypeSymbol("pint"));
+        this.store(new PrimitiveTypeSymbol("mango"));
+        this.store(new PrimitiveTypeSymbol("adobo"));
     }
 
     public void store(Symbol s) {
