@@ -1,7 +1,9 @@
 package main;
 
+import antlr4.KaonErrorListener;
 import antlr4.KaonLexer;
 import antlr4.KaonParser;
+import main.MrVisitor;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
@@ -69,7 +71,7 @@ public class Controller implements Initializable {
 
             parser.addErrorListener(listener);
             ParseTree tree = parser.compilationUnit();
-            TheVisitor visitor = new TheVisitor();
+            MrVisitor visitor = new MrVisitor();
             visitor.visit(tree);
 
             TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
@@ -95,7 +97,7 @@ public class Controller implements Initializable {
         KaonParser parser = new KaonParser(token);
 
         ParseTree tree = parser.compilationUnit();
-        TheVisitor visitor = new TheVisitor();
+        MrVisitor visitor = new MrVisitor();
         visitor.visit(tree);
 
         token.fill();

@@ -1,5 +1,6 @@
 package main;
 
+import antlr4.KaonErrorListener;
 import antlr4.KaonLexer;
 import antlr4.KaonParser;
 import org.antlr.v4.gui.TreeViewer;
@@ -28,12 +29,12 @@ public class Tester {
 
         parser.addErrorListener(listener);
         ParseTree tree = parser.compilationUnit();
-        TheVisitor visitor = new TheVisitor();
+        MrVisitor visitor = new MrVisitor();
         visitor.visit(tree);
 
 //        visitor.printTable();
 
-//        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
-//        viewer.open();
+        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
+        viewer.open();
     }
 }

@@ -1,5 +1,6 @@
-package main;
+package antlr4;
 
+import main.SyntaxError;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.misc.Utils;
