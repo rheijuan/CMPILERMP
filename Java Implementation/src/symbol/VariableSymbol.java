@@ -7,7 +7,7 @@ public class VariableSymbol extends Symbol {
 
     public VariableSymbol(String name, String type, Boolean isConstant, Object value) {
         super(name, type);
-
+        this.value = value;
         this.isConstant = isConstant;
     }
 
