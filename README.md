@@ -6,6 +6,8 @@ Things To Do:
 -----
 
  - [ ] Main
+    - [ ] Input/Output
+    - [ ] Conditional
     - [ ] Loops
     - [ ] Functions
     - [ ] **SCOPE**
@@ -25,8 +27,6 @@ DONE
  - [x] Constant Declaration
  - [x] Variable Assignment
  - [x] Assignment
- - [x] Input/Output
- - [x] Conditional
   
  LICENSE
 -----
