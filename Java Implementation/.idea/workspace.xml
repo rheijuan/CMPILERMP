@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40a79d4f-3447-42ca-8358-924b305406a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/driver/SymbolTableTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/LogicTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/Tester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MrVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MrVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/TheVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symbol/VariableSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symbol/VariableSymbol.java" afterDir="false" />
-    </list>
+    <list default="true" id="40a79d4f-3447-42ca-8358-924b305406a9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
