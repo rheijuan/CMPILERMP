@@ -5,14 +5,22 @@ A Simple Interpreter system with using antlr4
 Things To Do:
 -----
 
- - [ ] Something..
- - [ ] **Quite some more**
+ - [ ] main
+
+ - [ ] 	b. input/output
+ - [ ] 	c. conditional
+ - [ ] 	d. loops
+ - [ ] 	e. functions
+ - [ ] **SCOPE**
 
 DONE
 -----
 
  - [x] Initial Javafx GUI by Rhei
  - [x] Initial Symbol Table Logic
+ - [x] Constant Declaration
+ - [x] Variable Assignment
+ - [x] a. assignment
   
  LICENSE
 -----

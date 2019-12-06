@@ -478,5 +478,239 @@ public class TheVisitor extends KaonBaseVisitor {
 //            if(s instanceof VariableSymbol)
 //                System.out.println(s.toString());
 //        }
+//        return super.visitStatement(ctx);
 //    }
-}
+//
+//    @Override
+//    public Object visitCompareExpression(KaonParser.CompareExpressionContext ctx) {
+//        return super.visitCompareExpression(ctx);
+//    }
+//
+//    @Override
+//    public Object visitForError(KaonParser.ForErrorContext ctx) {
+//        return super.visitForError(ctx);
+//    }
+//
+//    @Override
+//    public Object visitCatchClause(KaonParser.CatchClauseContext ctx) {
+//        return super.visitCatchClause(ctx);
+//    }
+//
+//    @Override
+//    public Object visitCatchType(KaonParser.CatchTypeContext ctx) {
+//        return super.visitCatchType(ctx);
+//    }
+//
+//    @Override
+//    public Object visitFinallyBlock(KaonParser.FinallyBlockContext ctx) {
+//        return super.visitFinallyBlock(ctx);
+//    }
+//
+//    @Override
+//    public Object visitResourceSpecification(KaonParser.ResourceSpecificationContext ctx) {
+//        return super.visitResourceSpecification(ctx);
+//    }
+//
+//    @Override
+//    public Object visitResources(KaonParser.ResourcesContext ctx) {
+//        return super.visitResources(ctx);
+//    }
+//
+//    @Override
+//    public Object visitResource(KaonParser.ResourceContext ctx) {
+//        return super.visitResource(ctx);
+//    }
+//
+//    @Override
+//    public Object visitSwitchBlockStatementGroup(KaonParser.SwitchBlockStatementGroupContext ctx) {
+//        return super.visitSwitchBlockStatementGroup(ctx);
+//    }
+//
+//    @Override
+//    public Object visitSwitchLabel(KaonParser.SwitchLabelContext ctx) {
+//        return super.visitSwitchLabel(ctx);
+//    }
+//
+//    @Override
+//    public Object visitForControl(KaonParser.ForControlContext ctx) {
+//        return super.visitForControl(ctx);
+//    }
+//
+//    @Override
+//    public Object visitForInit(KaonParser.ForInitContext ctx) {
+//        return super.visitForInit(ctx);
+//    }
+//
+//    @Override
+//    public Object visitEnhancedForControl(KaonParser.EnhancedForControlContext ctx) {
+//        return super.visitEnhancedForControl(ctx);
+//    }
+//
+//    @Override
+//    public Object visitParExpression(KaonParser.ParExpressionContext ctx) {
+//        Object temp = this.visit(ctx.expression());
+//        return temp;
+//    }
+//
+//    @Override
+//    public Object visitExpressionList(KaonParser.ExpressionListContext ctx) {
+//        return super.visitExpressionList(ctx);
+//    }
+//
+//    @Override
+//    public Object visitMethodCall(KaonParser.MethodCallContext ctx) {
+//        return super.visitMethodCall(ctx);
+//    }
+//
+//    @Override
+//    public Object visitExpression(KaonParser.ExpressionContext ctx) {
+//        String text = ctx.getText();
+//        boolean numeric = false;
+//
+//        try {
+//            Double.parseDouble(text);
+//            numeric = true;
+//        } catch (NumberFormatException ignored) {
+//        }
+//
+//        if (numeric) {
+//            return text;
+//        } else if (text.contains("==")) {
+//            Object variables = this.visit((ParseTree) ctx.expression());
+//        } else if(text.contains("=")) {
+//
+////            System.out.println(this.visit((ParseTree) ctx.expression()));
+////            Object variables = ;
+//        } else if(text.contains("+") || text.contains("-") || text.contains("*") || text.contains("/")) {
+//            System.out.println();
+//            Expression expr = new Expression(text);
+//        }
+//
+//        return text;
+//    }
+//
+//    @Override
+//    public Object visitExpressionError(KaonParser.ExpressionErrorContext ctx) {
+//        return super.visitExpressionError(ctx);
+//    }
+//
+//    @Override
+//    public Object visitPrimary(KaonParser.PrimaryContext ctx) {
+//        return super.visitPrimary(ctx);
+//    }
+//
+//    @Override
+//    public Object visitArrayCreatorRest(KaonParser.ArrayCreatorRestContext ctx) {
+//        return super.visitArrayCreatorRest(ctx);
+//    }
+//
+//    @Override
+//    public Object visitTypeList(KaonParser.TypeListContext ctx) {
+//        return super.visitTypeList(ctx);
+//    }
+//
+//    @Override
+//    public Object visitTypeType(KaonParser.TypeTypeContext ctx) {
+//        if(ctx.getChild(0) instanceof KaonParser.PrimitiveTypeContext) {
+//            return ctx.getText();
+//        } else {
+//            System.out.println("Array");
+//        }
+//        return super.visitTypeType(ctx);
+//    }
+//
+//    @Override
+//    public Object visitPrimitiveType(KaonParser.PrimitiveTypeContext ctx) {
+//        return super.visitPrimitiveType(ctx);
+//    }
+//
+//    @Override
+//    public Object visitTypeArguments(KaonParser.TypeArgumentsContext ctx) {
+//        return super.visitTypeArguments(ctx);
+//    }
+//
+//    @Override
+//    public Object visitArguments(KaonParser.ArgumentsContext ctx) {
+//        return super.visitArguments(ctx);
+//    }
+//
+//    @Override
+//    public Object visitScanMissingIdentifierError(KaonParser.ScanMissingIdentifierErrorContext ctx) {
+//        Controller.errors.add("Missing identifier at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitExpressionAdditionError(KaonParser.ExpressionAdditionErrorContext ctx) {
+//        Controller.errors.add("A literal cannot be followed by '++' at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitExpressionSubtractionError(KaonParser.ExpressionSubtractionErrorContext ctx) {
+//        Controller.errors.add("A literal cannot be followed by '--' at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitReturnMissingError(KaonParser.ReturnMissingErrorContext ctx) {
+//        Controller.errors.add("Expected ';' at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitReturnPrimitiveTypeError(KaonParser.ReturnPrimitiveTypeErrorContext ctx) {
+//        Controller.errors.add("Cannot return an explicit data type at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitExcessLParenExpression(KaonParser.ExcessLParenExpressionContext ctx) {
+//        Controller.errors.add("Excess '(' found at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitExcessRParenExpression(KaonParser.ExcessRParenExpressionContext ctx) {
+//        Controller.errors.add("Excess ')' found at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitWrongLocalVariableDeclaration(KaonParser.WrongLocalVariableDeclarationContext ctx) {
+//        Controller.errors.add("Extra ';' found at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitWrongPrintStatement(KaonParser.WrongPrintStatementContext ctx) {
+//        Controller.errors.add("Unexpected operator at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitWrongBlockStatement(KaonParser.WrongBlockStatementContext ctx) {
+//        Controller.errors.add("Missing '}' at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitPrintMissingQuotesError(KaonParser.PrintMissingQuotesErrorContext ctx) {
+//        Controller.errors.add("Missing double quotes at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+//    @Override
+//    public Object visitPrimaryError(KaonParser.PrimaryErrorContext ctx) {
+//        Controller.errors.add("Extra opening or parenthesis at line " + ctx.getStart().getLine());
+//        return visitChildren(ctx);
+//    }
+//
+////    public void printTable() {
+////        System.out.println("SymbolName \t SymbolType \t Value");
+////        for (Symbol s : symbolTable) {
+////            if(s instanceof VariableSymbol)
+////                System.out.println(s.toString());
+////        }
+////    }
+//}
