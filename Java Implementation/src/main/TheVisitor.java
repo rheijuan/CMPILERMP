@@ -4,13 +4,11 @@ import antlr4.KaonBaseVisitor;
 import antlr4.KaonParser;
 import com.udojava.evalex.Expression;
 import org.antlr.v4.runtime.tree.ParseTree;
-import symbol_table.Symbol;
-import symbol_table.VariableSymbol;
+import symbol.Symbol;
+import symbol.VariableSymbol;
 
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 
 public class TheVisitor extends KaonBaseVisitor {
