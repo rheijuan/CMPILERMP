@@ -234,7 +234,6 @@ ADD_ASSIGN:         '+=';
 SUB_ASSIGN:         '-=';
 MUL_ASSIGN:         '*=';
 DIV_ASSIGN:         '/=';
-
 // Whitespace and comments
 WS: [ \t\r\n\u000C]+ -> channel(HIDDEN);
 COMMENT: '<!>' .*? '<!>' -> channel(HIDDEN);

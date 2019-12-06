@@ -3,7 +3,8 @@ package main;
 import antlr4.KaonBaseVisitor;
 import antlr4.KaonParser;
 import com.udojava.evalex.Expression;
-import symbol_table.VariableSymbol;
+import symbol.VariableSymbol;
+import symbol.VariableSymbol;
 
 import java.util.ArrayList;
 import java.util.Arrays;

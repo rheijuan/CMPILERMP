@@ -1,4 +1,4 @@
-package symbol_table;
+package symbol;
 
 public class TypeSymbol extends Symbol {
 
