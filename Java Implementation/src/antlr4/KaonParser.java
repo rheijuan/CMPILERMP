@@ -1,9 +1,13 @@
-package antlr4;// Generated from C:/Users/rheij/Documents/GitHub/CMPILERMP/Java Implementation/grammar\Kaon.g4 by ANTLR 4.7.2
+package antlr4;
+
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class KaonParser extends Parser {
@@ -13,64 +17,48 @@ public class KaonParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		BOOLEAN=10, CHAR=11, CONST=12, DO=13, DOUBLE=14, ELSE=15, FINAL=16, FLOAT=17, 
-		FOR=18, IF=19, INT=20, RETURN=21, VOID=22, WHILE=23, PRINT=24, SCAN=25, 
-		STRING=26, DECIMAL_LITERAL=27, FLOAT_LITERAL=28, BOOL_LITERAL=29, STRING_LITERAL=30, 
-		NULL_LITERAL=31, LPAREN=32, RPAREN=33, LBRACE=34, RBRACE=35, LBRACK=36, 
-		RBRACK=37, SEMI=38, COMMA=39, DOT=40, ASSIGN=41, GT=42, LT=43, BANG=44, 
-		EQUAL=45, LE=46, GE=47, NOTEQUAL=48, AND=49, OR=50, INC=51, DEC=52, ADD=53, 
-		SUB=54, MUL=55, DIV=56, MOD=57, ADD_ASSIGN=58, SUB_ASSIGN=59, MUL_ASSIGN=60, 
-		DIV_ASSIGN=61, WS=62, COMMENT=63, LINE_COMMENT=64, IDENTIFIER=65, ERROR=66;
+		T__0=1, MAIN=2, PRINTLN=3, PRINT=4, INPUT=5, FUNC=6, CONST=7, IF=8, ELSE=9, 
+		RETURN=10, FOR=11, WHILE=12, TO=13, DO=14, END=15, IN=16, NULL=17, VAR=18, 
+		AND=19, OR=20, EQUALS=21, NEQUALS=22, GTEQUALS=23, LTEQUALS=24, POW=25, 
+		BANG=26, GT=27, LT=28, MUL=29, DIV=30, ADD=31, SUB=32, MOD=33, RPAREN=34,
+		LPAREN=35, LBRACE=36, RBRACE=37, LBRACKET=38, RBRACKET=39, SCOLON=40, 
+		ASSIGN=41, COMMA=42, QMARK=43, BOOL=44, NUMBER=45, IDENTIFIER=46, STRING=47, 
+		COMMENT=48, SPACE=49;
 	public static final int
-		RULE_compilationUnit = 0, RULE_methodDeclaration = 1, RULE_methodBody = 2, 
-		RULE_typeTypeOrVoid = 3, RULE_constDeclaration = 4, RULE_constantDeclarator = 5, 
-		RULE_variableDeclarators = 6, RULE_variableDeclarator = 7, RULE_variableDeclaratorId = 8, 
-		RULE_variableInitializer = 9, RULE_arrayInitializer = 10, RULE_formalParameters = 11, 
-		RULE_formalParameterList = 12, RULE_formalParameter = 13, RULE_lastFormalParameter = 14, 
-		RULE_literal = 15, RULE_integerLiteral = 16, RULE_floatLiteral = 17, RULE_block = 18, 
-		RULE_blockStatement = 19, RULE_localVariableDeclaration = 20, RULE_elseStatement = 21, 
-		RULE_statement = 22, RULE_forControl = 23, RULE_forInit = 24, RULE_parExpression = 25, 
-		RULE_expressionList = 26, RULE_methodCall = 27, RULE_expression = 28, 
-		RULE_primary = 29, RULE_typeType = 30, RULE_primitiveType = 31;
+		RULE_source = 0, RULE_block = 1, RULE_statement = 2, RULE_assignment = 3, 
+		RULE_constantAssignment = 4, RULE_ifStatement = 5, RULE_ifStat = 6, RULE_elseIfStat = 7, 
+		RULE_elseStat = 8, RULE_functionDecl = 9, RULE_forStatement = 10, RULE_whileStatement = 11, 
+		RULE_doWhileStatement = 12, RULE_functionCall = 13, RULE_idList = 14, 
+		RULE_exprList = 15, RULE_expression = 16, RULE_indexes = 17, RULE_list = 18;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"compilationUnit", "methodDeclaration", "methodBody", "typeTypeOrVoid", 
-			"constDeclaration", "constantDeclarator", "variableDeclarators", "variableDeclarator", 
-			"variableDeclaratorId", "variableInitializer", "arrayInitializer", "formalParameters", 
-			"formalParameterList", "formalParameter", "lastFormalParameter", "literal", 
-			"integerLiteral", "floatLiteral", "block", "blockStatement", "localVariableDeclaration", 
-			"elseStatement", "statement", "forControl", "forInit", "parExpression", 
-			"expressionList", "methodCall", "expression", "primary", "typeType", 
-			"primitiveType"
+			"source", "block", "statement", "assignment", "constantAssignment", "ifStatement", 
+			"ifStat", "elseIfStat", "elseStat", "functionDecl", "forStatement", "whileStatement", 
+			"doWhileStatement", "functionCall", "idList", "exprList", "expression", 
+			"indexes", "list"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'...'", "');'", "'&='", "'|='", "'^='", "'>>='", "'>>>='", "'<<='", 
-			"'%='", "'bulalo'", "'chicharon'", "'tubig'", "'donut'", "'adobo'", "'eel'", 
-			"'garnish'", "'mango'", "'pork'", "'beef'", "'pint'", "'rice'", "'boil'", 
-			"'wine'", "'plate'", "'shop'", "'sinulid'", null, null, null, null, "'null'", 
-			"'('", "')'", "'{'", "'}'", "'['", "']'", "';'", "','", "'.'", "'='", 
-			"'>'", "'<'", "'!'", "'=='", "'<='", "'>='", "'!='", "'&&'", "'||'", 
-			"'++'", "'--'", "'+'", "'-'", "'*'", "'/'", "'%'", "'+='", "'-='", "'*='", 
-			"'/='"
+			null, "':'", "'dish'", "'plate'", "'print'", "'pudding'", "'sidedish'", 
+			"'water'", "'beef'", "'eel'", "'rice'", "'pork'", "'wine'", "'to'", "'doughnut'", 
+			"'finish'", "'in'", "'starve'", "'ingredient'", "'&&'", "'||'", "'=='", 
+			"'!='", "'>='", "'<='", "'^'", "'!'", "'>'", "'<'", "'*'", "'/'", "'+'", 
+			"'-'", "'%'", "')'", "'('", "'{'", "'}'", "'['", "']'", "';'", "'='", 
+			"','", "'?'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, "BOOLEAN", 
-			"CHAR", "CONST", "DO", "DOUBLE", "ELSE", "FINAL", "FLOAT", "FOR", "IF", 
-			"INT", "RETURN", "VOID", "WHILE", "PRINT", "SCAN", "STRING", "DECIMAL_LITERAL", 
-			"FLOAT_LITERAL", "BOOL_LITERAL", "STRING_LITERAL", "NULL_LITERAL", "LPAREN", 
-			"RPAREN", "LBRACE", "RBRACE", "LBRACK", "RBRACK", "SEMI", "COMMA", "DOT", 
-			"ASSIGN", "GT", "LT", "BANG", "EQUAL", "LE", "GE", "NOTEQUAL", "AND", 
-			"OR", "INC", "DEC", "ADD", "SUB", "MUL", "DIV", "MOD", "ADD_ASSIGN", 
-			"SUB_ASSIGN", "MUL_ASSIGN", "DIV_ASSIGN", "WS", "COMMENT", "LINE_COMMENT", 
-			"IDENTIFIER", "ERROR"
+			null, null, "MAIN", "PRINTLN", "PRINT", "INPUT", "FUNC", "CONST", "IF", 
+			"ELSE", "RETURN", "FOR", "WHILE", "TO", "DO", "END", "IN", "NULL", "VAR", 
+			"AND", "OR", "EQUALS", "NEQUALS", "GTEQUALS", "LTEQUALS", "POW", "BANG", 
+			"GT", "LT", "MUL", "DIV", "ADD", "SUB", "MOD", "RPAREN", "LPAREN", "LBRACE",
+			"RBRACE", "LBRACKET", "RBRACKET", "SCOLON", "ASSIGN", "COMMA", "QMARK", 
+			"BOOL", "NUMBER", "IDENTIFIER", "STRING", "COMMENT", "SPACE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -124,55 +112,39 @@ public class KaonParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	public static class CompilationUnitContext extends ParserRuleContext {
+	public static class SourceContext extends ParserRuleContext {
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
 		public TerminalNode EOF() { return getToken(KaonParser.EOF, 0); }
-		public List<MethodDeclarationContext> methodDeclaration() {
-			return getRuleContexts(MethodDeclarationContext.class);
-		}
-		public MethodDeclarationContext methodDeclaration(int i) {
-			return getRuleContext(MethodDeclarationContext.class,i);
-		}
-		public CompilationUnitContext(ParserRuleContext parent, int invokingState) {
+		public SourceContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_compilationUnit; }
+		@Override public int getRuleIndex() { return RULE_source; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterCompilationUnit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterSource(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitCompilationUnit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitSource(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitCompilationUnit(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitSource(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final CompilationUnitContext compilationUnit() throws RecognitionException {
-		CompilationUnitContext _localctx = new CompilationUnitContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_compilationUnit);
-		int _la;
+	public final SourceContext source() throws RecognitionException {
+		SourceContext _localctx = new SourceContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_source);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(67);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOLEAN) | (1L << CHAR) | (1L << DOUBLE) | (1L << FLOAT) | (1L << INT) | (1L << VOID) | (1L << STRING))) != 0)) {
-				{
-				{
-				setState(64);
-				methodDeclaration();
-				}
-				}
-				setState(69);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(70);
+			setState(38);
+			block();
+			setState(39);
 			match(EOF);
 			}
 		}
@@ -187,1163 +159,24 @@ public class KaonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class MethodDeclarationContext extends ParserRuleContext {
-		public TypeTypeOrVoidContext typeTypeOrVoid() {
-			return getRuleContext(TypeTypeOrVoidContext.class,0);
+	public static class BlockContext extends ParserRuleContext {
+		public List<StatementContext> statement() {
+			return getRuleContexts(StatementContext.class);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
-		public FormalParametersContext formalParameters() {
-			return getRuleContext(FormalParametersContext.class,0);
+		public StatementContext statement(int i) {
+			return getRuleContext(StatementContext.class,i);
 		}
-		public MethodBodyContext methodBody() {
-			return getRuleContext(MethodBodyContext.class,0);
+		public List<FunctionDeclContext> functionDecl() {
+			return getRuleContexts(FunctionDeclContext.class);
 		}
-		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
-		public TerminalNode LBRACK(int i) {
-			return getToken(KaonParser.LBRACK, i);
+		public FunctionDeclContext functionDecl(int i) {
+			return getRuleContext(FunctionDeclContext.class,i);
 		}
-		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
-		public TerminalNode RBRACK(int i) {
-			return getToken(KaonParser.RBRACK, i);
-		}
-		public MethodDeclarationContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_methodDeclaration; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterMethodDeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitMethodDeclaration(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitMethodDeclaration(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final MethodDeclarationContext methodDeclaration() throws RecognitionException {
-		MethodDeclarationContext _localctx = new MethodDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_methodDeclaration);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(72);
-			typeTypeOrVoid();
-			setState(73);
-			match(IDENTIFIER);
-			setState(74);
-			formalParameters();
-			setState(79);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==LBRACK) {
-				{
-				{
-				setState(75);
-				match(LBRACK);
-				setState(76);
-				match(RBRACK);
-				}
-				}
-				setState(81);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(82);
-			methodBody();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class MethodBodyContext extends ParserRuleContext {
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
-		}
-		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
-		public MethodBodyContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_methodBody; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterMethodBody(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitMethodBody(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitMethodBody(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final MethodBodyContext methodBody() throws RecognitionException {
-		MethodBodyContext _localctx = new MethodBodyContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_methodBody);
-		try {
-			setState(86);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case LBRACE:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(84);
-				block();
-				}
-				break;
-			case SEMI:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(85);
-				match(SEMI);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class TypeTypeOrVoidContext extends ParserRuleContext {
-		public TypeTypeContext typeType() {
-			return getRuleContext(TypeTypeContext.class,0);
-		}
-		public TerminalNode VOID() { return getToken(KaonParser.VOID, 0); }
-		public TypeTypeOrVoidContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_typeTypeOrVoid; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeTypeOrVoid(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeTypeOrVoid(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeTypeOrVoid(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final TypeTypeOrVoidContext typeTypeOrVoid() throws RecognitionException {
-		TypeTypeOrVoidContext _localctx = new TypeTypeOrVoidContext(_ctx, getState());
-		enterRule(_localctx, 6, RULE_typeTypeOrVoid);
-		try {
-			setState(90);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case BOOLEAN:
-			case CHAR:
-			case DOUBLE:
-			case FLOAT:
-			case INT:
-			case STRING:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(88);
-				typeType();
-				}
-				break;
-			case VOID:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(89);
-				match(VOID);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ConstDeclarationContext extends ParserRuleContext {
-		public TerminalNode FINAL() { return getToken(KaonParser.FINAL, 0); }
-		public TypeTypeContext typeType() {
-			return getRuleContext(TypeTypeContext.class,0);
-		}
-		public List<ConstantDeclaratorContext> constantDeclarator() {
-			return getRuleContexts(ConstantDeclaratorContext.class);
-		}
-		public ConstantDeclaratorContext constantDeclarator(int i) {
-			return getRuleContext(ConstantDeclaratorContext.class,i);
-		}
-		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
-		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
-		public TerminalNode COMMA(int i) {
-			return getToken(KaonParser.COMMA, i);
-		}
-		public ConstDeclarationContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_constDeclaration; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterConstDeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitConstDeclaration(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitConstDeclaration(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ConstDeclarationContext constDeclaration() throws RecognitionException {
-		ConstDeclarationContext _localctx = new ConstDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_constDeclaration);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(92);
-			match(FINAL);
-			setState(93);
-			typeType();
-			setState(94);
-			constantDeclarator();
-			setState(99);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==COMMA) {
-				{
-				{
-				setState(95);
-				match(COMMA);
-				setState(96);
-				constantDeclarator();
-				}
-				}
-				setState(101);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(102);
-			match(SEMI);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ConstantDeclaratorContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
-		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
-		public VariableInitializerContext variableInitializer() {
-			return getRuleContext(VariableInitializerContext.class,0);
-		}
-		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
-		public TerminalNode LBRACK(int i) {
-			return getToken(KaonParser.LBRACK, i);
-		}
-		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
-		public TerminalNode RBRACK(int i) {
-			return getToken(KaonParser.RBRACK, i);
-		}
-		public ConstantDeclaratorContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_constantDeclarator; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterConstantDeclarator(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitConstantDeclarator(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitConstantDeclarator(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ConstantDeclaratorContext constantDeclarator() throws RecognitionException {
-		ConstantDeclaratorContext _localctx = new ConstantDeclaratorContext(_ctx, getState());
-		enterRule(_localctx, 10, RULE_constantDeclarator);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(104);
-			match(IDENTIFIER);
-			setState(109);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==LBRACK) {
-				{
-				{
-				setState(105);
-				match(LBRACK);
-				setState(106);
-				match(RBRACK);
-				}
-				}
-				setState(111);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(112);
-			match(ASSIGN);
-			setState(113);
-			variableInitializer();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VariableDeclaratorsContext extends ParserRuleContext {
-		public List<VariableDeclaratorContext> variableDeclarator() {
-			return getRuleContexts(VariableDeclaratorContext.class);
-		}
-		public VariableDeclaratorContext variableDeclarator(int i) {
-			return getRuleContext(VariableDeclaratorContext.class,i);
-		}
-		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
-		public TerminalNode COMMA(int i) {
-			return getToken(KaonParser.COMMA, i);
-		}
-		public VariableDeclaratorsContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variableDeclarators; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableDeclarators(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableDeclarators(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableDeclarators(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VariableDeclaratorsContext variableDeclarators() throws RecognitionException {
-		VariableDeclaratorsContext _localctx = new VariableDeclaratorsContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_variableDeclarators);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(115);
-			variableDeclarator();
-			setState(120);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==COMMA) {
-				{
-				{
-				setState(116);
-				match(COMMA);
-				setState(117);
-				variableDeclarator();
-				}
-				}
-				setState(122);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VariableDeclaratorContext extends ParserRuleContext {
-		public VariableDeclaratorIdContext variableDeclaratorId() {
-			return getRuleContext(VariableDeclaratorIdContext.class,0);
-		}
-		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
-		public VariableInitializerContext variableInitializer() {
-			return getRuleContext(VariableInitializerContext.class,0);
-		}
-		public VariableDeclaratorContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variableDeclarator; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableDeclarator(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableDeclarator(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableDeclarator(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VariableDeclaratorContext variableDeclarator() throws RecognitionException {
-		VariableDeclaratorContext _localctx = new VariableDeclaratorContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_variableDeclarator);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(123);
-			variableDeclaratorId();
-			setState(126);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==ASSIGN) {
-				{
-				setState(124);
-				match(ASSIGN);
-				setState(125);
-				variableInitializer();
-				}
-			}
-
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VariableDeclaratorIdContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
-		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
-		public TerminalNode LBRACK(int i) {
-			return getToken(KaonParser.LBRACK, i);
-		}
-		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
-		public TerminalNode RBRACK(int i) {
-			return getToken(KaonParser.RBRACK, i);
-		}
-		public VariableDeclaratorIdContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variableDeclaratorId; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableDeclaratorId(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableDeclaratorId(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableDeclaratorId(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VariableDeclaratorIdContext variableDeclaratorId() throws RecognitionException {
-		VariableDeclaratorIdContext _localctx = new VariableDeclaratorIdContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_variableDeclaratorId);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(128);
-			match(IDENTIFIER);
-			setState(133);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==LBRACK) {
-				{
-				{
-				setState(129);
-				match(LBRACK);
-				setState(130);
-				match(RBRACK);
-				}
-				}
-				setState(135);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VariableInitializerContext extends ParserRuleContext {
-		public ArrayInitializerContext arrayInitializer() {
-			return getRuleContext(ArrayInitializerContext.class,0);
-		}
+		public TerminalNode RETURN() { return getToken(KaonParser.RETURN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public VariableInitializerContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variableInitializer; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterVariableInitializer(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitVariableInitializer(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitVariableInitializer(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VariableInitializerContext variableInitializer() throws RecognitionException {
-		VariableInitializerContext _localctx = new VariableInitializerContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_variableInitializer);
-		try {
-			setState(138);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case LBRACE:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(136);
-				arrayInitializer();
-				}
-				break;
-			case DECIMAL_LITERAL:
-			case FLOAT_LITERAL:
-			case BOOL_LITERAL:
-			case STRING_LITERAL:
-			case NULL_LITERAL:
-			case LPAREN:
-			case IDENTIFIER:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(137);
-				expression(0);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ArrayInitializerContext extends ParserRuleContext {
-		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
-		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
-		public List<VariableInitializerContext> variableInitializer() {
-			return getRuleContexts(VariableInitializerContext.class);
-		}
-		public VariableInitializerContext variableInitializer(int i) {
-			return getRuleContext(VariableInitializerContext.class,i);
-		}
-		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
-		public TerminalNode COMMA(int i) {
-			return getToken(KaonParser.COMMA, i);
-		}
-		public ArrayInitializerContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_arrayInitializer; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterArrayInitializer(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitArrayInitializer(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitArrayInitializer(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ArrayInitializerContext arrayInitializer() throws RecognitionException {
-		ArrayInitializerContext _localctx = new ArrayInitializerContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_arrayInitializer);
-		int _la;
-		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(140);
-			match(LBRACE);
-			setState(152);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (DECIMAL_LITERAL - 27)) | (1L << (FLOAT_LITERAL - 27)) | (1L << (BOOL_LITERAL - 27)) | (1L << (STRING_LITERAL - 27)) | (1L << (NULL_LITERAL - 27)) | (1L << (LPAREN - 27)) | (1L << (LBRACE - 27)) | (1L << (IDENTIFIER - 27)))) != 0)) {
-				{
-				setState(141);
-				variableInitializer();
-				setState(146);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
-				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-					if ( _alt==1 ) {
-						{
-						{
-						setState(142);
-						match(COMMA);
-						setState(143);
-						variableInitializer();
-						}
-						} 
-					}
-					setState(148);
-					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
-				}
-				setState(150);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==COMMA) {
-					{
-					setState(149);
-					match(COMMA);
-					}
-				}
-
-				}
-			}
-
-			setState(154);
-			match(RBRACE);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class FormalParametersContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
-		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
-		public FormalParameterListContext formalParameterList() {
-			return getRuleContext(FormalParameterListContext.class,0);
-		}
-		public FormalParametersContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_formalParameters; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFormalParameters(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFormalParameters(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFormalParameters(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final FormalParametersContext formalParameters() throws RecognitionException {
-		FormalParametersContext _localctx = new FormalParametersContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_formalParameters);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(156);
-			match(LPAREN);
-			setState(158);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOLEAN) | (1L << CHAR) | (1L << DOUBLE) | (1L << FLOAT) | (1L << INT) | (1L << STRING))) != 0)) {
-				{
-				setState(157);
-				formalParameterList();
-				}
-			}
-
-			setState(160);
-			match(RPAREN);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class FormalParameterListContext extends ParserRuleContext {
-		public List<FormalParameterContext> formalParameter() {
-			return getRuleContexts(FormalParameterContext.class);
-		}
-		public FormalParameterContext formalParameter(int i) {
-			return getRuleContext(FormalParameterContext.class,i);
-		}
-		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
-		public TerminalNode COMMA(int i) {
-			return getToken(KaonParser.COMMA, i);
-		}
-		public LastFormalParameterContext lastFormalParameter() {
-			return getRuleContext(LastFormalParameterContext.class,0);
-		}
-		public FormalParameterListContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_formalParameterList; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFormalParameterList(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFormalParameterList(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFormalParameterList(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final FormalParameterListContext formalParameterList() throws RecognitionException {
-		FormalParameterListContext _localctx = new FormalParameterListContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_formalParameterList);
-		int _la;
-		try {
-			int _alt;
-			setState(175);
-			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(162);
-				formalParameter();
-				setState(167);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,14,_ctx);
-				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
-					if ( _alt==1 ) {
-						{
-						{
-						setState(163);
-						match(COMMA);
-						setState(164);
-						formalParameter();
-						}
-						} 
-					}
-					setState(169);
-					_errHandler.sync(this);
-					_alt = getInterpreter().adaptivePredict(_input,14,_ctx);
-				}
-				setState(172);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (_la==COMMA) {
-					{
-					setState(170);
-					match(COMMA);
-					setState(171);
-					lastFormalParameter();
-					}
-				}
-
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(174);
-				lastFormalParameter();
-				}
-				break;
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class FormalParameterContext extends ParserRuleContext {
-		public TypeTypeContext typeType() {
-			return getRuleContext(TypeTypeContext.class,0);
-		}
-		public VariableDeclaratorIdContext variableDeclaratorId() {
-			return getRuleContext(VariableDeclaratorIdContext.class,0);
-		}
-		public FormalParameterContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_formalParameter; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFormalParameter(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFormalParameter(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFormalParameter(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final FormalParameterContext formalParameter() throws RecognitionException {
-		FormalParameterContext _localctx = new FormalParameterContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_formalParameter);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(177);
-			typeType();
-			setState(178);
-			variableDeclaratorId();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class LastFormalParameterContext extends ParserRuleContext {
-		public TypeTypeContext typeType() {
-			return getRuleContext(TypeTypeContext.class,0);
-		}
-		public VariableDeclaratorIdContext variableDeclaratorId() {
-			return getRuleContext(VariableDeclaratorIdContext.class,0);
-		}
-		public LastFormalParameterContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_lastFormalParameter; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterLastFormalParameter(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitLastFormalParameter(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitLastFormalParameter(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final LastFormalParameterContext lastFormalParameter() throws RecognitionException {
-		LastFormalParameterContext _localctx = new LastFormalParameterContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_lastFormalParameter);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(180);
-			typeType();
-			setState(181);
-			match(T__0);
-			setState(182);
-			variableDeclaratorId();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class LiteralContext extends ParserRuleContext {
-		public IntegerLiteralContext integerLiteral() {
-			return getRuleContext(IntegerLiteralContext.class,0);
-		}
-		public FloatLiteralContext floatLiteral() {
-			return getRuleContext(FloatLiteralContext.class,0);
-		}
-		public TerminalNode STRING_LITERAL() { return getToken(KaonParser.STRING_LITERAL, 0); }
-		public TerminalNode BOOL_LITERAL() { return getToken(KaonParser.BOOL_LITERAL, 0); }
-		public TerminalNode NULL_LITERAL() { return getToken(KaonParser.NULL_LITERAL, 0); }
-		public LiteralContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_literal; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitLiteral(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitLiteral(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final LiteralContext literal() throws RecognitionException {
-		LiteralContext _localctx = new LiteralContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_literal);
-		try {
-			setState(189);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case DECIMAL_LITERAL:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(184);
-				integerLiteral();
-				}
-				break;
-			case FLOAT_LITERAL:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(185);
-				floatLiteral();
-				}
-				break;
-			case STRING_LITERAL:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(186);
-				match(STRING_LITERAL);
-				}
-				break;
-			case BOOL_LITERAL:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(187);
-				match(BOOL_LITERAL);
-				}
-				break;
-			case NULL_LITERAL:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(188);
-				match(NULL_LITERAL);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class IntegerLiteralContext extends ParserRuleContext {
-		public TerminalNode DECIMAL_LITERAL() { return getToken(KaonParser.DECIMAL_LITERAL, 0); }
-		public IntegerLiteralContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_integerLiteral; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIntegerLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIntegerLiteral(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIntegerLiteral(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final IntegerLiteralContext integerLiteral() throws RecognitionException {
-		IntegerLiteralContext _localctx = new IntegerLiteralContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_integerLiteral);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(191);
-			match(DECIMAL_LITERAL);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class FloatLiteralContext extends ParserRuleContext {
-		public TerminalNode FLOAT_LITERAL() { return getToken(KaonParser.FLOAT_LITERAL, 0); }
-		public FloatLiteralContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_floatLiteral; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFloatLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFloatLiteral(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFloatLiteral(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final FloatLiteralContext floatLiteral() throws RecognitionException {
-		FloatLiteralContext _localctx = new FloatLiteralContext(_ctx, getState());
-		enterRule(_localctx, 34, RULE_floatLiteral);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(193);
-			match(FLOAT_LITERAL);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class BlockContext extends ParserRuleContext {
-		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
-		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
-		public List<BlockStatementContext> blockStatement() {
-			return getRuleContexts(BlockStatementContext.class);
-		}
-		public BlockStatementContext blockStatement(int i) {
-			return getRuleContext(BlockStatementContext.class,i);
-		}
+		public TerminalNode SCOLON() { return getToken(KaonParser.SCOLON, 0); }
 		public BlockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1365,219 +198,61 @@ public class KaonParser extends Parser {
 
 	public final BlockContext block() throws RecognitionException {
 		BlockContext _localctx = new BlockContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_block);
+		enterRule(_localctx, 2, RULE_block);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(195);
-			match(LBRACE);
-			setState(199);
+			setState(45);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 10)) & ~0x3f) == 0 && ((1L << (_la - 10)) & ((1L << (BOOLEAN - 10)) | (1L << (CHAR - 10)) | (1L << (DO - 10)) | (1L << (DOUBLE - 10)) | (1L << (FINAL - 10)) | (1L << (FLOAT - 10)) | (1L << (FOR - 10)) | (1L << (IF - 10)) | (1L << (INT - 10)) | (1L << (RETURN - 10)) | (1L << (WHILE - 10)) | (1L << (PRINT - 10)) | (1L << (SCAN - 10)) | (1L << (STRING - 10)) | (1L << (DECIMAL_LITERAL - 10)) | (1L << (FLOAT_LITERAL - 10)) | (1L << (BOOL_LITERAL - 10)) | (1L << (STRING_LITERAL - 10)) | (1L << (NULL_LITERAL - 10)) | (1L << (LPAREN - 10)) | (1L << (LBRACE - 10)) | (1L << (IDENTIFIER - 10)))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PRINTLN) | (1L << PRINT) | (1L << FUNC) | (1L << CONST) | (1L << IF) | (1L << FOR) | (1L << WHILE) | (1L << DO) | (1L << VAR) | (1L << IDENTIFIER))) != 0)) {
 				{
-				{
-				setState(196);
-				blockStatement();
+				setState(43);
+				_errHandler.sync(this);
+				switch (_input.LA(1)) {
+				case PRINTLN:
+				case PRINT:
+				case CONST:
+				case IF:
+				case FOR:
+				case WHILE:
+				case DO:
+				case VAR:
+				case IDENTIFIER:
+					{
+					setState(41);
+					statement();
+					}
+					break;
+				case FUNC:
+					{
+					setState(42);
+					functionDecl();
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
 				}
 				}
-				setState(201);
+				setState(47);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(202);
-			match(RBRACE);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class BlockStatementContext extends ParserRuleContext {
-		public LocalVariableDeclarationContext localVariableDeclaration() {
-			return getRuleContext(LocalVariableDeclarationContext.class,0);
-		}
-		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
-		public ConstDeclarationContext constDeclaration() {
-			return getRuleContext(ConstDeclarationContext.class,0);
-		}
-		public StatementContext statement() {
-			return getRuleContext(StatementContext.class,0);
-		}
-		public BlockStatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_blockStatement; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterBlockStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitBlockStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitBlockStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final BlockStatementContext blockStatement() throws RecognitionException {
-		BlockStatementContext _localctx = new BlockStatementContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_blockStatement);
-		try {
-			setState(209);
+			setState(52);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case BOOLEAN:
-			case CHAR:
-			case DOUBLE:
-			case FLOAT:
-			case INT:
-			case STRING:
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			if (_la==RETURN) {
 				{
-				setState(204);
-				localVariableDeclaration();
-				setState(205);
-				match(SEMI);
+				setState(48);
+				match(RETURN);
+				setState(49);
+				expression(0);
+				setState(50);
+				match(SCOLON);
 				}
-				break;
-			case FINAL:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(207);
-				constDeclaration();
-				}
-				break;
-			case DO:
-			case FOR:
-			case IF:
-			case RETURN:
-			case WHILE:
-			case PRINT:
-			case SCAN:
-			case DECIMAL_LITERAL:
-			case FLOAT_LITERAL:
-			case BOOL_LITERAL:
-			case STRING_LITERAL:
-			case NULL_LITERAL:
-			case LPAREN:
-			case LBRACE:
-			case IDENTIFIER:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(208);
-				statement();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
 			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
 
-	public static class LocalVariableDeclarationContext extends ParserRuleContext {
-		public TypeTypeContext typeType() {
-			return getRuleContext(TypeTypeContext.class,0);
-		}
-		public VariableDeclaratorsContext variableDeclarators() {
-			return getRuleContext(VariableDeclaratorsContext.class,0);
-		}
-		public LocalVariableDeclarationContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_localVariableDeclaration; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterLocalVariableDeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitLocalVariableDeclaration(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitLocalVariableDeclaration(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final LocalVariableDeclarationContext localVariableDeclaration() throws RecognitionException {
-		LocalVariableDeclarationContext _localctx = new LocalVariableDeclarationContext(_ctx, getState());
-		enterRule(_localctx, 40, RULE_localVariableDeclaration);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(211);
-			typeType();
-			setState(212);
-			variableDeclarators();
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class ElseStatementContext extends ParserRuleContext {
-		public TerminalNode ELSE() { return getToken(KaonParser.ELSE, 0); }
-		public StatementContext statement() {
-			return getRuleContext(StatementContext.class,0);
-		}
-		public ElseStatementContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_elseStatement; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterElseStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitElseStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitElseStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final ElseStatementContext elseStatement() throws RecognitionException {
-		ElseStatementContext _localctx = new ElseStatementContext(_ctx, getState());
-		enterRule(_localctx, 42, RULE_elseStatement);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(214);
-			match(ELSE);
-			setState(215);
-			statement();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1592,47 +267,28 @@ public class KaonParser extends Parser {
 	}
 
 	public static class StatementContext extends ParserRuleContext {
-		public BlockContext blockLabel;
-		public ExpressionContext statementExpression;
-		public BlockContext block() {
-			return getRuleContext(BlockContext.class,0);
+		public AssignmentContext assignment() {
+			return getRuleContext(AssignmentContext.class,0);
 		}
-		public TerminalNode IF() { return getToken(KaonParser.IF, 0); }
-		public ParExpressionContext parExpression() {
-			return getRuleContext(ParExpressionContext.class,0);
+		public TerminalNode SCOLON() { return getToken(KaonParser.SCOLON, 0); }
+		public ConstantAssignmentContext constantAssignment() {
+			return getRuleContext(ConstantAssignmentContext.class,0);
 		}
-		public StatementContext statement() {
-			return getRuleContext(StatementContext.class,0);
+		public FunctionCallContext functionCall() {
+			return getRuleContext(FunctionCallContext.class,0);
 		}
-		public ElseStatementContext elseStatement() {
-			return getRuleContext(ElseStatementContext.class,0);
+		public IfStatementContext ifStatement() {
+			return getRuleContext(IfStatementContext.class,0);
 		}
-		public TerminalNode FOR() { return getToken(KaonParser.FOR, 0); }
-		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
-		public ForControlContext forControl() {
-			return getRuleContext(ForControlContext.class,0);
+		public ForStatementContext forStatement() {
+			return getRuleContext(ForStatementContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
-		public TerminalNode WHILE() { return getToken(KaonParser.WHILE, 0); }
-		public TerminalNode DO() { return getToken(KaonParser.DO, 0); }
-		public TerminalNode SEMI() { return getToken(KaonParser.SEMI, 0); }
-		public TerminalNode RETURN() { return getToken(KaonParser.RETURN, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+		public WhileStatementContext whileStatement() {
+			return getRuleContext(WhileStatementContext.class,0);
 		}
-		public TerminalNode PRINT() { return getToken(KaonParser.PRINT, 0); }
-		public List<PrimaryContext> primary() {
-			return getRuleContexts(PrimaryContext.class);
+		public DoWhileStatementContext doWhileStatement() {
+			return getRuleContext(DoWhileStatementContext.class,0);
 		}
-		public PrimaryContext primary(int i) {
-			return getRuleContext(PrimaryContext.class,i);
-		}
-		public List<TerminalNode> ADD() { return getTokens(KaonParser.ADD); }
-		public TerminalNode ADD(int i) {
-			return getToken(KaonParser.ADD, i);
-		}
-		public TerminalNode SCAN() { return getToken(KaonParser.SCAN, 0); }
-		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1654,155 +310,66 @@ public class KaonParser extends Parser {
 
 	public final StatementContext statement() throws RecognitionException {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
-		enterRule(_localctx, 44, RULE_statement);
-		int _la;
+		enterRule(_localctx, 4, RULE_statement);
 		try {
-			setState(264);
+			setState(67);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case LBRACE:
+			case VAR:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(217);
-				((StatementContext)_localctx).blockLabel = block();
+				setState(54);
+				assignment();
+				setState(55);
+				match(SCOLON);
+				}
+				break;
+			case CONST:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(57);
+				constantAssignment();
+				setState(58);
+				match(SCOLON);
+				}
+				break;
+			case PRINTLN:
+			case PRINT:
+			case IDENTIFIER:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(60);
+				functionCall();
+				setState(61);
+				match(SCOLON);
 				}
 				break;
 			case IF:
-				enterOuterAlt(_localctx, 2);
+				enterOuterAlt(_localctx, 4);
 				{
-				setState(218);
-				match(IF);
-				setState(219);
-				parExpression();
-				setState(220);
-				statement();
-				setState(222);
-				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
-				case 1:
-					{
-					setState(221);
-					elseStatement();
-					}
-					break;
-				}
+				setState(63);
+				ifStatement();
 				}
 				break;
 			case FOR:
-				enterOuterAlt(_localctx, 3);
+				enterOuterAlt(_localctx, 5);
 				{
-				setState(224);
-				match(FOR);
-				setState(225);
-				match(LPAREN);
-				setState(226);
-				forControl();
-				setState(227);
-				match(RPAREN);
-				setState(228);
-				statement();
+				setState(64);
+				forStatement();
 				}
 				break;
 			case WHILE:
-				enterOuterAlt(_localctx, 4);
+				enterOuterAlt(_localctx, 6);
 				{
-				setState(230);
-				match(WHILE);
-				setState(231);
-				parExpression();
-				setState(232);
-				statement();
+				setState(65);
+				whileStatement();
 				}
 				break;
 			case DO:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(234);
-				match(DO);
-				setState(235);
-				statement();
-				setState(236);
-				match(WHILE);
-				setState(237);
-				parExpression();
-				setState(238);
-				match(SEMI);
-				}
-				break;
-			case RETURN:
-				enterOuterAlt(_localctx, 6);
-				{
-				setState(240);
-				match(RETURN);
-				setState(242);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (DECIMAL_LITERAL - 27)) | (1L << (FLOAT_LITERAL - 27)) | (1L << (BOOL_LITERAL - 27)) | (1L << (STRING_LITERAL - 27)) | (1L << (NULL_LITERAL - 27)) | (1L << (LPAREN - 27)) | (1L << (IDENTIFIER - 27)))) != 0)) {
-					{
-					setState(241);
-					expression(0);
-					}
-				}
-
-				setState(244);
-				match(SEMI);
-				}
-				break;
-			case DECIMAL_LITERAL:
-			case FLOAT_LITERAL:
-			case BOOL_LITERAL:
-			case STRING_LITERAL:
-			case NULL_LITERAL:
-			case LPAREN:
-			case IDENTIFIER:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(245);
-				((StatementContext)_localctx).statementExpression = expression(0);
-				setState(246);
-				match(SEMI);
-				}
-				break;
-			case PRINT:
-				enterOuterAlt(_localctx, 8);
-				{
-				setState(248);
-				match(PRINT);
-				setState(249);
-				match(LPAREN);
-				setState(250);
-				primary();
-				setState(255);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while (_la==ADD) {
-					{
-					{
-					setState(251);
-					match(ADD);
-					setState(252);
-					primary();
-					}
-					}
-					setState(257);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(258);
-				match(T__1);
-				}
-				break;
-			case SCAN:
-				enterOuterAlt(_localctx, 9);
-				{
-				setState(260);
-				match(SCAN);
-				setState(261);
-				match(LPAREN);
-				setState(262);
-				match(IDENTIFIER);
-				setState(263);
-				match(T__1);
+				setState(66);
+				doWhileStatement();
 				}
 				break;
 			default:
@@ -1820,73 +387,60 @@ public class KaonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ForControlContext extends ParserRuleContext {
-		public ExpressionListContext forUpdate;
-		public ForInitContext forInit() {
-			return getRuleContext(ForInitContext.class,0);
-		}
-		public List<TerminalNode> SEMI() { return getTokens(KaonParser.SEMI); }
-		public TerminalNode SEMI(int i) {
-			return getToken(KaonParser.SEMI, i);
-		}
+	public static class AssignmentContext extends ParserRuleContext {
+		public TerminalNode VAR() { return getToken(KaonParser.VAR, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public ExpressionListContext expressionList() {
-			return getRuleContext(ExpressionListContext.class,0);
+		public IndexesContext indexes() {
+			return getRuleContext(IndexesContext.class,0);
 		}
-		public ForControlContext(ParserRuleContext parent, int invokingState) {
+		public AssignmentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_forControl; }
+		@Override public int getRuleIndex() { return RULE_assignment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterForControl(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterAssignment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitForControl(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitAssignment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitForControl(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitAssignment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ForControlContext forControl() throws RecognitionException {
-		ForControlContext _localctx = new ForControlContext(_ctx, getState());
-		enterRule(_localctx, 46, RULE_forControl);
+	public final AssignmentContext assignment() throws RecognitionException {
+		AssignmentContext _localctx = new AssignmentContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_assignment);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(266);
-			forInit();
-			setState(267);
-			match(SEMI);
-			setState(269);
+			setState(69);
+			match(VAR);
+			setState(70);
+			match(IDENTIFIER);
+			setState(72);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (DECIMAL_LITERAL - 27)) | (1L << (FLOAT_LITERAL - 27)) | (1L << (BOOL_LITERAL - 27)) | (1L << (STRING_LITERAL - 27)) | (1L << (NULL_LITERAL - 27)) | (1L << (LPAREN - 27)) | (1L << (IDENTIFIER - 27)))) != 0)) {
+			if (_la==LBRACKET) {
 				{
-				setState(268);
-				expression(0);
+				setState(71);
+				indexes();
 				}
 			}
 
-			setState(271);
-			match(SEMI);
-			setState(273);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (DECIMAL_LITERAL - 27)) | (1L << (FLOAT_LITERAL - 27)) | (1L << (BOOL_LITERAL - 27)) | (1L << (STRING_LITERAL - 27)) | (1L << (NULL_LITERAL - 27)) | (1L << (LPAREN - 27)) | (1L << (IDENTIFIER - 27)))) != 0)) {
-				{
-				setState(272);
-				((ForControlContext)_localctx).forUpdate = expressionList();
-				}
-			}
-
+			setState(74);
+			match(ASSIGN);
+			setState(75);
+			expression(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1900,79 +454,60 @@ public class KaonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ForInitContext extends ParserRuleContext {
-		public TypeTypeContext typeType() {
-			return getRuleContext(TypeTypeContext.class,0);
-		}
-		public VariableDeclaratorIdContext variableDeclaratorId() {
-			return getRuleContext(VariableDeclaratorIdContext.class,0);
-		}
+	public static class ConstantAssignmentContext extends ParserRuleContext {
+		public TerminalNode CONST() { return getToken(KaonParser.CONST, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
 		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
-		public VariableInitializerContext variableInitializer() {
-			return getRuleContext(VariableInitializerContext.class,0);
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
 		}
-		public ExpressionListContext expressionList() {
-			return getRuleContext(ExpressionListContext.class,0);
+		public IndexesContext indexes() {
+			return getRuleContext(IndexesContext.class,0);
 		}
-		public ForInitContext(ParserRuleContext parent, int invokingState) {
+		public ConstantAssignmentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_forInit; }
+		@Override public int getRuleIndex() { return RULE_constantAssignment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterForInit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterConstantAssignment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitForInit(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitConstantAssignment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitForInit(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitConstantAssignment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ForInitContext forInit() throws RecognitionException {
-		ForInitContext _localctx = new ForInitContext(_ctx, getState());
-		enterRule(_localctx, 48, RULE_forInit);
+	public final ConstantAssignmentContext constantAssignment() throws RecognitionException {
+		ConstantAssignmentContext _localctx = new ConstantAssignmentContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_constantAssignment);
+		int _la;
 		try {
-			setState(281);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(77);
+			match(CONST);
+			setState(78);
+			match(IDENTIFIER);
+			setState(80);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case BOOLEAN:
-			case CHAR:
-			case DOUBLE:
-			case FLOAT:
-			case INT:
-			case STRING:
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			if (_la==LBRACKET) {
 				{
-				setState(275);
-				typeType();
-				setState(276);
-				variableDeclaratorId();
-				setState(277);
-				match(ASSIGN);
-				setState(278);
-				variableInitializer();
+				setState(79);
+				indexes();
 				}
-				break;
-			case DECIMAL_LITERAL:
-			case FLOAT_LITERAL:
-			case BOOL_LITERAL:
-			case STRING_LITERAL:
-			case NULL_LITERAL:
-			case LPAREN:
-			case IDENTIFIER:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(280);
-				expressionList();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			}
+
+			setState(82);
+			match(ASSIGN);
+			setState(83);
+			expression(0);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1986,43 +521,675 @@ public class KaonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ParExpressionContext extends ParserRuleContext {
+	public static class IfStatementContext extends ParserRuleContext {
+		public IfStatContext ifStat() {
+			return getRuleContext(IfStatContext.class,0);
+		}
+		public List<ElseIfStatContext> elseIfStat() {
+			return getRuleContexts(ElseIfStatContext.class);
+		}
+		public ElseIfStatContext elseIfStat(int i) {
+			return getRuleContext(ElseIfStatContext.class,i);
+		}
+		public ElseStatContext elseStat() {
+			return getRuleContext(ElseStatContext.class,0);
+		}
+		public IfStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ifStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIfStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIfStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIfStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final IfStatementContext ifStatement() throws RecognitionException {
+		IfStatementContext _localctx = new IfStatementContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_ifStatement);
+		int _la;
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(85);
+			ifStat();
+			setState(89);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(86);
+					elseIfStat();
+					}
+					} 
+				}
+				setState(91);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
+			}
+			setState(93);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==ELSE) {
+				{
+				setState(92);
+				elseStat();
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class IfStatContext extends ParserRuleContext {
+		public TerminalNode IF() { return getToken(KaonParser.IF, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
+		public IfStatContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ifStat; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIfStat(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIfStat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIfStat(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final IfStatContext ifStat() throws RecognitionException {
+		IfStatContext _localctx = new IfStatContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_ifStat);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(95);
+			match(IF);
+			setState(96);
+			expression(0);
+			setState(97);
+			match(LBRACE);
+			setState(98);
+			block();
+			setState(99);
+			match(RBRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ElseIfStatContext extends ParserRuleContext {
+		public TerminalNode ELSE() { return getToken(KaonParser.ELSE, 0); }
+		public TerminalNode IF() { return getToken(KaonParser.IF, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
+		public ElseIfStatContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_elseIfStat; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterElseIfStat(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitElseIfStat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitElseIfStat(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ElseIfStatContext elseIfStat() throws RecognitionException {
+		ElseIfStatContext _localctx = new ElseIfStatContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_elseIfStat);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(101);
+			match(ELSE);
+			setState(102);
+			match(IF);
+			setState(103);
+			expression(0);
+			setState(104);
+			match(LBRACE);
+			setState(105);
+			block();
+			setState(106);
+			match(RBRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ElseStatContext extends ParserRuleContext {
+		public TerminalNode ELSE() { return getToken(KaonParser.ELSE, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
+		public ElseStatContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_elseStat; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterElseStat(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitElseStat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitElseStat(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ElseStatContext elseStat() throws RecognitionException {
+		ElseStatContext _localctx = new ElseStatContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_elseStat);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(108);
+			match(ELSE);
+			setState(109);
+			match(LBRACE);
+			setState(110);
+			block();
+			setState(111);
+			match(RBRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FunctionDeclContext extends ParserRuleContext {
+		public TerminalNode FUNC() { return getToken(KaonParser.FUNC, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
+		public IdListContext idList() {
+			return getRuleContext(IdListContext.class,0);
+		}
+		public FunctionDeclContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_functionDecl; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFunctionDecl(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFunctionDecl(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFunctionDecl(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final FunctionDeclContext functionDecl() throws RecognitionException {
+		FunctionDeclContext _localctx = new FunctionDeclContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_functionDecl);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(113);
+			match(FUNC);
+			setState(114);
+			match(IDENTIFIER);
+			setState(115);
+			match(LPAREN);
+			setState(117);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==IDENTIFIER) {
+				{
+				setState(116);
+				idList();
+				}
+			}
+
+			setState(119);
+			match(RPAREN);
+			setState(120);
+			match(LBRACE);
+			setState(121);
+			block();
+			setState(122);
+			match(RBRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ForStatementContext extends ParserRuleContext {
+		public TerminalNode FOR() { return getToken(KaonParser.FOR, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode TO() { return getToken(KaonParser.TO, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
+		public ForStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_forStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterForStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitForStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitForStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ForStatementContext forStatement() throws RecognitionException {
+		ForStatementContext _localctx = new ForStatementContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_forStatement);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(124);
+			match(FOR);
+			setState(125);
+			match(IDENTIFIER);
+			setState(126);
+			match(ASSIGN);
+			setState(127);
+			expression(0);
+			setState(128);
+			match(TO);
+			setState(129);
+			expression(0);
+			setState(130);
+			match(LBRACE);
+			setState(131);
+			block();
+			setState(132);
+			match(RBRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class WhileStatementContext extends ParserRuleContext {
+		public TerminalNode WHILE() { return getToken(KaonParser.WHILE, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
+		public WhileStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_whileStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterWhileStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitWhileStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitWhileStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final WhileStatementContext whileStatement() throws RecognitionException {
+		WhileStatementContext _localctx = new WhileStatementContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_whileStatement);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(134);
+			match(WHILE);
+			setState(135);
+			expression(0);
+			setState(136);
+			match(LBRACE);
+			setState(137);
+			block();
+			setState(138);
+			match(RBRACE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class DoWhileStatementContext extends ParserRuleContext {
+		public TerminalNode DO() { return getToken(KaonParser.DO, 0); }
+		public TerminalNode LBRACE() { return getToken(KaonParser.LBRACE, 0); }
+		public BlockContext block() {
+			return getRuleContext(BlockContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(KaonParser.RBRACE, 0); }
+		public TerminalNode WHILE() { return getToken(KaonParser.WHILE, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TerminalNode SCOLON() { return getToken(KaonParser.SCOLON, 0); }
+		public DoWhileStatementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_doWhileStatement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterDoWhileStatement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitDoWhileStatement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitDoWhileStatement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final DoWhileStatementContext doWhileStatement() throws RecognitionException {
+		DoWhileStatementContext _localctx = new DoWhileStatementContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_doWhileStatement);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(140);
+			match(DO);
+			setState(141);
+			match(LBRACE);
+			setState(142);
+			block();
+			setState(143);
+			match(RBRACE);
+			setState(144);
+			match(WHILE);
+			setState(145);
+			expression(0);
+			setState(146);
+			match(SCOLON);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class FunctionCallContext extends ParserRuleContext {
+		public FunctionCallContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_functionCall; }
+	 
+		public FunctionCallContext() { }
+		public void copyFrom(FunctionCallContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class PrintlnFunctionCallContext extends FunctionCallContext {
+		public TerminalNode PRINTLN() { return getToken(KaonParser.PRINTLN, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public PrintlnFunctionCallContext(FunctionCallContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrintlnFunctionCall(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrintlnFunctionCall(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrintlnFunctionCall(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class IdentifierFunctionCallContext extends FunctionCallContext {
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public ExprListContext exprList() {
+			return getRuleContext(ExprListContext.class,0);
+		}
+		public IdentifierFunctionCallContext(FunctionCallContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIdentifierFunctionCall(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIdentifierFunctionCall(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIdentifierFunctionCall(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class PrintFunctionCallContext extends FunctionCallContext {
+		public TerminalNode PRINT() { return getToken(KaonParser.PRINT, 0); }
 		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
-		public ParExpressionContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_parExpression; }
+		public PrintFunctionCallContext(FunctionCallContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterParExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrintFunctionCall(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitParExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrintFunctionCall(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitParExpression(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrintFunctionCall(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ParExpressionContext parExpression() throws RecognitionException {
-		ParExpressionContext _localctx = new ParExpressionContext(_ctx, getState());
-		enterRule(_localctx, 50, RULE_parExpression);
+	public final FunctionCallContext functionCall() throws RecognitionException {
+		FunctionCallContext _localctx = new FunctionCallContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_functionCall);
+		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(283);
-			match(LPAREN);
-			setState(284);
-			expression(0);
-			setState(285);
-			match(RPAREN);
+			setState(165);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case IDENTIFIER:
+				_localctx = new IdentifierFunctionCallContext(_localctx);
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(148);
+				match(IDENTIFIER);
+				setState(149);
+				match(LPAREN);
+				setState(151);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PRINTLN) | (1L << PRINT) | (1L << INPUT) | (1L << NULL) | (1L << BANG) | (1L << SUB) | (1L << LPAREN) | (1L << LBRACKET) | (1L << BOOL) | (1L << NUMBER) | (1L << IDENTIFIER) | (1L << STRING))) != 0)) {
+					{
+					setState(150);
+					exprList();
+					}
+				}
+
+				setState(153);
+				match(RPAREN);
+				}
+				break;
+			case PRINTLN:
+				_localctx = new PrintlnFunctionCallContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(154);
+				match(PRINTLN);
+				setState(155);
+				match(LPAREN);
+				setState(157);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PRINTLN) | (1L << PRINT) | (1L << INPUT) | (1L << NULL) | (1L << BANG) | (1L << SUB) | (1L << LPAREN) | (1L << LBRACKET) | (1L << BOOL) | (1L << NUMBER) | (1L << IDENTIFIER) | (1L << STRING))) != 0)) {
+					{
+					setState(156);
+					expression(0);
+					}
+				}
+
+				setState(159);
+				match(RPAREN);
+				}
+				break;
+			case PRINT:
+				_localctx = new PrintFunctionCallContext(_localctx);
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(160);
+				match(PRINT);
+				setState(161);
+				match(LPAREN);
+				setState(162);
+				expression(0);
+				setState(163);
+				match(RPAREN);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2036,7 +1203,73 @@ public class KaonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class ExpressionListContext extends ParserRuleContext {
+	public static class IdListContext extends ParserRuleContext {
+		public List<TerminalNode> IDENTIFIER() { return getTokens(KaonParser.IDENTIFIER); }
+		public TerminalNode IDENTIFIER(int i) {
+			return getToken(KaonParser.IDENTIFIER, i);
+		}
+		public List<TerminalNode> COMMA() { return getTokens(KaonParser.COMMA); }
+		public TerminalNode COMMA(int i) {
+			return getToken(KaonParser.COMMA, i);
+		}
+		public IdListContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_idList; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIdList(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIdList(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIdList(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final IdListContext idList() throws RecognitionException {
+		IdListContext _localctx = new IdListContext(_ctx, getState());
+		enterRule(_localctx, 28, RULE_idList);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(167);
+			match(IDENTIFIER);
+			setState(172);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==COMMA) {
+				{
+				{
+				setState(168);
+				match(COMMA);
+				setState(169);
+				match(IDENTIFIER);
+				}
+				}
+				setState(174);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class ExprListContext extends ParserRuleContext {
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -2047,112 +1280,50 @@ public class KaonParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(KaonParser.COMMA, i);
 		}
-		public ExpressionListContext(ParserRuleContext parent, int invokingState) {
+		public ExprListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_expressionList; }
+		@Override public int getRuleIndex() { return RULE_exprList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpressionList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExprList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpressionList(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExprList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpressionList(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExprList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ExpressionListContext expressionList() throws RecognitionException {
-		ExpressionListContext _localctx = new ExpressionListContext(_ctx, getState());
-		enterRule(_localctx, 52, RULE_expressionList);
+	public final ExprListContext exprList() throws RecognitionException {
+		ExprListContext _localctx = new ExprListContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_exprList);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(287);
+			setState(175);
 			expression(0);
-			setState(292);
+			setState(180);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(288);
+				setState(176);
 				match(COMMA);
-				setState(289);
+				setState(177);
 				expression(0);
 				}
 				}
-				setState(294);
+				setState(182);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class MethodCallContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
-		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
-		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
-		public ExpressionListContext expressionList() {
-			return getRuleContext(ExpressionListContext.class,0);
-		}
-		public MethodCallContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_methodCall; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterMethodCall(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitMethodCall(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitMethodCall(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final MethodCallContext methodCall() throws RecognitionException {
-		MethodCallContext _localctx = new MethodCallContext(_ctx, getState());
-		enterRule(_localctx, 54, RULE_methodCall);
-		int _la;
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(295);
-			match(IDENTIFIER);
-			setState(296);
-			match(LPAREN);
-			setState(298);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (((((_la - 27)) & ~0x3f) == 0 && ((1L << (_la - 27)) & ((1L << (DECIMAL_LITERAL - 27)) | (1L << (FLOAT_LITERAL - 27)) | (1L << (BOOL_LITERAL - 27)) | (1L << (STRING_LITERAL - 27)) | (1L << (NULL_LITERAL - 27)) | (1L << (LPAREN - 27)) | (1L << (IDENTIFIER - 27)))) != 0)) {
-				{
-				setState(297);
-				expressionList();
-				}
-			}
-
-			setState(300);
-			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2167,13 +1338,364 @@ public class KaonParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
-		public Token bop;
-		public PrimaryContext primary() {
-			return getRuleContext(PrimaryContext.class,0);
+		public ExpressionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
 		}
-		public MethodCallContext methodCall() {
-			return getRuleContext(MethodCallContext.class,0);
+		@Override public int getRuleIndex() { return RULE_expression; }
+	 
+		public ExpressionContext() { }
+		public void copyFrom(ExpressionContext ctx) {
+			super.copyFrom(ctx);
 		}
+	}
+	public static class BoolExpressionContext extends ExpressionContext {
+		public TerminalNode BOOL() { return getToken(KaonParser.BOOL, 0); }
+		public BoolExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterBoolExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitBoolExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitBoolExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NumberExpressionContext extends ExpressionContext {
+		public TerminalNode NUMBER() { return getToken(KaonParser.NUMBER, 0); }
+		public NumberExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterNumberExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitNumberExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitNumberExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class IdentifierExpressionContext extends ExpressionContext {
+		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
+		public IndexesContext indexes() {
+			return getRuleContext(IndexesContext.class,0);
+		}
+		public IdentifierExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIdentifierExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIdentifierExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIdentifierExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NotExpressionContext extends ExpressionContext {
+		public TerminalNode BANG() { return getToken(KaonParser.BANG, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public NotExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterNotExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitNotExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitNotExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class OrExpressionContext extends ExpressionContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode OR() { return getToken(KaonParser.OR, 0); }
+		public OrExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterOrExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitOrExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitOrExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class UnaryMinusExpressionContext extends ExpressionContext {
+		public TerminalNode SUB() { return getToken(KaonParser.SUB, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public UnaryMinusExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterUnaryMinusExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitUnaryMinusExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitUnaryMinusExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class PowerExpressionContext extends ExpressionContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode POW() { return getToken(KaonParser.POW, 0); }
+		public PowerExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPowerExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPowerExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPowerExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class EqExpressionContext extends ExpressionContext {
+		public Token op;
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode EQUALS() { return getToken(KaonParser.EQUALS, 0); }
+		public TerminalNode NEQUALS() { return getToken(KaonParser.NEQUALS, 0); }
+		public EqExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterEqExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitEqExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitEqExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class AndExpressionContext extends ExpressionContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode AND() { return getToken(KaonParser.AND, 0); }
+		public AndExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterAndExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitAndExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitAndExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class InExpressionContext extends ExpressionContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode IN() { return getToken(KaonParser.IN, 0); }
+		public InExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterInExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitInExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitInExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class StringExpressionContext extends ExpressionContext {
+		public TerminalNode STRING() { return getToken(KaonParser.STRING, 0); }
+		public IndexesContext indexes() {
+			return getRuleContext(IndexesContext.class,0);
+		}
+		public StringExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterStringExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitStringExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitStringExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ExpressionExpressionContext extends ExpressionContext {
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public IndexesContext indexes() {
+			return getRuleContext(IndexesContext.class,0);
+		}
+		public ExpressionExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpressionExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpressionExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpressionExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ADDExpressionContext extends ExpressionContext {
+		public Token op;
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode ADD() { return getToken(KaonParser.ADD, 0); }
+		public TerminalNode SUB() { return getToken(KaonParser.SUB, 0); }
+		public ADDExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterADDExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitADDExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitADDExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class CompExpressionContext extends ExpressionContext {
+		public Token op;
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode GTEQUALS() { return getToken(KaonParser.GTEQUALS, 0); }
+		public TerminalNode LTEQUALS() { return getToken(KaonParser.LTEQUALS, 0); }
+		public TerminalNode GT() { return getToken(KaonParser.GT, 0); }
+		public TerminalNode LT() { return getToken(KaonParser.LT, 0); }
+		public CompExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterCompExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitCompExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitCompExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NullExpressionContext extends ExpressionContext {
+		public TerminalNode NULL() { return getToken(KaonParser.NULL, 0); }
+		public NullExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterNullExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitNullExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitNullExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class FunctionCallExpressionContext extends ExpressionContext {
+		public FunctionCallContext functionCall() {
+			return getRuleContext(FunctionCallContext.class,0);
+		}
+		public IndexesContext indexes() {
+			return getRuleContext(IndexesContext.class,0);
+		}
+		public FunctionCallExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterFunctionCallExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitFunctionCallExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitFunctionCallExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class MultExpressionContext extends ExpressionContext {
+		public Token op;
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -2183,38 +1705,83 @@ public class KaonParser extends Parser {
 		public TerminalNode MUL() { return getToken(KaonParser.MUL, 0); }
 		public TerminalNode DIV() { return getToken(KaonParser.DIV, 0); }
 		public TerminalNode MOD() { return getToken(KaonParser.MOD, 0); }
-		public TerminalNode ADD() { return getToken(KaonParser.ADD, 0); }
-		public TerminalNode SUB() { return getToken(KaonParser.SUB, 0); }
-		public TerminalNode LE() { return getToken(KaonParser.LE, 0); }
-		public TerminalNode GE() { return getToken(KaonParser.GE, 0); }
-		public TerminalNode GT() { return getToken(KaonParser.GT, 0); }
-		public TerminalNode LT() { return getToken(KaonParser.LT, 0); }
-		public TerminalNode EQUAL() { return getToken(KaonParser.EQUAL, 0); }
-		public TerminalNode NOTEQUAL() { return getToken(KaonParser.NOTEQUAL, 0); }
-		public TerminalNode AND() { return getToken(KaonParser.AND, 0); }
-		public TerminalNode OR() { return getToken(KaonParser.OR, 0); }
-		public TerminalNode ASSIGN() { return getToken(KaonParser.ASSIGN, 0); }
-		public TerminalNode ADD_ASSIGN() { return getToken(KaonParser.ADD_ASSIGN, 0); }
-		public TerminalNode SUB_ASSIGN() { return getToken(KaonParser.SUB_ASSIGN, 0); }
-		public TerminalNode MUL_ASSIGN() { return getToken(KaonParser.MUL_ASSIGN, 0); }
-		public TerminalNode DIV_ASSIGN() { return getToken(KaonParser.DIV_ASSIGN, 0); }
-		public TerminalNode LBRACK() { return getToken(KaonParser.LBRACK, 0); }
-		public TerminalNode RBRACK() { return getToken(KaonParser.RBRACK, 0); }
-		public ExpressionContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expression; }
+		public MultExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterMultExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitExpression(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitMultExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitExpression(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitMultExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ListExpressionContext extends ExpressionContext {
+		public ListContext list() {
+			return getRuleContext(ListContext.class,0);
+		}
+		public IndexesContext indexes() {
+			return getRuleContext(IndexesContext.class,0);
+		}
+		public ListExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterListExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitListExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitListExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class TernaryExpressionContext extends ExpressionContext {
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public TerminalNode QMARK() { return getToken(KaonParser.QMARK, 0); }
+		public TernaryExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTernaryExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTernaryExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTernaryExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class InputExpressionContext extends ExpressionContext {
+		public TerminalNode INPUT() { return getToken(KaonParser.INPUT, 0); }
+		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
+		public TerminalNode STRING() { return getToken(KaonParser.STRING, 0); }
+		public InputExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterInputExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitInputExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitInputExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2228,190 +1795,355 @@ public class KaonParser extends Parser {
 		int _parentState = getState();
 		ExpressionContext _localctx = new ExpressionContext(_ctx, _parentState);
 		ExpressionContext _prevctx = _localctx;
-		int _startState = 56;
-		enterRecursionRule(_localctx, 56, RULE_expression, _p);
+		int _startState = 32;
+		enterRecursionRule(_localctx, 32, RULE_expression, _p);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(305);
+			setState(219);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,29,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 			case 1:
 				{
-				setState(303);
-				primary();
+				_localctx = new UnaryMinusExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
+				setState(184);
+				match(SUB);
+				setState(185);
+				expression(20);
 				}
 				break;
 			case 2:
 				{
-				setState(304);
-				methodCall();
+				_localctx = new NotExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(186);
+				match(BANG);
+				setState(187);
+				expression(19);
+				}
+				break;
+			case 3:
+				{
+				_localctx = new NumberExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(188);
+				match(NUMBER);
+				}
+				break;
+			case 4:
+				{
+				_localctx = new BoolExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(189);
+				match(BOOL);
+				}
+				break;
+			case 5:
+				{
+				_localctx = new NullExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(190);
+				match(NULL);
+				}
+				break;
+			case 6:
+				{
+				_localctx = new FunctionCallExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(191);
+				functionCall();
+				setState(193);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
+				case 1:
+					{
+					setState(192);
+					indexes();
+					}
+					break;
+				}
+				}
+				break;
+			case 7:
+				{
+				_localctx = new ListExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(195);
+				list();
+				setState(197);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,15,_ctx) ) {
+				case 1:
+					{
+					setState(196);
+					indexes();
+					}
+					break;
+				}
+				}
+				break;
+			case 8:
+				{
+				_localctx = new IdentifierExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(199);
+				match(IDENTIFIER);
+				setState(201);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
+				case 1:
+					{
+					setState(200);
+					indexes();
+					}
+					break;
+				}
+				}
+				break;
+			case 9:
+				{
+				_localctx = new StringExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(203);
+				match(STRING);
+				setState(205);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+				case 1:
+					{
+					setState(204);
+					indexes();
+					}
+					break;
+				}
+				}
+				break;
+			case 10:
+				{
+				_localctx = new ExpressionExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(207);
+				match(LPAREN);
+				setState(208);
+				expression(0);
+				setState(209);
+				match(RPAREN);
+				setState(211);
+				_errHandler.sync(this);
+				switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
+				case 1:
+					{
+					setState(210);
+					indexes();
+					}
+					break;
+				}
+				}
+				break;
+			case 11:
+				{
+				_localctx = new InputExpressionContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(213);
+				match(INPUT);
+				setState(214);
+				match(LPAREN);
+				setState(216);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==STRING) {
+					{
+					setState(215);
+					match(STRING);
+					}
+				}
+
+				setState(218);
+				match(RPAREN);
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(335);
+			setState(253);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,31,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,22,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(333);
+					setState(251);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,30,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,21,_ctx) ) {
 					case 1:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new PowerExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(307);
-						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(308);
-						((ExpressionContext)_localctx).bop = _input.LT(1);
-						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << MOD))) != 0)) ) {
-							((ExpressionContext)_localctx).bop = (Token)_errHandler.recoverInline(this);
-						}
-						else {
-							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-							_errHandler.reportMatch(this);
-							consume();
-						}
-						setState(309);
-						expression(8);
+						setState(221);
+						if (!(precpred(_ctx, 18))) throw new FailedPredicateException(this, "precpred(_ctx, 18)");
+						setState(222);
+						match(POW);
+						setState(223);
+						expression(18);
 						}
 						break;
 					case 2:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new MultExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(310);
-						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(311);
-						((ExpressionContext)_localctx).bop = _input.LT(1);
+						setState(224);
+						if (!(precpred(_ctx, 17))) throw new FailedPredicateException(this, "precpred(_ctx, 17)");
+						setState(225);
+						((MultExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==ADD || _la==SUB) ) {
-							((ExpressionContext)_localctx).bop = (Token)_errHandler.recoverInline(this);
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << MOD))) != 0)) ) {
+							((MultExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(312);
-						expression(7);
+						setState(226);
+						expression(18);
 						}
 						break;
 					case 3:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new ADDExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(313);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(314);
-						((ExpressionContext)_localctx).bop = _input.LT(1);
+						setState(227);
+						if (!(precpred(_ctx, 16))) throw new FailedPredicateException(this, "precpred(_ctx, 16)");
+						setState(228);
+						((ADDExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GT) | (1L << LT) | (1L << LE) | (1L << GE))) != 0)) ) {
-							((ExpressionContext)_localctx).bop = (Token)_errHandler.recoverInline(this);
+						if ( !(_la==ADD || _la==SUB) ) {
+							((ADDExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(315);
-						expression(6);
+						setState(229);
+						expression(17);
 						}
 						break;
 					case 4:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new CompExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(316);
-						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(317);
-						((ExpressionContext)_localctx).bop = _input.LT(1);
+						setState(230);
+						if (!(precpred(_ctx, 15))) throw new FailedPredicateException(this, "precpred(_ctx, 15)");
+						setState(231);
+						((CompExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==EQUAL || _la==NOTEQUAL) ) {
-							((ExpressionContext)_localctx).bop = (Token)_errHandler.recoverInline(this);
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GTEQUALS) | (1L << LTEQUALS) | (1L << GT) | (1L << LT))) != 0)) ) {
+							((CompExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(318);
-						expression(5);
+						setState(232);
+						expression(16);
 						}
 						break;
 					case 5:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new EqExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(319);
-						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(320);
-						((ExpressionContext)_localctx).bop = match(AND);
-						setState(321);
-						expression(4);
-						}
-						break;
-					case 6:
-						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
-						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(322);
-						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(323);
-						((ExpressionContext)_localctx).bop = match(OR);
-						setState(324);
-						expression(3);
-						}
-						break;
-					case 7:
-						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
-						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(325);
-						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-						setState(326);
-						((ExpressionContext)_localctx).bop = _input.LT(1);
+						setState(233);
+						if (!(precpred(_ctx, 14))) throw new FailedPredicateException(this, "precpred(_ctx, 14)");
+						setState(234);
+						((EqExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << ASSIGN) | (1L << ADD_ASSIGN) | (1L << SUB_ASSIGN) | (1L << MUL_ASSIGN) | (1L << DIV_ASSIGN))) != 0)) ) {
-							((ExpressionContext)_localctx).bop = (Token)_errHandler.recoverInline(this);
+						if ( !(_la==EQUALS || _la==NEQUALS) ) {
+							((EqExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(327);
-						expression(1);
+						setState(235);
+						expression(15);
+						}
+						break;
+					case 6:
+						{
+						_localctx = new AndExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expression);
+						setState(236);
+						if (!(precpred(_ctx, 13))) throw new FailedPredicateException(this, "precpred(_ctx, 13)");
+						setState(237);
+						match(AND);
+						setState(238);
+						expression(14);
+						}
+						break;
+					case 7:
+						{
+						_localctx = new OrExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expression);
+						setState(239);
+						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
+						setState(240);
+						match(OR);
+						setState(241);
+						expression(13);
 						}
 						break;
 					case 8:
 						{
-						_localctx = new ExpressionContext(_parentctx, _parentState);
+						_localctx = new TernaryExpressionContext(new ExpressionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
-						setState(328);
-						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
-						setState(329);
-						match(LBRACK);
-						setState(330);
+						setState(242);
+						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
+						setState(243);
+						match(QMARK);
+						setState(244);
 						expression(0);
-						setState(331);
-						match(RBRACK);
+						setState(245);
+						match(T__0);
+						setState(246);
+						expression(12);
+						}
+						break;
+					case 9:
+						{
+						_localctx = new InExpressionContext(new ExpressionContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expression);
+						setState(248);
+						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
+						setState(249);
+						match(IN);
+						setState(250);
+						expression(11);
 						}
 						break;
 					}
 					} 
 				}
-				setState(337);
+				setState(255);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,31,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,22,_ctx);
 			}
 			}
 		}
@@ -2426,142 +2158,71 @@ public class KaonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class PrimaryContext extends ParserRuleContext {
-		public TerminalNode LPAREN() { return getToken(KaonParser.LPAREN, 0); }
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+	public static class IndexesContext extends ParserRuleContext {
+		public List<TerminalNode> LBRACKET() { return getTokens(KaonParser.LBRACKET); }
+		public TerminalNode LBRACKET(int i) {
+			return getToken(KaonParser.LBRACKET, i);
 		}
-		public TerminalNode RPAREN() { return getToken(KaonParser.RPAREN, 0); }
-		public LiteralContext literal() {
-			return getRuleContext(LiteralContext.class,0);
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
 		}
-		public TerminalNode IDENTIFIER() { return getToken(KaonParser.IDENTIFIER, 0); }
-		public PrimaryContext(ParserRuleContext parent, int invokingState) {
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public List<TerminalNode> RBRACKET() { return getTokens(KaonParser.RBRACKET); }
+		public TerminalNode RBRACKET(int i) {
+			return getToken(KaonParser.RBRACKET, i);
+		}
+		public IndexesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_primary; }
+		@Override public int getRuleIndex() { return RULE_indexes; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrimary(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterIndexes(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrimary(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitIndexes(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrimary(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitIndexes(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final PrimaryContext primary() throws RecognitionException {
-		PrimaryContext _localctx = new PrimaryContext(_ctx, getState());
-		enterRule(_localctx, 58, RULE_primary);
+	public final IndexesContext indexes() throws RecognitionException {
+		IndexesContext _localctx = new IndexesContext(_ctx, getState());
+		enterRule(_localctx, 34, RULE_indexes);
 		try {
-			setState(344);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case LPAREN:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(338);
-				match(LPAREN);
-				setState(339);
-				expression(0);
-				setState(340);
-				match(RPAREN);
-				}
-				break;
-			case DECIMAL_LITERAL:
-			case FLOAT_LITERAL:
-			case BOOL_LITERAL:
-			case STRING_LITERAL:
-			case NULL_LITERAL:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(342);
-				literal();
-				}
-				break;
-			case IDENTIFIER:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(343);
-				match(IDENTIFIER);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class TypeTypeContext extends ParserRuleContext {
-		public PrimitiveTypeContext primitiveType() {
-			return getRuleContext(PrimitiveTypeContext.class,0);
-		}
-		public List<TerminalNode> LBRACK() { return getTokens(KaonParser.LBRACK); }
-		public TerminalNode LBRACK(int i) {
-			return getToken(KaonParser.LBRACK, i);
-		}
-		public List<TerminalNode> RBRACK() { return getTokens(KaonParser.RBRACK); }
-		public TerminalNode RBRACK(int i) {
-			return getToken(KaonParser.RBRACK, i);
-		}
-		public TypeTypeContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_typeType; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterTypeType(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitTypeType(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitTypeType(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final TypeTypeContext typeType() throws RecognitionException {
-		TypeTypeContext _localctx = new TypeTypeContext(_ctx, getState());
-		enterRule(_localctx, 60, RULE_typeType);
-		int _la;
-		try {
+			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(346);
-			primitiveType();
-			setState(351);
+			setState(260); 
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==LBRACK) {
-				{
-				{
-				setState(347);
-				match(LBRACK);
-				setState(348);
-				match(RBRACK);
+			_alt = 1;
+			do {
+				switch (_alt) {
+				case 1:
+					{
+					{
+					setState(256);
+					match(LBRACKET);
+					setState(257);
+					expression(0);
+					setState(258);
+					match(RBRACKET);
+					}
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
 				}
-				}
-				setState(353);
+				setState(262); 
 				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
+				_alt = getInterpreter().adaptivePredict(_input,23,_ctx);
+			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -2575,49 +2236,52 @@ public class KaonParser extends Parser {
 		return _localctx;
 	}
 
-	public static class PrimitiveTypeContext extends ParserRuleContext {
-		public TerminalNode BOOLEAN() { return getToken(KaonParser.BOOLEAN, 0); }
-		public TerminalNode CHAR() { return getToken(KaonParser.CHAR, 0); }
-		public TerminalNode INT() { return getToken(KaonParser.INT, 0); }
-		public TerminalNode FLOAT() { return getToken(KaonParser.FLOAT, 0); }
-		public TerminalNode DOUBLE() { return getToken(KaonParser.DOUBLE, 0); }
-		public TerminalNode STRING() { return getToken(KaonParser.STRING, 0); }
-		public PrimitiveTypeContext(ParserRuleContext parent, int invokingState) {
+	public static class ListContext extends ParserRuleContext {
+		public TerminalNode LBRACKET() { return getToken(KaonParser.LBRACKET, 0); }
+		public TerminalNode RBRACKET() { return getToken(KaonParser.RBRACKET, 0); }
+		public ExprListContext exprList() {
+			return getRuleContext(ExprListContext.class,0);
+		}
+		public ListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_primitiveType; }
+		@Override public int getRuleIndex() { return RULE_list; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterPrimitiveType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).enterList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitPrimitiveType(this);
+			if ( listener instanceof KaonListener ) ((KaonListener)listener).exitList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitPrimitiveType(this);
+			if ( visitor instanceof KaonVisitor ) return ((KaonVisitor<? extends T>)visitor).visitList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final PrimitiveTypeContext primitiveType() throws RecognitionException {
-		PrimitiveTypeContext _localctx = new PrimitiveTypeContext(_ctx, getState());
-		enterRule(_localctx, 62, RULE_primitiveType);
+	public final ListContext list() throws RecognitionException {
+		ListContext _localctx = new ListContext(_ctx, getState());
+		enterRule(_localctx, 36, RULE_list);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(354);
+			setState(264);
+			match(LBRACKET);
+			setState(266);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BOOLEAN) | (1L << CHAR) | (1L << DOUBLE) | (1L << FLOAT) | (1L << INT) | (1L << STRING))) != 0)) ) {
-			_errHandler.recoverInline(this);
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PRINTLN) | (1L << PRINT) | (1L << INPUT) | (1L << NULL) | (1L << BANG) | (1L << SUB) | (1L << LPAREN) | (1L << LBRACKET) | (1L << BOOL) | (1L << NUMBER) | (1L << IDENTIFIER) | (1L << STRING))) != 0)) {
+				{
+				setState(265);
+				exprList();
+				}
 			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+
+			setState(268);
+			match(RBRACKET);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2633,7 +2297,7 @@ public class KaonParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 28:
+		case 16:
 			return expression_sempred((ExpressionContext)_localctx, predIndex);
 		}
 		return true;
@@ -2641,153 +2305,122 @@ public class KaonParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 7);
+			return precpred(_ctx, 18);
 		case 1:
-			return precpred(_ctx, 6);
+			return precpred(_ctx, 17);
 		case 2:
-			return precpred(_ctx, 5);
+			return precpred(_ctx, 16);
 		case 3:
-			return precpred(_ctx, 4);
+			return precpred(_ctx, 15);
 		case 4:
-			return precpred(_ctx, 3);
+			return precpred(_ctx, 14);
 		case 5:
-			return precpred(_ctx, 2);
+			return precpred(_ctx, 13);
 		case 6:
-			return precpred(_ctx, 1);
+			return precpred(_ctx, 12);
 		case 7:
-			return precpred(_ctx, 9);
+			return precpred(_ctx, 11);
+		case 8:
+			return precpred(_ctx, 10);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3D\u0167\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
-		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
-		"\t!\3\2\7\2D\n\2\f\2\16\2G\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\7\3P\n\3\f"+
-		"\3\16\3S\13\3\3\3\3\3\3\4\3\4\5\4Y\n\4\3\5\3\5\5\5]\n\5\3\6\3\6\3\6\3"+
-		"\6\3\6\7\6d\n\6\f\6\16\6g\13\6\3\6\3\6\3\7\3\7\3\7\7\7n\n\7\f\7\16\7q"+
-		"\13\7\3\7\3\7\3\7\3\b\3\b\3\b\7\by\n\b\f\b\16\b|\13\b\3\t\3\t\3\t\5\t"+
-		"\u0081\n\t\3\n\3\n\3\n\7\n\u0086\n\n\f\n\16\n\u0089\13\n\3\13\3\13\5\13"+
-		"\u008d\n\13\3\f\3\f\3\f\3\f\7\f\u0093\n\f\f\f\16\f\u0096\13\f\3\f\5\f"+
-		"\u0099\n\f\5\f\u009b\n\f\3\f\3\f\3\r\3\r\5\r\u00a1\n\r\3\r\3\r\3\16\3"+
-		"\16\3\16\7\16\u00a8\n\16\f\16\16\16\u00ab\13\16\3\16\3\16\5\16\u00af\n"+
-		"\16\3\16\5\16\u00b2\n\16\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\21\3\21"+
-		"\3\21\3\21\3\21\5\21\u00c0\n\21\3\22\3\22\3\23\3\23\3\24\3\24\7\24\u00c8"+
-		"\n\24\f\24\16\24\u00cb\13\24\3\24\3\24\3\25\3\25\3\25\3\25\3\25\5\25\u00d4"+
-		"\n\25\3\26\3\26\3\26\3\27\3\27\3\27\3\30\3\30\3\30\3\30\3\30\5\30\u00e1"+
-		"\n\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30"+
-		"\3\30\3\30\3\30\3\30\3\30\5\30\u00f5\n\30\3\30\3\30\3\30\3\30\3\30\3\30"+
-		"\3\30\3\30\3\30\7\30\u0100\n\30\f\30\16\30\u0103\13\30\3\30\3\30\3\30"+
-		"\3\30\3\30\3\30\5\30\u010b\n\30\3\31\3\31\3\31\5\31\u0110\n\31\3\31\3"+
-		"\31\5\31\u0114\n\31\3\32\3\32\3\32\3\32\3\32\3\32\5\32\u011c\n\32\3\33"+
-		"\3\33\3\33\3\33\3\34\3\34\3\34\7\34\u0125\n\34\f\34\16\34\u0128\13\34"+
-		"\3\35\3\35\3\35\5\35\u012d\n\35\3\35\3\35\3\36\3\36\3\36\5\36\u0134\n"+
-		"\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3"+
-		"\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\3\36\7\36\u0150"+
-		"\n\36\f\36\16\36\u0153\13\36\3\37\3\37\3\37\3\37\3\37\3\37\5\37\u015b"+
-		"\n\37\3 \3 \3 \7 \u0160\n \f \16 \u0163\13 \3!\3!\3!\2\3:\"\2\4\6\b\n"+
-		"\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@\2\b\3\29;\3\2"+
-		"\678\4\2,-\60\61\4\2//\62\62\5\2\5\13++<?\7\2\f\r\20\20\23\23\26\26\34"+
-		"\34\2\u017a\2E\3\2\2\2\4J\3\2\2\2\6X\3\2\2\2\b\\\3\2\2\2\n^\3\2\2\2\f"+
-		"j\3\2\2\2\16u\3\2\2\2\20}\3\2\2\2\22\u0082\3\2\2\2\24\u008c\3\2\2\2\26"+
-		"\u008e\3\2\2\2\30\u009e\3\2\2\2\32\u00b1\3\2\2\2\34\u00b3\3\2\2\2\36\u00b6"+
-		"\3\2\2\2 \u00bf\3\2\2\2\"\u00c1\3\2\2\2$\u00c3\3\2\2\2&\u00c5\3\2\2\2"+
-		"(\u00d3\3\2\2\2*\u00d5\3\2\2\2,\u00d8\3\2\2\2.\u010a\3\2\2\2\60\u010c"+
-		"\3\2\2\2\62\u011b\3\2\2\2\64\u011d\3\2\2\2\66\u0121\3\2\2\28\u0129\3\2"+
-		"\2\2:\u0133\3\2\2\2<\u015a\3\2\2\2>\u015c\3\2\2\2@\u0164\3\2\2\2BD\5\4"+
-		"\3\2CB\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2\2\2FH\3\2\2\2GE\3\2\2\2HI\7\2"+
-		"\2\3I\3\3\2\2\2JK\5\b\5\2KL\7C\2\2LQ\5\30\r\2MN\7&\2\2NP\7\'\2\2OM\3\2"+
-		"\2\2PS\3\2\2\2QO\3\2\2\2QR\3\2\2\2RT\3\2\2\2SQ\3\2\2\2TU\5\6\4\2U\5\3"+
-		"\2\2\2VY\5&\24\2WY\7(\2\2XV\3\2\2\2XW\3\2\2\2Y\7\3\2\2\2Z]\5> \2[]\7\30"+
-		"\2\2\\Z\3\2\2\2\\[\3\2\2\2]\t\3\2\2\2^_\7\22\2\2_`\5> \2`e\5\f\7\2ab\7"+
-		")\2\2bd\5\f\7\2ca\3\2\2\2dg\3\2\2\2ec\3\2\2\2ef\3\2\2\2fh\3\2\2\2ge\3"+
-		"\2\2\2hi\7(\2\2i\13\3\2\2\2jo\7C\2\2kl\7&\2\2ln\7\'\2\2mk\3\2\2\2nq\3"+
-		"\2\2\2om\3\2\2\2op\3\2\2\2pr\3\2\2\2qo\3\2\2\2rs\7+\2\2st\5\24\13\2t\r"+
-		"\3\2\2\2uz\5\20\t\2vw\7)\2\2wy\5\20\t\2xv\3\2\2\2y|\3\2\2\2zx\3\2\2\2"+
-		"z{\3\2\2\2{\17\3\2\2\2|z\3\2\2\2}\u0080\5\22\n\2~\177\7+\2\2\177\u0081"+
-		"\5\24\13\2\u0080~\3\2\2\2\u0080\u0081\3\2\2\2\u0081\21\3\2\2\2\u0082\u0087"+
-		"\7C\2\2\u0083\u0084\7&\2\2\u0084\u0086\7\'\2\2\u0085\u0083\3\2\2\2\u0086"+
-		"\u0089\3\2\2\2\u0087\u0085\3\2\2\2\u0087\u0088\3\2\2\2\u0088\23\3\2\2"+
-		"\2\u0089\u0087\3\2\2\2\u008a\u008d\5\26\f\2\u008b\u008d\5:\36\2\u008c"+
-		"\u008a\3\2\2\2\u008c\u008b\3\2\2\2\u008d\25\3\2\2\2\u008e\u009a\7$\2\2"+
-		"\u008f\u0094\5\24\13\2\u0090\u0091\7)\2\2\u0091\u0093\5\24\13\2\u0092"+
-		"\u0090\3\2\2\2\u0093\u0096\3\2\2\2\u0094\u0092\3\2\2\2\u0094\u0095\3\2"+
-		"\2\2\u0095\u0098\3\2\2\2\u0096\u0094\3\2\2\2\u0097\u0099\7)\2\2\u0098"+
-		"\u0097\3\2\2\2\u0098\u0099\3\2\2\2\u0099\u009b\3\2\2\2\u009a\u008f\3\2"+
-		"\2\2\u009a\u009b\3\2\2\2\u009b\u009c\3\2\2\2\u009c\u009d\7%\2\2\u009d"+
-		"\27\3\2\2\2\u009e\u00a0\7\"\2\2\u009f\u00a1\5\32\16\2\u00a0\u009f\3\2"+
-		"\2\2\u00a0\u00a1\3\2\2\2\u00a1\u00a2\3\2\2\2\u00a2\u00a3\7#\2\2\u00a3"+
-		"\31\3\2\2\2\u00a4\u00a9\5\34\17\2\u00a5\u00a6\7)\2\2\u00a6\u00a8\5\34"+
-		"\17\2\u00a7\u00a5\3\2\2\2\u00a8\u00ab\3\2\2\2\u00a9\u00a7\3\2\2\2\u00a9"+
-		"\u00aa\3\2\2\2\u00aa\u00ae\3\2\2\2\u00ab\u00a9\3\2\2\2\u00ac\u00ad\7)"+
-		"\2\2\u00ad\u00af\5\36\20\2\u00ae\u00ac\3\2\2\2\u00ae\u00af\3\2\2\2\u00af"+
-		"\u00b2\3\2\2\2\u00b0\u00b2\5\36\20\2\u00b1\u00a4\3\2\2\2\u00b1\u00b0\3"+
-		"\2\2\2\u00b2\33\3\2\2\2\u00b3\u00b4\5> \2\u00b4\u00b5\5\22\n\2\u00b5\35"+
-		"\3\2\2\2\u00b6\u00b7\5> \2\u00b7\u00b8\7\3\2\2\u00b8\u00b9\5\22\n\2\u00b9"+
-		"\37\3\2\2\2\u00ba\u00c0\5\"\22\2\u00bb\u00c0\5$\23\2\u00bc\u00c0\7 \2"+
-		"\2\u00bd\u00c0\7\37\2\2\u00be\u00c0\7!\2\2\u00bf\u00ba\3\2\2\2\u00bf\u00bb"+
-		"\3\2\2\2\u00bf\u00bc\3\2\2\2\u00bf\u00bd\3\2\2\2\u00bf\u00be\3\2\2\2\u00c0"+
-		"!\3\2\2\2\u00c1\u00c2\7\35\2\2\u00c2#\3\2\2\2\u00c3\u00c4\7\36\2\2\u00c4"+
-		"%\3\2\2\2\u00c5\u00c9\7$\2\2\u00c6\u00c8\5(\25\2\u00c7\u00c6\3\2\2\2\u00c8"+
-		"\u00cb\3\2\2\2\u00c9\u00c7\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca\u00cc\3\2"+
-		"\2\2\u00cb\u00c9\3\2\2\2\u00cc\u00cd\7%\2\2\u00cd\'\3\2\2\2\u00ce\u00cf"+
-		"\5*\26\2\u00cf\u00d0\7(\2\2\u00d0\u00d4\3\2\2\2\u00d1\u00d4\5\n\6\2\u00d2"+
-		"\u00d4\5.\30\2\u00d3\u00ce\3\2\2\2\u00d3\u00d1\3\2\2\2\u00d3\u00d2\3\2"+
-		"\2\2\u00d4)\3\2\2\2\u00d5\u00d6\5> \2\u00d6\u00d7\5\16\b\2\u00d7+\3\2"+
-		"\2\2\u00d8\u00d9\7\21\2\2\u00d9\u00da\5.\30\2\u00da-\3\2\2\2\u00db\u010b"+
-		"\5&\24\2\u00dc\u00dd\7\25\2\2\u00dd\u00de\5\64\33\2\u00de\u00e0\5.\30"+
-		"\2\u00df\u00e1\5,\27\2\u00e0\u00df\3\2\2\2\u00e0\u00e1\3\2\2\2\u00e1\u010b"+
-		"\3\2\2\2\u00e2\u00e3\7\24\2\2\u00e3\u00e4\7\"\2\2\u00e4\u00e5\5\60\31"+
-		"\2\u00e5\u00e6\7#\2\2\u00e6\u00e7\5.\30\2\u00e7\u010b\3\2\2\2\u00e8\u00e9"+
-		"\7\31\2\2\u00e9\u00ea\5\64\33\2\u00ea\u00eb\5.\30\2\u00eb\u010b\3\2\2"+
-		"\2\u00ec\u00ed\7\17\2\2\u00ed\u00ee\5.\30\2\u00ee\u00ef\7\31\2\2\u00ef"+
-		"\u00f0\5\64\33\2\u00f0\u00f1\7(\2\2\u00f1\u010b\3\2\2\2\u00f2\u00f4\7"+
-		"\27\2\2\u00f3\u00f5\5:\36\2\u00f4\u00f3\3\2\2\2\u00f4\u00f5\3\2\2\2\u00f5"+
-		"\u00f6\3\2\2\2\u00f6\u010b\7(\2\2\u00f7\u00f8\5:\36\2\u00f8\u00f9\7(\2"+
-		"\2\u00f9\u010b\3\2\2\2\u00fa\u00fb\7\32\2\2\u00fb\u00fc\7\"\2\2\u00fc"+
-		"\u0101\5<\37\2\u00fd\u00fe\7\67\2\2\u00fe\u0100\5<\37\2\u00ff\u00fd\3"+
-		"\2\2\2\u0100\u0103\3\2\2\2\u0101\u00ff\3\2\2\2\u0101\u0102\3\2\2\2\u0102"+
-		"\u0104\3\2\2\2\u0103\u0101\3\2\2\2\u0104\u0105\7\4\2\2\u0105\u010b\3\2"+
-		"\2\2\u0106\u0107\7\33\2\2\u0107\u0108\7\"\2\2\u0108\u0109\7C\2\2\u0109"+
-		"\u010b\7\4\2\2\u010a\u00db\3\2\2\2\u010a\u00dc\3\2\2\2\u010a\u00e2\3\2"+
-		"\2\2\u010a\u00e8\3\2\2\2\u010a\u00ec\3\2\2\2\u010a\u00f2\3\2\2\2\u010a"+
-		"\u00f7\3\2\2\2\u010a\u00fa\3\2\2\2\u010a\u0106\3\2\2\2\u010b/\3\2\2\2"+
-		"\u010c\u010d\5\62\32\2\u010d\u010f\7(\2\2\u010e\u0110\5:\36\2\u010f\u010e"+
-		"\3\2\2\2\u010f\u0110\3\2\2\2\u0110\u0111\3\2\2\2\u0111\u0113\7(\2\2\u0112"+
-		"\u0114\5\66\34\2\u0113\u0112\3\2\2\2\u0113\u0114\3\2\2\2\u0114\61\3\2"+
-		"\2\2\u0115\u0116\5> \2\u0116\u0117\5\22\n\2\u0117\u0118\7+\2\2\u0118\u0119"+
-		"\5\24\13\2\u0119\u011c\3\2\2\2\u011a\u011c\5\66\34\2\u011b\u0115\3\2\2"+
-		"\2\u011b\u011a\3\2\2\2\u011c\63\3\2\2\2\u011d\u011e\7\"\2\2\u011e\u011f"+
-		"\5:\36\2\u011f\u0120\7#\2\2\u0120\65\3\2\2\2\u0121\u0126\5:\36\2\u0122"+
-		"\u0123\7)\2\2\u0123\u0125\5:\36\2\u0124\u0122\3\2\2\2\u0125\u0128\3\2"+
-		"\2\2\u0126\u0124\3\2\2\2\u0126\u0127\3\2\2\2\u0127\67\3\2\2\2\u0128\u0126"+
-		"\3\2\2\2\u0129\u012a\7C\2\2\u012a\u012c\7\"\2\2\u012b\u012d\5\66\34\2"+
-		"\u012c\u012b\3\2\2\2\u012c\u012d\3\2\2\2\u012d\u012e\3\2\2\2\u012e\u012f"+
-		"\7#\2\2\u012f9\3\2\2\2\u0130\u0131\b\36\1\2\u0131\u0134\5<\37\2\u0132"+
-		"\u0134\58\35\2\u0133\u0130\3\2\2\2\u0133\u0132\3\2\2\2\u0134\u0151\3\2"+
-		"\2\2\u0135\u0136\f\t\2\2\u0136\u0137\t\2\2\2\u0137\u0150\5:\36\n\u0138"+
-		"\u0139\f\b\2\2\u0139\u013a\t\3\2\2\u013a\u0150\5:\36\t\u013b\u013c\f\7"+
-		"\2\2\u013c\u013d\t\4\2\2\u013d\u0150\5:\36\b\u013e\u013f\f\6\2\2\u013f"+
-		"\u0140\t\5\2\2\u0140\u0150\5:\36\7\u0141\u0142\f\5\2\2\u0142\u0143\7\63"+
-		"\2\2\u0143\u0150\5:\36\6\u0144\u0145\f\4\2\2\u0145\u0146\7\64\2\2\u0146"+
-		"\u0150\5:\36\5\u0147\u0148\f\3\2\2\u0148\u0149\t\6\2\2\u0149\u0150\5:"+
-		"\36\3\u014a\u014b\f\13\2\2\u014b\u014c\7&\2\2\u014c\u014d\5:\36\2\u014d"+
-		"\u014e\7\'\2\2\u014e\u0150\3\2\2\2\u014f\u0135\3\2\2\2\u014f\u0138\3\2"+
-		"\2\2\u014f\u013b\3\2\2\2\u014f\u013e\3\2\2\2\u014f\u0141\3\2\2\2\u014f"+
-		"\u0144\3\2\2\2\u014f\u0147\3\2\2\2\u014f\u014a\3\2\2\2\u0150\u0153\3\2"+
-		"\2\2\u0151\u014f\3\2\2\2\u0151\u0152\3\2\2\2\u0152;\3\2\2\2\u0153\u0151"+
-		"\3\2\2\2\u0154\u0155\7\"\2\2\u0155\u0156\5:\36\2\u0156\u0157\7#\2\2\u0157"+
-		"\u015b\3\2\2\2\u0158\u015b\5 \21\2\u0159\u015b\7C\2\2\u015a\u0154\3\2"+
-		"\2\2\u015a\u0158\3\2\2\2\u015a\u0159\3\2\2\2\u015b=\3\2\2\2\u015c\u0161"+
-		"\5@!\2\u015d\u015e\7&\2\2\u015e\u0160\7\'\2\2\u015f\u015d\3\2\2\2\u0160"+
-		"\u0163\3\2\2\2\u0161\u015f\3\2\2\2\u0161\u0162\3\2\2\2\u0162?\3\2\2\2"+
-		"\u0163\u0161\3\2\2\2\u0164\u0165\t\7\2\2\u0165A\3\2\2\2$EQX\\eoz\u0080"+
-		"\u0087\u008c\u0094\u0098\u009a\u00a0\u00a9\u00ae\u00b1\u00bf\u00c9\u00d3"+
-		"\u00e0\u00f4\u0101\u010a\u010f\u0113\u011b\u0126\u012c\u0133\u014f\u0151"+
-		"\u015a\u0161";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\63\u0111\4\2\t\2"+
+		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\4\23\t\23\4\24\t\24\3\2\3\2\3\2\3\3\3\3\7\3.\n\3\f\3\16\3\61\13\3\3\3"+
+		"\3\3\3\3\3\3\5\3\67\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3"+
+		"\4\3\4\5\4F\n\4\3\5\3\5\3\5\5\5K\n\5\3\5\3\5\3\5\3\6\3\6\3\6\5\6S\n\6"+
+		"\3\6\3\6\3\6\3\7\3\7\7\7Z\n\7\f\7\16\7]\13\7\3\7\5\7`\n\7\3\b\3\b\3\b"+
+		"\3\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\13\3\13"+
+		"\3\13\3\13\5\13x\n\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f"+
+		"\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16"+
+		"\3\16\3\16\3\17\3\17\3\17\5\17\u009a\n\17\3\17\3\17\3\17\3\17\5\17\u00a0"+
+		"\n\17\3\17\3\17\3\17\3\17\3\17\3\17\5\17\u00a8\n\17\3\20\3\20\3\20\7\20"+
+		"\u00ad\n\20\f\20\16\20\u00b0\13\20\3\21\3\21\3\21\7\21\u00b5\n\21\f\21"+
+		"\16\21\u00b8\13\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\5"+
+		"\22\u00c4\n\22\3\22\3\22\5\22\u00c8\n\22\3\22\3\22\5\22\u00cc\n\22\3\22"+
+		"\3\22\5\22\u00d0\n\22\3\22\3\22\3\22\3\22\5\22\u00d6\n\22\3\22\3\22\3"+
+		"\22\5\22\u00db\n\22\3\22\5\22\u00de\n\22\3\22\3\22\3\22\3\22\3\22\3\22"+
+		"\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22"+
+		"\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\7\22\u00fe\n\22\f\22"+
+		"\16\22\u0101\13\22\3\23\3\23\3\23\3\23\6\23\u0107\n\23\r\23\16\23\u0108"+
+		"\3\24\3\24\5\24\u010d\n\24\3\24\3\24\3\24\2\3\"\25\2\4\6\b\n\f\16\20\22"+
+		"\24\26\30\32\34\36 \"$&\2\6\4\2\37 ##\3\2!\"\4\2\31\32\35\36\3\2\27\30"+
+		"\2\u012c\2(\3\2\2\2\4/\3\2\2\2\6E\3\2\2\2\bG\3\2\2\2\nO\3\2\2\2\fW\3\2"+
+		"\2\2\16a\3\2\2\2\20g\3\2\2\2\22n\3\2\2\2\24s\3\2\2\2\26~\3\2\2\2\30\u0088"+
+		"\3\2\2\2\32\u008e\3\2\2\2\34\u00a7\3\2\2\2\36\u00a9\3\2\2\2 \u00b1\3\2"+
+		"\2\2\"\u00dd\3\2\2\2$\u0106\3\2\2\2&\u010a\3\2\2\2()\5\4\3\2)*\7\2\2\3"+
+		"*\3\3\2\2\2+.\5\6\4\2,.\5\24\13\2-+\3\2\2\2-,\3\2\2\2.\61\3\2\2\2/-\3"+
+		"\2\2\2/\60\3\2\2\2\60\66\3\2\2\2\61/\3\2\2\2\62\63\7\f\2\2\63\64\5\"\22"+
+		"\2\64\65\7*\2\2\65\67\3\2\2\2\66\62\3\2\2\2\66\67\3\2\2\2\67\5\3\2\2\2"+
+		"89\5\b\5\29:\7*\2\2:F\3\2\2\2;<\5\n\6\2<=\7*\2\2=F\3\2\2\2>?\5\34\17\2"+
+		"?@\7*\2\2@F\3\2\2\2AF\5\f\7\2BF\5\26\f\2CF\5\30\r\2DF\5\32\16\2E8\3\2"+
+		"\2\2E;\3\2\2\2E>\3\2\2\2EA\3\2\2\2EB\3\2\2\2EC\3\2\2\2ED\3\2\2\2F\7\3"+
+		"\2\2\2GH\7\24\2\2HJ\7\60\2\2IK\5$\23\2JI\3\2\2\2JK\3\2\2\2KL\3\2\2\2L"+
+		"M\7+\2\2MN\5\"\22\2N\t\3\2\2\2OP\7\t\2\2PR\7\60\2\2QS\5$\23\2RQ\3\2\2"+
+		"\2RS\3\2\2\2ST\3\2\2\2TU\7+\2\2UV\5\"\22\2V\13\3\2\2\2W[\5\16\b\2XZ\5"+
+		"\20\t\2YX\3\2\2\2Z]\3\2\2\2[Y\3\2\2\2[\\\3\2\2\2\\_\3\2\2\2][\3\2\2\2"+
+		"^`\5\22\n\2_^\3\2\2\2_`\3\2\2\2`\r\3\2\2\2ab\7\n\2\2bc\5\"\22\2cd\7&\2"+
+		"\2de\5\4\3\2ef\7\'\2\2f\17\3\2\2\2gh\7\13\2\2hi\7\n\2\2ij\5\"\22\2jk\7"+
+		"&\2\2kl\5\4\3\2lm\7\'\2\2m\21\3\2\2\2no\7\13\2\2op\7&\2\2pq\5\4\3\2qr"+
+		"\7\'\2\2r\23\3\2\2\2st\7\b\2\2tu\7\60\2\2uw\7%\2\2vx\5\36\20\2wv\3\2\2"+
+		"\2wx\3\2\2\2xy\3\2\2\2yz\7$\2\2z{\7&\2\2{|\5\4\3\2|}\7\'\2\2}\25\3\2\2"+
+		"\2~\177\7\r\2\2\177\u0080\7\60\2\2\u0080\u0081\7+\2\2\u0081\u0082\5\""+
+		"\22\2\u0082\u0083\7\17\2\2\u0083\u0084\5\"\22\2\u0084\u0085\7&\2\2\u0085"+
+		"\u0086\5\4\3\2\u0086\u0087\7\'\2\2\u0087\27\3\2\2\2\u0088\u0089\7\16\2"+
+		"\2\u0089\u008a\5\"\22\2\u008a\u008b\7&\2\2\u008b\u008c\5\4\3\2\u008c\u008d"+
+		"\7\'\2\2\u008d\31\3\2\2\2\u008e\u008f\7\20\2\2\u008f\u0090\7&\2\2\u0090"+
+		"\u0091\5\4\3\2\u0091\u0092\7\'\2\2\u0092\u0093\7\16\2\2\u0093\u0094\5"+
+		"\"\22\2\u0094\u0095\7*\2\2\u0095\33\3\2\2\2\u0096\u0097\7\60\2\2\u0097"+
+		"\u0099\7%\2\2\u0098\u009a\5 \21\2\u0099\u0098\3\2\2\2\u0099\u009a\3\2"+
+		"\2\2\u009a\u009b\3\2\2\2\u009b\u00a8\7$\2\2\u009c\u009d\7\5\2\2\u009d"+
+		"\u009f\7%\2\2\u009e\u00a0\5\"\22\2\u009f\u009e\3\2\2\2\u009f\u00a0\3\2"+
+		"\2\2\u00a0\u00a1\3\2\2\2\u00a1\u00a8\7$\2\2\u00a2\u00a3\7\6\2\2\u00a3"+
+		"\u00a4\7%\2\2\u00a4\u00a5\5\"\22\2\u00a5\u00a6\7$\2\2\u00a6\u00a8\3\2"+
+		"\2\2\u00a7\u0096\3\2\2\2\u00a7\u009c\3\2\2\2\u00a7\u00a2\3\2\2\2\u00a8"+
+		"\35\3\2\2\2\u00a9\u00ae\7\60\2\2\u00aa\u00ab\7,\2\2\u00ab\u00ad\7\60\2"+
+		"\2\u00ac\u00aa\3\2\2\2\u00ad\u00b0\3\2\2\2\u00ae\u00ac\3\2\2\2\u00ae\u00af"+
+		"\3\2\2\2\u00af\37\3\2\2\2\u00b0\u00ae\3\2\2\2\u00b1\u00b6\5\"\22\2\u00b2"+
+		"\u00b3\7,\2\2\u00b3\u00b5\5\"\22\2\u00b4\u00b2\3\2\2\2\u00b5\u00b8\3\2"+
+		"\2\2\u00b6\u00b4\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7!\3\2\2\2\u00b8\u00b6"+
+		"\3\2\2\2\u00b9\u00ba\b\22\1\2\u00ba\u00bb\7\"\2\2\u00bb\u00de\5\"\22\26"+
+		"\u00bc\u00bd\7\34\2\2\u00bd\u00de\5\"\22\25\u00be\u00de\7/\2\2\u00bf\u00de"+
+		"\7.\2\2\u00c0\u00de\7\23\2\2\u00c1\u00c3\5\34\17\2\u00c2\u00c4\5$\23\2"+
+		"\u00c3\u00c2\3\2\2\2\u00c3\u00c4\3\2\2\2\u00c4\u00de\3\2\2\2\u00c5\u00c7"+
+		"\5&\24\2\u00c6\u00c8\5$\23\2\u00c7\u00c6\3\2\2\2\u00c7\u00c8\3\2\2\2\u00c8"+
+		"\u00de\3\2\2\2\u00c9\u00cb\7\60\2\2\u00ca\u00cc\5$\23\2\u00cb\u00ca\3"+
+		"\2\2\2\u00cb\u00cc\3\2\2\2\u00cc\u00de\3\2\2\2\u00cd\u00cf\7\61\2\2\u00ce"+
+		"\u00d0\5$\23\2\u00cf\u00ce\3\2\2\2\u00cf\u00d0\3\2\2\2\u00d0\u00de\3\2"+
+		"\2\2\u00d1\u00d2\7%\2\2\u00d2\u00d3\5\"\22\2\u00d3\u00d5\7$\2\2\u00d4"+
+		"\u00d6\5$\23\2\u00d5\u00d4\3\2\2\2\u00d5\u00d6\3\2\2\2\u00d6\u00de\3\2"+
+		"\2\2\u00d7\u00d8\7\7\2\2\u00d8\u00da\7%\2\2\u00d9\u00db\7\61\2\2\u00da"+
+		"\u00d9\3\2\2\2\u00da\u00db\3\2\2\2\u00db\u00dc\3\2\2\2\u00dc\u00de\7$"+
+		"\2\2\u00dd\u00b9\3\2\2\2\u00dd\u00bc\3\2\2\2\u00dd\u00be\3\2\2\2\u00dd"+
+		"\u00bf\3\2\2\2\u00dd\u00c0\3\2\2\2\u00dd\u00c1\3\2\2\2\u00dd\u00c5\3\2"+
+		"\2\2\u00dd\u00c9\3\2\2\2\u00dd\u00cd\3\2\2\2\u00dd\u00d1\3\2\2\2\u00dd"+
+		"\u00d7\3\2\2\2\u00de\u00ff\3\2\2\2\u00df\u00e0\f\24\2\2\u00e0\u00e1\7"+
+		"\33\2\2\u00e1\u00fe\5\"\22\24\u00e2\u00e3\f\23\2\2\u00e3\u00e4\t\2\2\2"+
+		"\u00e4\u00fe\5\"\22\24\u00e5\u00e6\f\22\2\2\u00e6\u00e7\t\3\2\2\u00e7"+
+		"\u00fe\5\"\22\23\u00e8\u00e9\f\21\2\2\u00e9\u00ea\t\4\2\2\u00ea\u00fe"+
+		"\5\"\22\22\u00eb\u00ec\f\20\2\2\u00ec\u00ed\t\5\2\2\u00ed\u00fe\5\"\22"+
+		"\21\u00ee\u00ef\f\17\2\2\u00ef\u00f0\7\25\2\2\u00f0\u00fe\5\"\22\20\u00f1"+
+		"\u00f2\f\16\2\2\u00f2\u00f3\7\26\2\2\u00f3\u00fe\5\"\22\17\u00f4\u00f5"+
+		"\f\r\2\2\u00f5\u00f6\7-\2\2\u00f6\u00f7\5\"\22\2\u00f7\u00f8\7\3\2\2\u00f8"+
+		"\u00f9\5\"\22\16\u00f9\u00fe\3\2\2\2\u00fa\u00fb\f\f\2\2\u00fb\u00fc\7"+
+		"\22\2\2\u00fc\u00fe\5\"\22\r\u00fd\u00df\3\2\2\2\u00fd\u00e2\3\2\2\2\u00fd"+
+		"\u00e5\3\2\2\2\u00fd\u00e8\3\2\2\2\u00fd\u00eb\3\2\2\2\u00fd\u00ee\3\2"+
+		"\2\2\u00fd\u00f1\3\2\2\2\u00fd\u00f4\3\2\2\2\u00fd\u00fa\3\2\2\2\u00fe"+
+		"\u0101\3\2\2\2\u00ff\u00fd\3\2\2\2\u00ff\u0100\3\2\2\2\u0100#\3\2\2\2"+
+		"\u0101\u00ff\3\2\2\2\u0102\u0103\7(\2\2\u0103\u0104\5\"\22\2\u0104\u0105"+
+		"\7)\2\2\u0105\u0107\3\2\2\2\u0106\u0102\3\2\2\2\u0107\u0108\3\2\2\2\u0108"+
+		"\u0106\3\2\2\2\u0108\u0109\3\2\2\2\u0109%\3\2\2\2\u010a\u010c\7(\2\2\u010b"+
+		"\u010d\5 \21\2\u010c\u010b\3\2\2\2\u010c\u010d\3\2\2\2\u010d\u010e\3\2"+
+		"\2\2\u010e\u010f\7)\2\2\u010f\'\3\2\2\2\33-/\66EJR[_w\u0099\u009f\u00a7"+
+		"\u00ae\u00b6\u00c3\u00c7\u00cb\u00cf\u00d5\u00da\u00dd\u00fd\u00ff\u0108"+
+		"\u010c";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -1,4 +1,5 @@
-package antlr4;// Generated from C:/Users/rheij/Documents/GitHub/CMPILERMP/Java Implementation/grammar\Kaon.g4 by ANTLR 4.7.2
+package antlr4;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,185 +8,15 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface KaonListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#compilationUnit}.
+	 * Enter a parse tree produced by {@link KaonParser#source}.
 	 * @param ctx the parse tree
 	 */
-	void enterCompilationUnit(KaonParser.CompilationUnitContext ctx);
+	void enterSource(KaonParser.SourceContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#compilationUnit}.
+	 * Exit a parse tree produced by {@link KaonParser#source}.
 	 * @param ctx the parse tree
 	 */
-	void exitCompilationUnit(KaonParser.CompilationUnitContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#methodDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodDeclaration(KaonParser.MethodDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#methodDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodDeclaration(KaonParser.MethodDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#methodBody}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodBody(KaonParser.MethodBodyContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#methodBody}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodBody(KaonParser.MethodBodyContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#typeTypeOrVoid}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeTypeOrVoid(KaonParser.TypeTypeOrVoidContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#typeTypeOrVoid}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeTypeOrVoid(KaonParser.TypeTypeOrVoidContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#constDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterConstDeclaration(KaonParser.ConstDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#constDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitConstDeclaration(KaonParser.ConstDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#constantDeclarator}.
-	 * @param ctx the parse tree
-	 */
-	void enterConstantDeclarator(KaonParser.ConstantDeclaratorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#constantDeclarator}.
-	 * @param ctx the parse tree
-	 */
-	void exitConstantDeclarator(KaonParser.ConstantDeclaratorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#variableDeclarators}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariableDeclarators(KaonParser.VariableDeclaratorsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#variableDeclarators}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariableDeclarators(KaonParser.VariableDeclaratorsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#variableDeclarator}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariableDeclarator(KaonParser.VariableDeclaratorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#variableDeclarator}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariableDeclarator(KaonParser.VariableDeclaratorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#variableDeclaratorId}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariableDeclaratorId(KaonParser.VariableDeclaratorIdContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#variableDeclaratorId}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariableDeclaratorId(KaonParser.VariableDeclaratorIdContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#variableInitializer}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariableInitializer(KaonParser.VariableInitializerContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#variableInitializer}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariableInitializer(KaonParser.VariableInitializerContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#arrayInitializer}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayInitializer(KaonParser.ArrayInitializerContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#arrayInitializer}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayInitializer(KaonParser.ArrayInitializerContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#formalParameters}.
-	 * @param ctx the parse tree
-	 */
-	void enterFormalParameters(KaonParser.FormalParametersContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#formalParameters}.
-	 * @param ctx the parse tree
-	 */
-	void exitFormalParameters(KaonParser.FormalParametersContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#formalParameterList}.
-	 * @param ctx the parse tree
-	 */
-	void enterFormalParameterList(KaonParser.FormalParameterListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#formalParameterList}.
-	 * @param ctx the parse tree
-	 */
-	void exitFormalParameterList(KaonParser.FormalParameterListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#formalParameter}.
-	 * @param ctx the parse tree
-	 */
-	void enterFormalParameter(KaonParser.FormalParameterContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#formalParameter}.
-	 * @param ctx the parse tree
-	 */
-	void exitFormalParameter(KaonParser.FormalParameterContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#lastFormalParameter}.
-	 * @param ctx the parse tree
-	 */
-	void enterLastFormalParameter(KaonParser.LastFormalParameterContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#lastFormalParameter}.
-	 * @param ctx the parse tree
-	 */
-	void exitLastFormalParameter(KaonParser.LastFormalParameterContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void enterLiteral(KaonParser.LiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#literal}.
-	 * @param ctx the parse tree
-	 */
-	void exitLiteral(KaonParser.LiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#integerLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterIntegerLiteral(KaonParser.IntegerLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#integerLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitIntegerLiteral(KaonParser.IntegerLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#floatLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterFloatLiteral(KaonParser.FloatLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#floatLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitFloatLiteral(KaonParser.FloatLiteralContext ctx);
+	void exitSource(KaonParser.SourceContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link KaonParser#block}.
 	 * @param ctx the parse tree
@@ -197,36 +28,6 @@ public interface KaonListener extends ParseTreeListener {
 	 */
 	void exitBlock(KaonParser.BlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#blockStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterBlockStatement(KaonParser.BlockStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#blockStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitBlockStatement(KaonParser.BlockStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#localVariableDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterLocalVariableDeclaration(KaonParser.LocalVariableDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#localVariableDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitLocalVariableDeclaration(KaonParser.LocalVariableDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link KaonParser#elseStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterElseStatement(KaonParser.ElseStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KaonParser#elseStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitElseStatement(KaonParser.ElseStatementContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link KaonParser#statement}.
 	 * @param ctx the parse tree
 	 */
@@ -237,93 +38,419 @@ public interface KaonListener extends ParseTreeListener {
 	 */
 	void exitStatement(KaonParser.StatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#forControl}.
+	 * Enter a parse tree produced by {@link KaonParser#assignment}.
 	 * @param ctx the parse tree
 	 */
-	void enterForControl(KaonParser.ForControlContext ctx);
+	void enterAssignment(KaonParser.AssignmentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#forControl}.
+	 * Exit a parse tree produced by {@link KaonParser#assignment}.
 	 * @param ctx the parse tree
 	 */
-	void exitForControl(KaonParser.ForControlContext ctx);
+	void exitAssignment(KaonParser.AssignmentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#forInit}.
+	 * Enter a parse tree produced by {@link KaonParser#constantAssignment}.
 	 * @param ctx the parse tree
 	 */
-	void enterForInit(KaonParser.ForInitContext ctx);
+	void enterConstantAssignment(KaonParser.ConstantAssignmentContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#forInit}.
+	 * Exit a parse tree produced by {@link KaonParser#constantAssignment}.
 	 * @param ctx the parse tree
 	 */
-	void exitForInit(KaonParser.ForInitContext ctx);
+	void exitConstantAssignment(KaonParser.ConstantAssignmentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#parExpression}.
+	 * Enter a parse tree produced by {@link KaonParser#ifStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterParExpression(KaonParser.ParExpressionContext ctx);
+	void enterIfStatement(KaonParser.IfStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#parExpression}.
+	 * Exit a parse tree produced by {@link KaonParser#ifStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitParExpression(KaonParser.ParExpressionContext ctx);
+	void exitIfStatement(KaonParser.IfStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#expressionList}.
+	 * Enter a parse tree produced by {@link KaonParser#ifStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressionList(KaonParser.ExpressionListContext ctx);
+	void enterIfStat(KaonParser.IfStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#expressionList}.
+	 * Exit a parse tree produced by {@link KaonParser#ifStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressionList(KaonParser.ExpressionListContext ctx);
+	void exitIfStat(KaonParser.IfStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#methodCall}.
+	 * Enter a parse tree produced by {@link KaonParser#elseIfStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterMethodCall(KaonParser.MethodCallContext ctx);
+	void enterElseIfStat(KaonParser.ElseIfStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#methodCall}.
+	 * Exit a parse tree produced by {@link KaonParser#elseIfStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitMethodCall(KaonParser.MethodCallContext ctx);
+	void exitElseIfStat(KaonParser.ElseIfStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#expression}.
+	 * Enter a parse tree produced by {@link KaonParser#elseStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpression(KaonParser.ExpressionContext ctx);
+	void enterElseStat(KaonParser.ElseStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#expression}.
+	 * Exit a parse tree produced by {@link KaonParser#elseStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpression(KaonParser.ExpressionContext ctx);
+	void exitElseStat(KaonParser.ElseStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#primary}.
+	 * Enter a parse tree produced by {@link KaonParser#functionDecl}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimary(KaonParser.PrimaryContext ctx);
+	void enterFunctionDecl(KaonParser.FunctionDeclContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#primary}.
+	 * Exit a parse tree produced by {@link KaonParser#functionDecl}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimary(KaonParser.PrimaryContext ctx);
+	void exitFunctionDecl(KaonParser.FunctionDeclContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#typeType}.
+	 * Enter a parse tree produced by {@link KaonParser#forStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeType(KaonParser.TypeTypeContext ctx);
+	void enterForStatement(KaonParser.ForStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#typeType}.
+	 * Exit a parse tree produced by {@link KaonParser#forStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeType(KaonParser.TypeTypeContext ctx);
+	void exitForStatement(KaonParser.ForStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link KaonParser#primitiveType}.
+	 * Enter a parse tree produced by {@link KaonParser#whileStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimitiveType(KaonParser.PrimitiveTypeContext ctx);
+	void enterWhileStatement(KaonParser.WhileStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link KaonParser#primitiveType}.
+	 * Exit a parse tree produced by {@link KaonParser#whileStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimitiveType(KaonParser.PrimitiveTypeContext ctx);
+	void exitWhileStatement(KaonParser.WhileStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KaonParser#doWhileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterDoWhileStatement(KaonParser.DoWhileStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#doWhileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitDoWhileStatement(KaonParser.DoWhileStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code identifierFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentifierFunctionCall(KaonParser.IdentifierFunctionCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code identifierFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentifierFunctionCall(KaonParser.IdentifierFunctionCallContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code printlnFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrintlnFunctionCall(KaonParser.PrintlnFunctionCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code printlnFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrintlnFunctionCall(KaonParser.PrintlnFunctionCallContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code printFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrintFunctionCall(KaonParser.PrintFunctionCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code printFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrintFunctionCall(KaonParser.PrintFunctionCallContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KaonParser#idList}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdList(KaonParser.IdListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#idList}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdList(KaonParser.IdListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KaonParser#exprList}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprList(KaonParser.ExprListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#exprList}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprList(KaonParser.ExprListContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code boolExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterBoolExpression(KaonParser.BoolExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code boolExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitBoolExpression(KaonParser.BoolExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code numberExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumberExpression(KaonParser.NumberExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code numberExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumberExpression(KaonParser.NumberExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code identifierExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentifierExpression(KaonParser.IdentifierExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code identifierExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentifierExpression(KaonParser.IdentifierExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code notExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNotExpression(KaonParser.NotExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code notExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNotExpression(KaonParser.NotExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code orExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterOrExpression(KaonParser.OrExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code orExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitOrExpression(KaonParser.OrExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code unaryMinusExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterUnaryMinusExpression(KaonParser.UnaryMinusExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code unaryMinusExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitUnaryMinusExpression(KaonParser.UnaryMinusExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code powerExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPowerExpression(KaonParser.PowerExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code powerExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPowerExpression(KaonParser.PowerExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code eqExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterEqExpression(KaonParser.EqExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code eqExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitEqExpression(KaonParser.EqExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code andExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterAndExpression(KaonParser.AndExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code andExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitAndExpression(KaonParser.AndExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code inExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterInExpression(KaonParser.InExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code inExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitInExpression(KaonParser.InExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code stringExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringExpression(KaonParser.StringExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringExpression(KaonParser.StringExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code expressionExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpressionExpression(KaonParser.ExpressionExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code expressionExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpressionExpression(KaonParser.ExpressionExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ADDExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterADDExpression(KaonParser.ADDExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ADDExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitADDExpression(KaonParser.ADDExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code compExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterCompExpression(KaonParser.CompExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code compExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitCompExpression(KaonParser.CompExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code nullExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterNullExpression(KaonParser.NullExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code nullExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitNullExpression(KaonParser.NullExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code functionCallExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCallExpression(KaonParser.FunctionCallExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code functionCallExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCallExpression(KaonParser.FunctionCallExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code multExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMultExpression(KaonParser.MultExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code multExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMultExpression(KaonParser.MultExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code listExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterListExpression(KaonParser.ListExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code listExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitListExpression(KaonParser.ListExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ternaryExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterTernaryExpression(KaonParser.TernaryExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ternaryExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitTernaryExpression(KaonParser.TernaryExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code inputExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterInputExpression(KaonParser.InputExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code inputExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitInputExpression(KaonParser.InputExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KaonParser#indexes}.
+	 * @param ctx the parse tree
+	 */
+	void enterIndexes(KaonParser.IndexesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#indexes}.
+	 * @param ctx the parse tree
+	 */
+	void exitIndexes(KaonParser.IndexesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KaonParser#list}.
+	 * @param ctx the parse tree
+	 */
+	void enterList(KaonParser.ListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#list}.
+	 * @param ctx the parse tree
+	 */
+	void exitList(KaonParser.ListContext ctx);
 }

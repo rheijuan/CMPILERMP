@@ -1,270 +1,190 @@
 grammar Kaon;
 
-compilationUnit
-    : methodDeclaration* EOF
+source
+    : block EOF
     ;
-
-methodDeclaration
-    : typeTypeOrVoid IDENTIFIER formalParameters ('[' ']')*
-      methodBody
+/*
+mainDeclaration
+    : MAIN LBRACE statement* RBRACE
     ;
-
-methodBody
-    : block
-    | ';'
-    ;
-
-typeTypeOrVoid
-    : typeType
-    | VOID
-    ;
-
-constDeclaration
-    : FINAL typeType constantDeclarator (',' constantDeclarator)* ';'
-    ;
-
-constantDeclarator
-    : IDENTIFIER ('[' ']')* '=' variableInitializer
-    ;
-
-variableDeclarators
-    : variableDeclarator (',' variableDeclarator)*
-    ;
-
-variableDeclarator
-    : variableDeclaratorId ('=' variableInitializer)? 
-    ;
-
-variableDeclaratorId
-    : IDENTIFIER ('[' ']')*
-    ;
-
-variableInitializer
-    : arrayInitializer
-    | expression
-    ;
-
-arrayInitializer
-    : '{' (variableInitializer (',' variableInitializer)* (',')? )? '}'
-    ;
-
-formalParameters
-    : '(' formalParameterList? ')'
-    ;
-
-formalParameterList
-    : formalParameter (',' formalParameter)* (',' lastFormalParameter)?
-    | lastFormalParameter
-    ;
-
-formalParameter
-    : typeType variableDeclaratorId
-    ;
-
-lastFormalParameter
-    : typeType '...' variableDeclaratorId
-    ;
-
-literal
-    : integerLiteral
-    | floatLiteral
-    | STRING_LITERAL
-    | BOOL_LITERAL
-    | NULL_LITERAL
-    ;
-
-integerLiteral
-    : DECIMAL_LITERAL
-    ;
-
-floatLiteral
-    : FLOAT_LITERAL
-    ;
-
+*/
 block
-    : '{' blockStatement* '}'
-    ;
-
-blockStatement
-    : localVariableDeclaration ';'
-    | constDeclaration
-    | statement
-    ;
-
-localVariableDeclaration
-    : typeType variableDeclarators
-    ;
-
-elseStatement
-    : ELSE statement
+    : ( statement | functionDecl )* ( RETURN expression SCOLON)?
     ;
 
 statement
-    : blockLabel=block
-    | IF parExpression statement (elseStatement)?
-    | FOR '(' forControl ')' statement
-    | WHILE parExpression statement
-    | DO statement WHILE parExpression ';'
-    | RETURN expression? ';'
-    | statementExpression=expression ';'
-    | PRINT '(' primary ('+'primary)* ');'
-    | SCAN  '(' IDENTIFIER ');'
+    : assignment SCOLON
+    | constantAssignment SCOLON
+    | functionCall SCOLON
+    | ifStatement
+    | forStatement
+    | whileStatement
+    | doWhileStatement
     ;
 
-forControl
-    : forInit ';' expression? ';' forUpdate=expressionList?
+assignment
+    : VAR IDENTIFIER indexes? '=' expression
     ;
 
-forInit
-    : typeType variableDeclaratorId '=' variableInitializer
-    | expressionList
+constantAssignment
+    : CONST IDENTIFIER indexes? '=' expression
     ;
 
-parExpression
-    : '(' expression ')'
+ifStatement
+    : ifStat elseIfStat* elseStat?
     ;
 
-expressionList
-    : expression (',' expression)*
+ifStat
+    : IF expression LBRACE block RBRACE
     ;
 
- methodCall
-    : IDENTIFIER '(' expressionList? ')'
+elseIfStat
+    : ELSE IF expression LBRACE block RBRACE
+    ;
+
+elseStat
+    : ELSE LBRACE block RBRACE
+    ;
+
+functionDecl
+    : FUNC IDENTIFIER '(' idList? ')' LBRACE block RBRACE
+    ;
+
+forStatement
+    : FOR IDENTIFIER '=' expression TO expression LBRACE block RBRACE
+    ;
+
+whileStatement
+    : WHILE expression LBRACE block RBRACE
+    ;
+
+doWhileStatement
+    : DO LBRACE block RBRACE WHILE expression SCOLON
+    ;
+
+functionCall
+    : IDENTIFIER '(' exprList? ')' #identifierFunctionCall
+    | PRINTLN '(' expression? ')'  #printlnFunctionCall
+    | PRINT '(' expression ')'     #printFunctionCall
+    ;
+
+idList
+    : IDENTIFIER ( ',' IDENTIFIER )*
+    ;
+
+exprList
+    : expression ( ',' expression )*
     ;
 
 expression
-    : primary
-    | expression '[' expression ']'
-    | methodCall
-    | expression bop=('*'|'/'|'%') expression
-    | expression bop=('+'|'-') expression
-    | expression bop=('<=' | '>=' | '>' | '<') expression
-    | expression bop=('==' | '!=') expression
-    | expression bop='&&' expression
-    | expression bop='||' expression
-    | <assoc=right> expression bop=('=' | '+=' | '-=' | '*=' | '/=' | '&=' | '|=' | '^=' | '>>=' | '>>>=' | '<<=' | '%=') expression
+    : '-' expression                                       #unaryMinusExpression
+    | '!' expression                                       #notExpression
+    | <assoc=right> expression '^' expression              #powerExpression
+    | expression op=( '*' | '/' | '%' ) expression         #multExpression
+    | expression op=( '+' | '-' ) expression               #ADDExpression
+    | expression op=( '>=' | '<=' | '>' | '<' ) expression #compExpression
+    | expression op=( '==' | '!=' ) expression             #eqExpression
+    | expression '&&' expression                           #andExpression
+    | expression '||' expression                           #orExpression
+    | expression '?' expression ':' expression             #ternaryExpression
+    | expression IN expression                             #inExpression
+    | NUMBER                                               #numberExpression
+    | BOOL                                                 #boolExpression
+    | NULL                                                 #nullExpression
+    | functionCall indexes?                                #functionCallExpression
+    | list indexes?                                        #listExpression
+    | IDENTIFIER indexes?                                  #identifierExpression
+    | STRING indexes?                                      #stringExpression
+    | '(' expression ')' indexes?                          #expressionExpression
+    | INPUT '(' STRING? ')'                                #inputExpression
     ;
 
-primary
-    : '(' expression ')'
-    | literal
-    | IDENTIFIER
+indexes
+    : ( '[' expression ']' )+
     ;
 
-typeType
-    :  primitiveType ('[' ']')*
-    ;
-
-primitiveType
-    : BOOLEAN
-    | CHAR
-    | INT
-    | FLOAT
-    | DOUBLE
-    | STRING
+list
+    : '[' exprList? ']'
     ;
 
 // Keywords
+MAIN     : 'dish';
+PRINTLN  : 'plate';
+PRINT    : 'print';
+INPUT    : 'pudding';
+FUNC     : 'sidedish';
+CONST    : 'water';
+IF       : 'beef';
+ELSE     : 'eel';
+RETURN   : 'rice';
+FOR      : 'pork';
+WHILE    : 'wine';
+TO       : 'to';
+DO       : 'doughnut';
+END      : 'finish';
+IN       : 'in';
+NULL     : 'starve';
+VAR      : 'ingredient';
 
-    BOOLEAN:            'bulalo';
-	CHAR:               'chicharon';
-	CONST:              'tubig';
-	DO:                 'donut';
-	DOUBLE:             'adobo';
-	ELSE:               'eel';
-	FINAL:              'garnish';
-	FLOAT:              'mango';
-	FOR:                'pork';
-	IF:                 'beef';
-	INT:                'pint';
-	RETURN:             'rice';
-	VOID:               'boil';
-	WHILE:              'wine';
-	PRINT:              'plate';
-    SCAN:               'shop';
-    STRING:             'sinulid';
+AND      : '&&';
+OR       : '||';
+EQUALS   : '==';
+NEQUALS  : '!=';
+GTEQUALS : '>=';
+LTEQUALS : '<=';
+POW      : '^';
+BANG     : '!';
+GT       : '>';
+LT       : '<';
+MUL      : '*';
+DIV      : '/';
+ADD      : '+';
+SUB      : '-';
+MOD      : '%';
+RPAREN   : ')';
+LPAREN   : '(';
+LBRACE   : '{';
+RBRACE   : '}';
+LBRACKET : '[';
+RBRACKET : ']';
+SCOLON   : ';';
+ASSIGN   : '=';
+COMMA    : ',';
+QMARK    : '?';
 
-// Literals
-
-DECIMAL_LITERAL
-    : ('0' | [1-9] (Digits? | '_'+ Digits)) [lL]?
-    ;
-
-FLOAT_LITERAL
-    : (Digits '.' Digits? | '.' Digits) ExponentPart? [fFdD]?
-    | Digits (ExponentPart [fFdD]? | [fFdD])
-    ;
-
-BOOL_LITERAL
+BOOL
     : 'butete' // true
     | 'palaka' // false
     ;
 
-STRING_LITERAL: '"' (~["\\\r\n] | EscapeSequence)* '"';
-NULL_LITERAL: 'null';
-
-// Separators
-LPAREN:             '(';
-RPAREN:             ')';
-LBRACE:             '{';
-RBRACE:             '}';
-LBRACK:             '[';
-RBRACK:             ']';
-SEMI:               ';';
-COMMA:              ',';
-DOT:                '.';
-ASSIGN:             '=';
-GT:                 '>';
-LT:                 '<';
-BANG:               '!';
-EQUAL:              '==';
-LE:                 '<=';
-GE:                 '>=';
-NOTEQUAL:           '!=';
-AND:                '&&';
-OR:                 '||';
-INC:                '++';
-DEC:                '--';
-ADD:                '+';
-SUB:                '-';
-MUL:                '*';
-DIV:                '/';
-MOD:                '%';
-ADD_ASSIGN:         '+=';
-SUB_ASSIGN:         '-=';
-MUL_ASSIGN:         '*=';
-DIV_ASSIGN:         '/=';
-// Whitespace and comments
-WS: [ \t\r\n\u000C]+ -> channel(HIDDEN);
-COMMENT: '<!>' .*? '<!>' -> channel(HIDDEN);
-LINE_COMMENT: '#' ~[\r\n]* -> channel(HIDDEN);
-
-// Identifiers
-IDENTIFIER: Letter LetterOrDigit*;
-
-ERROR
-    : [0-9] LetterOrDigit*
-    | '\'' (~['\\\r\n] | EscapeSequence) (~['\\\r\n] | EscapeSequence)+ '\''
-    | '\'' '\''
+NUMBER
+    : Int ( '.' Digit* )?
     ;
 
-// Fragment rules
-fragment ExponentPart
-    : [eE] [+-]? Digits
+IDENTIFIER
+    : [a-zA-Z_] [a-zA-Z_0-9]*
     ;
 
-fragment EscapeSequence
-    : '\\' [btnfr"'\\]
-    | '\\' ([0-3]? [0-7])? [0-7]
+STRING
+    : ["] ( ~["\r\n\\] | '\\' ~[\r\n] )* ["]
+    | ['] ( ~['\r\n\\] | '\\' ~[\r\n] )* [']
     ;
 
-fragment Digits
-    : [0-9] ([0-9_]* [0-9])?
+COMMENT
+    : ( '//' ~[\r\n]* | '/*' .*? '*/' ) -> skip
     ;
 
-fragment LetterOrDigit
-    : Letter
-    | [0-9]
+SPACE
+    : [ \t\r\n\u000C] -> skip
+    ;
+
+fragment Int
+    : [1-9] Digit*
+    | '0'
+    ;
+
+fragment Digit
+    : [0-9]
     ;
 
 fragment Letter

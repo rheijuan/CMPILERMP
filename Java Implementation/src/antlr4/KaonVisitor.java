@@ -1,4 +1,5 @@
-package antlr4;// Generated from C:/Users/rheij/Documents/GitHub/CMPILERMP/Java Implementation/grammar\Kaon.g4 by ANTLR 4.7.2
+package antlr4;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -10,113 +11,11 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#compilationUnit}.
+	 * Visit a parse tree produced by {@link KaonParser#source}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCompilationUnit(KaonParser.CompilationUnitContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#methodDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMethodDeclaration(KaonParser.MethodDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#methodBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMethodBody(KaonParser.MethodBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#typeTypeOrVoid}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeTypeOrVoid(KaonParser.TypeTypeOrVoidContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#constDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstDeclaration(KaonParser.ConstDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#constantDeclarator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstantDeclarator(KaonParser.ConstantDeclaratorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#variableDeclarators}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariableDeclarators(KaonParser.VariableDeclaratorsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#variableDeclarator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariableDeclarator(KaonParser.VariableDeclaratorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#variableDeclaratorId}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariableDeclaratorId(KaonParser.VariableDeclaratorIdContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#variableInitializer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariableInitializer(KaonParser.VariableInitializerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#arrayInitializer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArrayInitializer(KaonParser.ArrayInitializerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#formalParameters}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFormalParameters(KaonParser.FormalParametersContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#formalParameterList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFormalParameterList(KaonParser.FormalParameterListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#formalParameter}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFormalParameter(KaonParser.FormalParameterContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#lastFormalParameter}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLastFormalParameter(KaonParser.LastFormalParameterContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#literal}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLiteral(KaonParser.LiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#integerLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIntegerLiteral(KaonParser.IntegerLiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#floatLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFloatLiteral(KaonParser.FloatLiteralContext ctx);
+	T visitSource(KaonParser.SourceContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link KaonParser#block}.
 	 * @param ctx the parse tree
@@ -124,81 +23,254 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBlock(KaonParser.BlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#blockStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlockStatement(KaonParser.BlockStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#localVariableDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLocalVariableDeclaration(KaonParser.LocalVariableDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link KaonParser#elseStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitElseStatement(KaonParser.ElseStatementContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link KaonParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitStatement(KaonParser.StatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#forControl}.
+	 * Visit a parse tree produced by {@link KaonParser#assignment}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitForControl(KaonParser.ForControlContext ctx);
+	T visitAssignment(KaonParser.AssignmentContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#forInit}.
+	 * Visit a parse tree produced by {@link KaonParser#constantAssignment}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitForInit(KaonParser.ForInitContext ctx);
+	T visitConstantAssignment(KaonParser.ConstantAssignmentContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#parExpression}.
+	 * Visit a parse tree produced by {@link KaonParser#ifStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParExpression(KaonParser.ParExpressionContext ctx);
+	T visitIfStatement(KaonParser.IfStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#expressionList}.
+	 * Visit a parse tree produced by {@link KaonParser#ifStat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpressionList(KaonParser.ExpressionListContext ctx);
+	T visitIfStat(KaonParser.IfStatContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#methodCall}.
+	 * Visit a parse tree produced by {@link KaonParser#elseIfStat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMethodCall(KaonParser.MethodCallContext ctx);
+	T visitElseIfStat(KaonParser.ElseIfStatContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#expression}.
+	 * Visit a parse tree produced by {@link KaonParser#elseStat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpression(KaonParser.ExpressionContext ctx);
+	T visitElseStat(KaonParser.ElseStatContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#primary}.
+	 * Visit a parse tree produced by {@link KaonParser#functionDecl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimary(KaonParser.PrimaryContext ctx);
+	T visitFunctionDecl(KaonParser.FunctionDeclContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#typeType}.
+	 * Visit a parse tree produced by {@link KaonParser#forStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTypeType(KaonParser.TypeTypeContext ctx);
+	T visitForStatement(KaonParser.ForStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link KaonParser#primitiveType}.
+	 * Visit a parse tree produced by {@link KaonParser#whileStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimitiveType(KaonParser.PrimitiveTypeContext ctx);
+	T visitWhileStatement(KaonParser.WhileStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#doWhileStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDoWhileStatement(KaonParser.DoWhileStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code identifierFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdentifierFunctionCall(KaonParser.IdentifierFunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code printlnFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrintlnFunctionCall(KaonParser.PrintlnFunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code printFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrintFunctionCall(KaonParser.PrintFunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#idList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdList(KaonParser.IdListContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#exprList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprList(KaonParser.ExprListContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code boolExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBoolExpression(KaonParser.BoolExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code numberExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumberExpression(KaonParser.NumberExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code identifierExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdentifierExpression(KaonParser.IdentifierExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code notExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotExpression(KaonParser.NotExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code orExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrExpression(KaonParser.OrExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code unaryMinusExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnaryMinusExpression(KaonParser.UnaryMinusExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code powerExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPowerExpression(KaonParser.PowerExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code eqExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqExpression(KaonParser.EqExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code andExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndExpression(KaonParser.AndExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code inExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitInExpression(KaonParser.InExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code stringExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringExpression(KaonParser.StringExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code expressionExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpressionExpression(KaonParser.ExpressionExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ADDExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitADDExpression(KaonParser.ADDExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code compExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCompExpression(KaonParser.CompExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code nullExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNullExpression(KaonParser.NullExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code functionCallExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunctionCallExpression(KaonParser.FunctionCallExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code multExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMultExpression(KaonParser.MultExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code listExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListExpression(KaonParser.ListExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ternaryExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTernaryExpression(KaonParser.TernaryExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code inputExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitInputExpression(KaonParser.InputExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#indexes}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIndexes(KaonParser.IndexesContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#list}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitList(KaonParser.ListContext ctx);
 }
