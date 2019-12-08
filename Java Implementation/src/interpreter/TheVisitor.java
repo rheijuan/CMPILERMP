@@ -7,7 +7,7 @@ import model.KaonData;
 import model.Scope;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.TerminalNode;
-
+import driver.Kaon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -140,7 +140,7 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
         if (lhs == null || rhs == null) {
-            System.err.println("lhs " + lhs + " rhs " + rhs);
+            Kaon.appendOutput("lhs " + lhs + " rhs " + rhs);
             throw new KaonException(ctx);
         }
 
@@ -459,10 +459,10 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         if (ctx.indexes() != null) {
             List<ExpressionContext> exps = ctx.indexes().expression();
             val = resolveIndexes(val, exps);
-            System.out.println(val + " insideinsideinside vse");
+            Kaon.appendOutput(val + " insideinsideinside vse");
         }
 
-        System.out.println(val + "inside vse");
+        Kaon.appendOutput(val + "inside vse");
         return val;
     }
 
@@ -518,14 +518,14 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     // Println '(' expression? ')'  #printlnFunctionCall
     @Override
     public KaonData visitPrintlnFunctionCall(PrintlnFunctionCallContext ctx) {
-        System.out.println(this.visit(ctx.expression()));
+        Kaon.appendOutput(this.visit(ctx.expression()).toString());
         return KaonData.VOID;
     }
 
     // Print '(' expression ')'     #printFunctionCall
     @Override
     public KaonData visitPrintFunctionCall(PrintFunctionCallContext ctx) {
-        System.out.print(this.visit(ctx.expression()));
+        Kaon.appendOutput(this.visit(ctx.expression()).toString());
         return KaonData.VOID;
     }
 

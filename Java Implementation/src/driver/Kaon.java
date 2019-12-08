@@ -28,175 +28,180 @@ import org.fife.ui.rsyntaxtextarea.*;
 
 import static org.antlr.v4.runtime.CharStreams.fromString;
 
-public class Kaon {
+public class Kaon extends JFrame {
+
+    private JPanel cp;
+    private static TextArea outputArea;
+
+    private Kaon() {
+        cp = new JPanel();
+        cp.setLayout(null);
+
+        AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory)TokenMakerFactory.getDefaultInstance();
+        atmf.putMapping("Kaon.g4", "TokenMaker");
+        RSyntaxTextArea textArea = new RSyntaxTextArea(100, 100);
+
+        textArea.setSyntaxEditingStyle("/Kaon.g4");
+        textArea.setCodeFoldingEnabled(true);
+        RTextScrollPane sp = new RTextScrollPane(textArea);
+        cp.add(sp);
+        textArea.setSize(700, 500);
+
+        CompletionProvider provider = createCompletionProvider();
+        AutoCompletion ac = new AutoCompletion(provider);
+        ac.install(textArea);
+
+        RSyntaxTextArea.setTemplatesEnabled(true);
+        CodeTemplateManager ctm = RSyntaxTextArea.getCodeTemplateManager();
+
+        CodeTemplate ct = new StaticCodeTemplate("pt", "plate(", null);
+        ctm.addTemplate(ct);
+
+        ct = new StaticCodeTemplate("it", "pudding(", null);
+        ctm.addTemplate(ct);
+
+        ct = new StaticCodeTemplate("pk", "pork i=0 to ", "{\n\t\n}\n");
+        ctm.addTemplate(ct);
+
+        ct = new StaticCodeTemplate("do", "donut { \n\n } wine(", ")\n");
+        ctm.addTemplate(ct);
+
+        ct = new StaticCodeTemplate("wn", "wine (", ") {\n\t\n}\n");
+        ctm.addTemplate(ct);
+
+        cp.add(textArea);
+        textArea.setLocation(20, 20);
+
+        outputArea = new TextArea();
+        outputArea.setSize(950, 200);
+
+        cp.add(outputArea);
+        outputArea.setLocation(20, 550);
+
+        ImageIcon imageIcon = new ImageIcon(Kaon.class.getResource("../images/rice.png"));
+        Image image = imageIcon.getImage();
+        image = image.getScaledInstance(75, 75,  java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(image);
+
+        JLabel logo = new JLabel(imageIcon);
+        logo.setSize(75, 75);
+
+        cp.add(logo);
+        logo.setLocation(750, 20);
+
+        Label label = new Label("Kaon");
+        label.setSize(150,50);
+        label.setFont(new Font("Verdana", Font.BOLD, 40));
+
+        cp.add(label);
+        label.setLocation(850, 35);
+
+        imageIcon = new ImageIcon(Kaon.class.getResource("../images/xchan.png"));
+        image = imageIcon.getImage();
+        image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(image);
+
+        JLabel icon1 = new JLabel(imageIcon);
+        icon1.setSize(75, 75);
+
+        cp.add(icon1);
+        icon1.setLocation(730, 100);
+
+        JLabel name1 = new JLabel("Christian Dequito");
+        name1.setSize(200,75);
+        name1.setFont(new Font("Verdana", Font.PLAIN, 16));
+
+        cp.add(name1);
+        name1.setLocation(810, 110);
+
+        imageIcon = new ImageIcon(Kaon.class.getResource("../images/don.png"));
+        image = imageIcon.getImage();
+        image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(image);
+
+        JLabel icon2 = new JLabel(imageIcon);
+        icon2.setSize(75, 75);
+
+        cp.add(icon2);
+        icon2.setLocation(730, 170);
+
+        JLabel name2 = new JLabel("Don Minaga");
+        name2.setSize(200,75);
+        name2.setFont(new Font("Verdana", Font.PLAIN, 16));
+
+        cp.add(name2);
+        name2.setLocation(810, 175);
+
+        imageIcon = new ImageIcon(Kaon.class.getResource("../images/ivan.png"));
+        image = imageIcon.getImage();
+        image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(image);
+
+        JLabel icon3 = new JLabel(imageIcon);
+        icon3.setSize(75, 75);
+
+        cp.add(icon3);
+        icon3.setLocation(730, 240);
+
+        JLabel name3 = new JLabel("Ivan Dichaves");
+        name3.setSize(200,75);
+        name3.setFont(new Font("Verdana", Font.PLAIN, 16));
+
+        cp.add(name3);
+        name3.setLocation(810, 245);
+
+        imageIcon = new ImageIcon(Kaon.class.getResource("../images/rhei.png"));
+        image = imageIcon.getImage();
+        image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(image);
+
+        JLabel icon4 = new JLabel(imageIcon);
+        icon4.setSize(75, 75);
+
+        cp.add(icon4);
+        icon4.setLocation(730, 310);
+
+        JLabel name4 = new JLabel("Rhei Juan");
+        name4.setSize(200,75);
+        name4.setFont(new Font("Verdana", Font.PLAIN, 16));
+
+        cp.add(name4);
+        name4.setLocation(810, 310);
+
+        JButton runButton = new JButton("Run");
+        runButton.setSize(220, 50);
+        runButton.addActionListener(e -> {
+            perform(textArea.getText());
+        });
+
+        cp.add(runButton);
+        runButton.setLocation(750, 400);
+
+        JButton manualButton = new JButton("User Manual");
+        manualButton.setSize(220, 50);
+        manualButton.addActionListener(e -> {
+            openManual();
+        });
+
+        cp.add(manualButton);
+        manualButton.setLocation(750, 470);
+
+        setContentPane(cp);
+        pack();
+        setSize(1000, 800);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Kaon IDE");
-            JPanel cp = new JPanel();
-
-            cp.setLayout(null);
-
-            AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory)TokenMakerFactory.getDefaultInstance();
-            atmf.putMapping("Kaon.g4", "TokenMaker");
-            RSyntaxTextArea textArea = new RSyntaxTextArea(100, 100);
-
-            textArea.setSyntaxEditingStyle("/Kaon.g4");
-            textArea.setCodeFoldingEnabled(true);
-            RTextScrollPane sp = new RTextScrollPane(textArea);
-            cp.add(sp);
-            textArea.setSize(700, 500);
-
-            CompletionProvider provider = createCompletionProvider();
-            AutoCompletion ac = new AutoCompletion(provider);
-            ac.install(textArea);
-
-            RSyntaxTextArea.setTemplatesEnabled(true);
-            CodeTemplateManager ctm = RSyntaxTextArea.getCodeTemplateManager();
-
-            CodeTemplate ct = new StaticCodeTemplate("pt", "plate(", null);
-            ctm.addTemplate(ct);
-
-            ct = new StaticCodeTemplate("it", "pudding(", null);
-            ctm.addTemplate(ct);
-
-            ct = new StaticCodeTemplate("pk", "pork i=0 to ", "{\n\t\n}\n");
-            ctm.addTemplate(ct);
-
-            ct = new StaticCodeTemplate("do", "donut { \n\n } wine(", ")\n");
-            ctm.addTemplate(ct);
-
-            ct = new StaticCodeTemplate("wn", "wine (", ") {\n\t\n}\n");
-            ctm.addTemplate(ct);
-
-            cp.add(textArea);
-            textArea.setLocation(20, 20);
-
-            TextArea output = new TextArea();
-            output.setSize(950, 200);
-
-            cp.add(output);
-            output.setLocation(20, 550);
-
-            ImageIcon imageIcon = new ImageIcon(Kaon.class.getResource("../images/rice.png"));
-            Image image = imageIcon.getImage();
-            image = image.getScaledInstance(75, 75,  java.awt.Image.SCALE_SMOOTH);
-            imageIcon = new ImageIcon(image);
-
-            JLabel logo = new JLabel(imageIcon);
-            logo.setSize(75, 75);
-
-            cp.add(logo);
-            logo.setLocation(750, 20);
-
-            Label label = new Label("Kaon");
-            label.setSize(150,50);
-            label.setFont(new Font("Verdana", Font.BOLD, 40));
-
-            cp.add(label);
-            label.setLocation(850, 35);
-
-            imageIcon = new ImageIcon(Kaon.class.getResource("../images/xchan.png"));
-            image = imageIcon.getImage();
-            image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
-            imageIcon = new ImageIcon(image);
-
-            JLabel icon1 = new JLabel(imageIcon);
-            icon1.setSize(75, 75);
-
-            cp.add(icon1);
-            icon1.setLocation(730, 100);
-
-            JLabel name1 = new JLabel("Christian Dequito");
-            name1.setSize(200,75);
-            name1.setFont(new Font("Verdana", Font.PLAIN, 16));
-
-            cp.add(name1);
-            name1.setLocation(810, 110);
-
-            imageIcon = new ImageIcon(Kaon.class.getResource("../images/don.png"));
-            image = imageIcon.getImage();
-            image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
-            imageIcon = new ImageIcon(image);
-
-            JLabel icon2 = new JLabel(imageIcon);
-            icon2.setSize(75, 75);
-
-            cp.add(icon2);
-            icon2.setLocation(730, 170);
-
-            JLabel name2 = new JLabel("Don Minaga");
-            name2.setSize(200,75);
-            name2.setFont(new Font("Verdana", Font.PLAIN, 16));
-
-            cp.add(name2);
-            name2.setLocation(810, 175);
-
-            imageIcon = new ImageIcon(Kaon.class.getResource("../images/ivan.png"));
-            image = imageIcon.getImage();
-            image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
-            imageIcon = new ImageIcon(image);
-
-            JLabel icon3 = new JLabel(imageIcon);
-            icon3.setSize(75, 75);
-
-            cp.add(icon3);
-            icon3.setLocation(730, 240);
-
-            JLabel name3 = new JLabel("Ivan Dichaves");
-            name3.setSize(200,75);
-            name3.setFont(new Font("Verdana", Font.PLAIN, 16));
-
-            cp.add(name3);
-            name3.setLocation(810, 245);
-
-            imageIcon = new ImageIcon(Kaon.class.getResource("../images/rhei.png"));
-            image = imageIcon.getImage();
-            image = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
-            imageIcon = new ImageIcon(image);
-
-            JLabel icon4 = new JLabel(imageIcon);
-            icon4.setSize(75, 75);
-
-            cp.add(icon4);
-            icon4.setLocation(730, 310);
-
-            JLabel name4 = new JLabel("Rhei Juan");
-            name4.setSize(200,75);
-            name4.setFont(new Font("Verdana", Font.PLAIN, 16));
-
-            cp.add(name4);
-            name4.setLocation(810, 310);
-
-            JButton runButton = new JButton("Run");
-            runButton.setSize(220, 50);
-            runButton.addActionListener(e -> {
-                perform(textArea.getText());
-            });
-
-            cp.add(runButton);
-            runButton.setLocation(750, 400);
-
-            JButton manualButton = new JButton("User Manual");
-            manualButton.setSize(220, 50);
-            manualButton.addActionListener(e -> {
-                openManual();
-            });
-
-            cp.add(manualButton);
-            manualButton.setLocation(750, 470);
-
-            frame.setContentPane(cp);
-            frame.pack();
-            frame.setSize(1000, 800);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-
+            new Kaon().setVisible(true);
         });
     }
 
     private static void perform(String code)  {
-        System.out.println("Here");
+        outputArea.setText("");
         KaonLexer lexer = new KaonLexer(fromString(code));
         KaonParser parser = new KaonParser(new CommonTokenStream(lexer));
         ParseTree tree = parser.source();
@@ -360,5 +365,9 @@ public class Kaon {
 
         return provider;
 
+    }
+
+    public static void appendOutput(String output) {
+        outputArea.append(output + "\n");
     }
 }
