@@ -12,11 +12,9 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+
 import org.fife.ui.autocomplete.AutoCompletion;
 import org.fife.ui.autocomplete.BasicCompletion;
 import org.fife.ui.autocomplete.CompletionProvider;
@@ -369,5 +367,12 @@ public class Kaon extends JFrame {
 
     public static void appendOutput(String output) {
         outputArea.append(output + "\n");
+    }
+
+    public static String getInput() {
+        JFrame inputFrame = new JFrame("Input");
+        Object result = JOptionPane.showInputDialog(inputFrame, "Enter input value:");
+
+        return result.toString();
     }
 }

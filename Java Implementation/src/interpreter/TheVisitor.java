@@ -176,6 +176,9 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
         if (lhs.isNumber() && rhs.isNumber()) {
+            if(rhs.asDouble() == 0.0) {
+                Kaon.appendOutput("Divide by zero exception");
+            }
             return new KaonData(lhs.asDouble() / rhs.asDouble());
         }
         throw new KaonException(ctx);
@@ -380,7 +383,13 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
             if (val.isString()) {
                 val = new KaonData(val.asString().substring(i, i + 1));
             } else {
-                val = val.asList().get(i);
+                try {
+                    val = val.asList().get(i);
+                } catch(IndexOutOfBoundsException e) {
+                    Kaon.appendOutput("Index Out Of Bounds Exception");
+                    Kaon.appendOutput("Index being accessed " + i);
+                    Kaon.appendOutput("Length of the array " + val.asList().size());
+                }
             }
         }
         return val;
