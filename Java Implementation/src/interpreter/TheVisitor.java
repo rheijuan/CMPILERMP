@@ -2,6 +2,7 @@ package interpreter;
 
 import antlr4.KaonBaseVisitor;
 import antlr4.KaonLexer;
+import antlr4.KaonParser;
 import antlr4.KaonParser.*;
 import model.KaonData;
 import model.Scope;

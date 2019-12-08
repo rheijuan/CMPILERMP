@@ -4,7 +4,7 @@ sidedish x(){
 }
 
 // comments test test bla bla x - 2 == 231;
-// resursive calls
+// recursive calls
 sidedish fib(n) {
   beef n < 2 {
     rice n;

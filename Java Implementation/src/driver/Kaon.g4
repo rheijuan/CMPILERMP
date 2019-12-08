@@ -66,6 +66,7 @@ functionCall
     : IDENTIFIER '(' exprList? ')' #identifierFunctionCall
     | PRINTLN '(' expression? ')'  #printlnFunctionCall
     | PRINT '(' expression ')'     #printFunctionCall
+    | PRINT exprList? ')'          #missingLParenPrintStatement
     ;
 
 idList

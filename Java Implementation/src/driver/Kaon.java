@@ -8,10 +8,12 @@ import interpreter.Function;
 import model.Scope;
 import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.ConsoleErrorListener;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -30,6 +32,7 @@ public class Kaon extends JFrame {
 
     private JPanel cp;
     private static TextArea outputArea;
+    private static ArrayList<String> errors;
 
     private Kaon() {
         cp = new JPanel();
@@ -193,6 +196,7 @@ public class Kaon extends JFrame {
     }
 
     public static void main(String[] args) {
+        errors = new ArrayList<>();
         SwingUtilities.invokeLater(() -> {
             new Kaon().setVisible(true);
         });
@@ -200,18 +204,31 @@ public class Kaon extends JFrame {
 
     private static void perform(String code)  {
         outputArea.setText("");
+        errors.clear();
+
         KaonLexer lexer = new KaonLexer(fromString(code));
         KaonParser parser = new KaonParser(new CommonTokenStream(lexer));
         ParseTree tree = parser.source();
         Scope scope = new Scope();
         HashMap<String, Function> functions = new HashMap<>();
 
-        FunctionVisitor functionVisitor = new FunctionVisitor(functions);
-        functionVisitor.visit(tree);
-        TheVisitor theVisitor = new TheVisitor(scope, functions);
-        theVisitor.visit(tree);
-        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
-        viewer.open();
+        lexer.removeErrorListener(ConsoleErrorListener.INSTANCE);
+        parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
+
+        ErrorVisitor errorVisitor = new ErrorVisitor();
+        errorVisitor.visit(tree);
+
+        if(errors.size() > 0) {
+            for(String error : errors)
+                outputArea.append(error + "\n");
+        } else {
+            FunctionVisitor functionVisitor = new FunctionVisitor(functions);
+            functionVisitor.visit(tree);
+            TheVisitor theVisitor = new TheVisitor(scope, functions);
+            theVisitor.visit(tree);
+            TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
+            viewer.open();
+        }
     }
 
     private static void openManual() {
@@ -374,5 +391,9 @@ public class Kaon extends JFrame {
         Object result = JOptionPane.showInputDialog(inputFrame, "Enter input value:");
 
         return result.toString();
+    }
+
+    static void addErrors(String error) {
+        errors.add(error);
     }
 }

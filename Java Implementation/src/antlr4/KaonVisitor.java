@@ -1,5 +1,4 @@
-package antlr4;
-
+package antlr4;// Generated from C:/Users/rheij/Documents/GitHub/CMPILERMP/Java Implementation/grammar\Kaon.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -71,11 +70,35 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunctionDecl(KaonParser.FunctionDeclContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingLBraceFuncDecl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingLBraceFuncDecl(KaonParser.MissingLBraceFuncDeclContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingRBraceFuncDecl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingRBraceFuncDecl(KaonParser.MissingRBraceFuncDeclContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link KaonParser#forStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitForStatement(KaonParser.ForStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingLBraceForLoop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingLBraceForLoop(KaonParser.MissingLBraceForLoopContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingRBraceForLoop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingRBraceForLoop(KaonParser.MissingRBraceForLoopContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link KaonParser#whileStatement}.
 	 * @param ctx the parse tree
@@ -83,11 +106,35 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWhileStatement(KaonParser.WhileStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingLBraceWhileLoop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingLBraceWhileLoop(KaonParser.MissingLBraceWhileLoopContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingRBraceWhileLoop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingRBraceWhileLoop(KaonParser.MissingRBraceWhileLoopContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link KaonParser#doWhileStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitDoWhileStatement(KaonParser.DoWhileStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingLBraceDoWhileLoop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingLBraceDoWhileLoop(KaonParser.MissingLBraceDoWhileLoopContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#missingRBraceDoWhileLoop}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingRBraceDoWhileLoop(KaonParser.MissingRBraceDoWhileLoopContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code identifierFunctionCall}
 	 * labeled alternative in {@link KaonParser#functionCall}.
@@ -109,6 +156,34 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPrintFunctionCall(KaonParser.PrintFunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code missingLParenFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code missingRParenFunctionCall}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code missingLParenPrintStatement}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingLParenPrintStatement(KaonParser.MissingLParenPrintStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code missingRParenStatement}
+	 * labeled alternative in {@link KaonParser#functionCall}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingRParenStatement(KaonParser.MissingRParenStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link KaonParser#idList}.
 	 * @param ctx the parse tree
@@ -142,6 +217,13 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIdentifierExpression(KaonParser.IdentifierExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code missingLParenExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingLParenExpression(KaonParser.MissingLParenExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code notExpression}
 	 * labeled alternative in {@link KaonParser#expression}.
@@ -206,13 +288,6 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpressionExpression(KaonParser.ExpressionExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code ADDExpression}
-	 * labeled alternative in {@link KaonParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitADDExpression(KaonParser.ADDExpressionContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code compExpression}
 	 * labeled alternative in {@link KaonParser#expression}.
 	 * @param ctx the parse tree
@@ -226,6 +301,27 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitNullExpression(KaonParser.NullExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code missingRParenExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMissingRParenExpression(KaonParser.MissingRParenExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code excessOperationExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExcessOperationExpression(KaonParser.ExcessOperationExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ADDExpression}
+	 * labeled alternative in {@link KaonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitADDExpression(KaonParser.ADDExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code functionCallExpression}
 	 * labeled alternative in {@link KaonParser#expression}.
