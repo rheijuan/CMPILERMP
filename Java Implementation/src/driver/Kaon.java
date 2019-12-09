@@ -44,7 +44,6 @@ public class Kaon extends JFrame {
         atmf.putMapping("text/Kaon", "driver.TokenMaker");
 
         RSyntaxTextArea textArea = new RSyntaxTextArea(20, 60);
-        RSyntaxTextArea textArea = new RSyntaxTextArea(20, 60);
         textArea.setSyntaxEditingStyle("text/Kaon");
         textArea.setCodeFoldingEnabled(true);
         RTextScrollPane sp = new RTextScrollPane(textArea);
