@@ -267,6 +267,42 @@ public class KaonBaseListener implements KaonListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTryCatchNullStatement(KaonParser.TryCatchNullStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTryCatchNullStatement(KaonParser.TryCatchNullStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTryCatchIndexOutOfBoundsStatement(KaonParser.TryCatchIndexOutOfBoundsStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTryCatchIndexOutOfBoundsStatement(KaonParser.TryCatchIndexOutOfBoundsStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTryCatchDivideByZeroStatement(KaonParser.TryCatchDivideByZeroStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTryCatchDivideByZeroStatement(KaonParser.TryCatchDivideByZeroStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIdentifierFunctionCall(KaonParser.IdentifierFunctionCallContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -217,6 +217,36 @@ public interface KaonListener extends ParseTreeListener {
 	 */
 	void exitMissingRBraceDoWhileLoop(KaonParser.MissingRBraceDoWhileLoopContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link KaonParser#tryCatchNullStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTryCatchNullStatement(KaonParser.TryCatchNullStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#tryCatchNullStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTryCatchNullStatement(KaonParser.TryCatchNullStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KaonParser#tryCatchIndexOutOfBoundsStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTryCatchIndexOutOfBoundsStatement(KaonParser.TryCatchIndexOutOfBoundsStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#tryCatchIndexOutOfBoundsStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTryCatchIndexOutOfBoundsStatement(KaonParser.TryCatchIndexOutOfBoundsStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link KaonParser#tryCatchDivideByZeroStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTryCatchDivideByZeroStatement(KaonParser.TryCatchDivideByZeroStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KaonParser#tryCatchDivideByZeroStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTryCatchDivideByZeroStatement(KaonParser.TryCatchDivideByZeroStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code identifierFunctionCall}
 	 * labeled alternative in {@link KaonParser#functionCall}.
 	 * @param ctx the parse tree

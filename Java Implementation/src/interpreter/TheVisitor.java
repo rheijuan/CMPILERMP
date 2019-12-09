@@ -23,12 +23,10 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     private static RiceData returnValue = new RiceData();
     private Scope scope;
     private Map<String, Function> functions;
-    private boolean hasRunTimeError;
 
     public TheVisitor(Scope scope, Map<String, Function> functions) {
         this.scope = scope;
         this.functions = functions;
-        hasRunTimeError = false;
     }
 
     // functionDecl
@@ -142,12 +140,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     public KaonData MUL(MultExpressionContext ctx) {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to multiply with null");
-
-            throw new KaonException(ctx);
-        }
 
         // number * number
         if (lhs.isNumber() && rhs.isNumber()) {
@@ -181,18 +173,7 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
 
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to divide with null");
-
-            throw new KaonException(ctx);
-        }
-
         if (lhs.isNumber() && rhs.isNumber()) {
-            if(rhs.asDouble() == 0.0) {
-                hasRunTimeError = true;
-                Kaon.appendOutput("Divide by zero exception");
-            }
             return new KaonData(lhs.asDouble() / rhs.asDouble());
         }
         throw new KaonException(ctx);
@@ -201,13 +182,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     private KaonData MOD(MultExpressionContext ctx) {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
-
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to modulo with null");
-
-            throw new KaonException(ctx);
-        }
 
         if (lhs.isNumber() && rhs.isNumber()) {
             return new KaonData(lhs.asDouble() % rhs.asDouble());
@@ -218,12 +192,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     private KaonData ADD(ADDExpressionContext ctx) {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
-
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to add with null");
-            throw new KaonException(ctx);
-        }
 
         // number + number
         if (lhs.isNumber() && rhs.isNumber()) {
@@ -254,12 +222,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
 
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to subtract something with null");
-            throw new KaonException(ctx);
-        }
-
         if (lhs.isNumber() && rhs.isNumber()) {
             return new KaonData(lhs.asDouble() - rhs.asDouble());
         }
@@ -275,13 +237,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
 
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
-
-            throw new KaonException(ctx);
-        }
-
         if (lhs.isNumber() && rhs.isNumber()) {
             return new KaonData(lhs.asDouble() >= rhs.asDouble());
         }
@@ -295,13 +250,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
 
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
-
-            throw new KaonException(ctx);
-        }
-
         if (lhs.isNumber() && rhs.isNumber()) {
             return new KaonData(lhs.asDouble() <= rhs.asDouble());
         }
@@ -314,13 +262,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     private KaonData gt(CompExpressionContext ctx) {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
-
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
-
-            throw new KaonException(ctx);
-        }
 
         if (lhs.isNumber() && rhs.isNumber()) {
             return new KaonData(lhs.asDouble() > rhs.asDouble());
@@ -336,7 +277,7 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData rhs = this.visit(ctx.expression(1));
 
         if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
+
             Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
 
             throw new KaonException(ctx);
@@ -355,26 +296,12 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
 
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
-
-            throw new KaonException(ctx);
-        }
-
         return new KaonData(lhs.equals(rhs));
     }
 
     private KaonData nEq(EqExpressionContext ctx) {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
-
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
-
-            throw new KaonException(ctx);
-        }
 
         return new KaonData(!lhs.equals(rhs));
     }
@@ -384,13 +311,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     public KaonData visitAndExpression(AndExpressionContext ctx) {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
-
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
-
-            throw new KaonException(ctx);
-        }
 
         if (!lhs.isBoolean() || !rhs.isBoolean()) {
             throw new KaonException(ctx);
@@ -403,13 +323,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     public KaonData visitOrExpression(OrExpressionContext ctx) {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
-
-        if (lhs == null || rhs == null) {
-            hasRunTimeError = true;
-            Kaon.appendOutput("Null Pointer Exception: Trying to compare with null");
-
-            throw new KaonException(ctx);
-        }
 
         if (!lhs.isBoolean() || !rhs.isBoolean()) {
             throw new KaonException(ctx);
@@ -473,14 +386,7 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
             if (val.isString()) {
                 val = new KaonData(val.asString().substring(i, i + 1));
             } else {
-                try {
-                    val = val.asList().get(i);
-                } catch(IndexOutOfBoundsException e) {
-                    hasRunTimeError = true;
-                    Kaon.appendOutput("Index Out Of Bounds Exception");
-                    Kaon.appendOutput("Index being accessed " + i);
-                    Kaon.appendOutput("Length of the array " + val.asList().size());
-                }
+                val = val.asList().get(i);
             }
         }
         return val;
@@ -559,7 +465,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         if (ctx.indexes() != null) {
             List<ExpressionContext> exps = ctx.indexes().expression();
             val = resolveIndexes(val, exps);
-            if(!hasRunTimeError)
                 Kaon.appendOutput(val + " insideinsideinside vse");
         }
 
@@ -632,7 +537,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     // Println '(' expression? ')'  #printlnFunctionCall
     @Override
     public KaonData visitPrintlnFunctionCall(PrintlnFunctionCallContext ctx) {
-        if(!hasRunTimeError)
             Kaon.appendOutput(this.visit(ctx.expression()).toString());
         return KaonData.VOID;
     }
@@ -640,7 +544,6 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     // Print '(' expression ')'     #printFunctionCall
     @Override
     public KaonData visitPrintFunctionCall(PrintFunctionCallContext ctx) {
-        if(!hasRunTimeError)
             Kaon.appendOutput(this.visit(ctx.expression()).toString());
         return KaonData.VOID;
     }
@@ -744,7 +647,65 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         return KaonData.VOID;
     }
 
-    public void refreshErrors() {
-        this.hasRunTimeError = false;
+    @Override
+    public KaonData visitTryCatchNullStatement(TryCatchNullStatementContext ctx) {
+        try{
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        } catch(NullPointerException e) {
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        } finally {
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        }
+        return KaonData.VOID;
+    }
+
+    @Override public KaonData visitTryCatchIndexOutOfBoundsStatement(TryCatchIndexOutOfBoundsStatementContext ctx) {
+        try {
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        } catch(IndexOutOfBoundsException e) {
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        } finally {
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        }
+
+        return KaonData.VOID;
+    }
+
+    @Override public KaonData visitTryCatchDivideByZeroStatement(TryCatchDivideByZeroStatementContext ctx) {
+        try{
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        } catch(ArithmeticException e) {
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        } finally {
+            scope = new Scope(scope);
+            for(StatementContext sx : ctx.statement()) {
+                this.visit(sx);
+            }
+        }
+        return KaonData.VOID;
     }
 }

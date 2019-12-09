@@ -20,6 +20,9 @@ statement
     | forStatement
     | whileStatement
     | doWhileStatement
+    | tryCatchNullStatement
+    | tryCatchIndexOutOfBoundsStatement
+    | tryCatchDivideByZeroStatement
     ;
 
 assignment
@@ -102,6 +105,18 @@ missingRBraceDoWhileLoop
     : DO LBRACE block WHILE expression SCOLON
     ;
 
+tryCatchNullStatement
+    : TRY LBRACE statement* RBRACE CATCH '(' 'NullException' ')' LBRACE statement* RBRACE FINALLY LBRACE statement* RBRACE
+    ;
+
+tryCatchIndexOutOfBoundsStatement
+    : TRY LBRACE statement* RBRACE CATCH '(' 'IndexOutOfBounds' ')' LBRACE statement* RBRACE FINALLY LBRACE statement* RBRACE
+    ;
+
+tryCatchDivideByZeroStatement
+    : TRY LBRACE statement* RBRACE CATCH '(' 'DivideByZero' ')' LBRACE statement* RBRACE FINALLY LBRACE statement* RBRACE
+    ;
+
 functionCall
     : IDENTIFIER '(' exprList? ')' #identifierFunctionCall
     | PRINTLN '(' expression? ')'  #printlnFunctionCall
@@ -170,6 +185,9 @@ END      : 'finish';
 IN       : 'in';
 NULL     : 'starve';
 VAR      : 'ingredient';
+TRY      : 'cook';
+CATCH    : 'oil';
+FINALLY  : 'serve';
 
 AND      : '&&';
 OR       : '||';

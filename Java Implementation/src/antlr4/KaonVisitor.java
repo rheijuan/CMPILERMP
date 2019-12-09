@@ -136,6 +136,24 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMissingRBraceDoWhileLoop(KaonParser.MissingRBraceDoWhileLoopContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link KaonParser#tryCatchNullStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTryCatchNullStatement(KaonParser.TryCatchNullStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#tryCatchIndexOutOfBoundsStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTryCatchIndexOutOfBoundsStatement(KaonParser.TryCatchIndexOutOfBoundsStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link KaonParser#tryCatchDivideByZeroStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTryCatchDivideByZeroStatement(KaonParser.TryCatchDivideByZeroStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code identifierFunctionCall}
 	 * labeled alternative in {@link KaonParser#functionCall}.
 	 * @param ctx the parse tree

@@ -234,7 +234,6 @@ public class Kaon extends JFrame {
             FunctionVisitor functionVisitor = new FunctionVisitor(functions);
             functionVisitor.visit(tree);
             TheVisitor theVisitor = new TheVisitor(scope, functions);
-            theVisitor.refreshErrors();
             theVisitor.visit(tree);
             TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
             viewer.open();
@@ -243,28 +242,25 @@ public class Kaon extends JFrame {
 
     private static void openManual() {
         JFrame manualFrame = new JFrame("Kaon User Manual");
-        JPanel manualPanel = new JPanel();
-
-        manualPanel.setLayout(null);
+        JPanel manualPanel = new JPanel(null);
 
         JTextArea textArea = new JTextArea();
-        textArea.setSize(300, 410);
-        textArea.setEditable(false);
         textArea.setLineWrap(true);
+        textArea.setSize(300, 410);
 
         manualPanel.add(textArea);
         textArea.setLocation(350, 30);
 
         JButton variableDeclaration = new JButton("Variable Declarations");
         variableDeclaration.setSize(250,50);
+
         variableDeclaration.addActionListener(e -> {
-            textArea.setText("There are no data types in the grammar Kaon. There are two types of variables that can be declared\n\n" +
-                             "1. Normal Variable\n" +
-                             "- Normal variables can be used in expressions, print statements, conditionals, loops, etc\n" +
-                             "Syntax: ingredient *identifier* = ..." +
-                             "2. Constant Variable\n" +
-                             "- Constant variables are the same as normal variables but their value stays the same throughout the program\n" +
-                             "Syntax: water *identifier* = ...");
+            textArea.append("There are no data types in the grammar Kaon.\n" +
+                            "It is similar to the Python language\n\n" +
+                            "Normal Variables\n" +
+                            "Syntax: ingredient *identifier* = ...\n\n" +
+                            "Constant Variables\n" +
+                            "Syntax: water ingredient *identifier* = ...");
         });
 
         manualPanel.add(variableDeclaration);
@@ -273,8 +269,9 @@ public class Kaon extends JFrame {
         JButton inputOrOutput = new JButton("Input/ Output Statements");
         inputOrOutput.setSize(250, 50);
         inputOrOutput.addActionListener(e -> {
+
             textArea.setText("1. Input \n" +
-                            "Syntax: ingredient x = pudding(); \n" +
+                            "Syntax: ingredient a = pudding();\n" +
                             "2. Output \n" +
                             "Syntax: plate(identifier or string);");
         });
