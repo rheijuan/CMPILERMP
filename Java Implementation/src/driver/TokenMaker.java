@@ -12,22 +12,22 @@ public class TokenMaker extends AbstractTokenMaker {
     @Override
     public TokenMap getWordsToHighlight() {
         TokenMap tokenMap = new TokenMap();
-        tokenMap.put("plate",  Token.RESERVED_WORD);
-        tokenMap.put("print",   Token.RESERVED_WORD);
-        tokenMap.put("pudding",    Token.RESERVED_WORD);
-        tokenMap.put("state", Token.RESERVED_WORD);
+        tokenMap.put("plate",  Token.FUNCTION);
+        tokenMap.put("print",   Token.FUNCTION);
+        tokenMap.put("pudding",    Token.FUNCTION);
+        tokenMap.put("state", Token.FUNCTION);
 
-        tokenMap.put("water", Token.FUNCTION);
-        tokenMap.put("beef",  Token.FUNCTION);
-        tokenMap.put("eel",  Token.FUNCTION);
-        tokenMap.put("rice",  Token.FUNCTION);
-        tokenMap.put("pork",  Token.FUNCTION);
-        tokenMap.put("wine",  Token.FUNCTION);
-        tokenMap.put("to",  Token.FUNCTION);
-        tokenMap.put("finish",  Token.FUNCTION);
-        tokenMap.put("in",  Token.FUNCTION);
-        tokenMap.put("null",  Token.FUNCTION);
-        tokenMap.put("ingredient",  Token.FUNCTION);
+        tokenMap.put("water", Token.RESERVED_WORD);
+        tokenMap.put("beef",  Token.RESERVED_WORD);
+        tokenMap.put("eel",  Token.RESERVED_WORD);
+        tokenMap.put("rice",  Token.RESERVED_WORD);
+        tokenMap.put("pork",  Token.RESERVED_WORD);
+        tokenMap.put("wine",  Token.RESERVED_WORD);
+        tokenMap.put("to",  Token.RESERVED_WORD);
+        tokenMap.put("finish",  Token.RESERVED_WORD);
+        tokenMap.put("in",  Token.RESERVED_WORD);
+        tokenMap.put("null",  Token.RESERVED_WORD);
+        tokenMap.put("ingredient",  Token.RESERVED_WORD);
 
         return tokenMap;
     }

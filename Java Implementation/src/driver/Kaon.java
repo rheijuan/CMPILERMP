@@ -38,15 +38,17 @@ public class Kaon extends JFrame {
         cp = new JPanel();
         cp.setLayout(null);
 
+        JPanel codePanel = new JPanel(new BorderLayout());
+
         AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory)TokenMakerFactory.getDefaultInstance();
         atmf.putMapping("Kaon.g4", "TokenMaker");
 
-        RSyntaxTextArea textArea = new RSyntaxTextArea(100, 100);
-        textArea.setSyntaxEditingStyle("/Kaon.g4");
+        RSyntaxTextArea textArea = new RSyntaxTextArea(30, 60);
+        textArea.setSyntaxEditingStyle("Kaon.g4");
         textArea.setCodeFoldingEnabled(true);
         RTextScrollPane sp = new RTextScrollPane(textArea);
-        cp.add(sp);
-        textArea.setSize(700, 500);
+        codePanel.add(sp);
+        codePanel.setSize(700, 500);
 
         CompletionProvider provider = createCompletionProvider();
         AutoCompletion ac = new AutoCompletion(provider);
@@ -70,8 +72,8 @@ public class Kaon extends JFrame {
         ct = new StaticCodeTemplate("wn", "wine (", ") {\n\t\n}\n");
         ctm.addTemplate(ct);
 
-        cp.add(textArea);
-        textArea.setLocation(20, 20);
+        codePanel.setLocation(20,20);
+        cp.add(codePanel);
 
         outputArea = new TextArea();
         outputArea.setSize(950, 200);
@@ -394,41 +396,10 @@ public class Kaon extends JFrame {
     }
 
     public static String getInput() {
-        /**
-        String value = "";
-
-        JFrame inputFrame = new JFrame("Input");
-        JPanel inputPanel = new JPanel();
-
-        inputPanel.setLayout(null);
-
-        JTextArea inputArea = new JTextArea();
-        inputArea.setSize(100, 100);
-
-        inputPanel.add(inputArea);
-        inputArea.setLocation(0,0);
-
-        JButton okButton = new JButton("OK");
-        okButton.setSize(100,100);
-
-        inputPanel.add(okButton);
-        okButton.setLocation(100,100);
-
-        inputFrame.setContentPane(inputPanel);
-        inputFrame.pack();
-        inputFrame.setSize(300, 200);
-        inputFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        inputFrame.setLocationRelativeTo(null);
-        inputFrame.setLocationRelativeTo(null);
-        inputFrame.setVisible(true);
-
-        return value;
-         **/
-
         final String[] result = {""};
 
         JFrame f = new JFrame("Input");
-        return JOptionPane.showInputDialog(f, "Enter Name");
+        return JOptionPane.showInputDialog(f, "Enter Input");
     }
 
     static void addErrors(String error) {
