@@ -13,20 +13,23 @@ public class TokenMaker extends AbstractTokenMaker {
     public TokenMap getWordsToHighlight() {
         TokenMap tokenMap = new TokenMap();
         tokenMap.put("plate",  Token.FUNCTION);
-        tokenMap.put("print",   Token.FUNCTION);
         tokenMap.put("pudding",    Token.FUNCTION);
-        tokenMap.put("state", Token.FUNCTION);
 
+        tokenMap.put("state", Token.RESERVED_WORD);
+        tokenMap.put("dish", Token.RESERVED_WORD);
         tokenMap.put("water", Token.RESERVED_WORD);
+        tokenMap.put("doughnut", Token.RESERVED_WORD);
+        tokenMap.put("wine", Token.RESERVED_WORD);
         tokenMap.put("beef",  Token.RESERVED_WORD);
         tokenMap.put("eel",  Token.RESERVED_WORD);
         tokenMap.put("rice",  Token.RESERVED_WORD);
         tokenMap.put("pork",  Token.RESERVED_WORD);
         tokenMap.put("wine",  Token.RESERVED_WORD);
+        tokenMap.put("sidedish",  Token.RESERVED_WORD);
         tokenMap.put("to",  Token.RESERVED_WORD);
         tokenMap.put("finish",  Token.RESERVED_WORD);
         tokenMap.put("in",  Token.RESERVED_WORD);
-        tokenMap.put("null",  Token.RESERVED_WORD);
+        tokenMap.put("starve",  Token.RESERVED_WORD);
         tokenMap.put("ingredient",  Token.RESERVED_WORD);
 
         return tokenMap;

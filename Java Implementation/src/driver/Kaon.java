@@ -41,13 +41,15 @@ public class Kaon extends JFrame {
         JPanel codePanel = new JPanel(new BorderLayout());
 
         AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory)TokenMakerFactory.getDefaultInstance();
-        atmf.putMapping("Kaon.g4", "TokenMaker");
+        atmf.putMapping("text/Kaon", "driver.TokenMaker");
 
-        RSyntaxTextArea textArea = new RSyntaxTextArea(30, 60);
-        textArea.setSyntaxEditingStyle("Kaon.g4");
+        RSyntaxTextArea textArea = new RSyntaxTextArea(20, 60);
+        RSyntaxTextArea textArea = new RSyntaxTextArea(20, 60);
+        textArea.setSyntaxEditingStyle("text/Kaon");
         textArea.setCodeFoldingEnabled(true);
         RTextScrollPane sp = new RTextScrollPane(textArea);
         codePanel.add(sp);
+
         codePanel.setSize(700, 500);
 
         CompletionProvider provider = createCompletionProvider();
@@ -66,7 +68,7 @@ public class Kaon extends JFrame {
         ct = new StaticCodeTemplate("pk", "pork i=0 to ", "{\n\t\n}\n");
         ctm.addTemplate(ct);
 
-        ct = new StaticCodeTemplate("do", "donut { \n\n } wine(", ")\n");
+        ct = new StaticCodeTemplate("do", "doughnut { \n\n } wine (", ")\n");
         ctm.addTemplate(ct);
 
         ct = new StaticCodeTemplate("wn", "wine (", ") {\n\t\n}\n");
