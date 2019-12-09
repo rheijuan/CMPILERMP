@@ -184,20 +184,6 @@ public class KaonBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements K
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitMissingLParenPrintStatement(KaonParser.MissingLParenPrintStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

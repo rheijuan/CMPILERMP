@@ -40,8 +40,8 @@ public class Kaon extends JFrame {
 
         AbstractTokenMakerFactory atmf = (AbstractTokenMakerFactory)TokenMakerFactory.getDefaultInstance();
         atmf.putMapping("Kaon.g4", "TokenMaker");
-        RSyntaxTextArea textArea = new RSyntaxTextArea(100, 100);
 
+        RSyntaxTextArea textArea = new RSyntaxTextArea(100, 100);
         textArea.setSyntaxEditingStyle("/Kaon.g4");
         textArea.setCodeFoldingEnabled(true);
         RTextScrollPane sp = new RTextScrollPane(textArea);
@@ -198,6 +198,12 @@ public class Kaon extends JFrame {
     public static void main(String[] args) {
         errors = new ArrayList<>();
         SwingUtilities.invokeLater(() -> {
+            try {
+                String laf = UIManager.getSystemLookAndFeelClassName();
+                UIManager.setLookAndFeel(laf);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             new Kaon().setVisible(true);
         });
     }
@@ -225,6 +231,7 @@ public class Kaon extends JFrame {
             FunctionVisitor functionVisitor = new FunctionVisitor(functions);
             functionVisitor.visit(tree);
             TheVisitor theVisitor = new TheVisitor(scope, functions);
+            theVisitor.refreshErrors();
             theVisitor.visit(tree);
             TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
             viewer.open();
@@ -387,10 +394,41 @@ public class Kaon extends JFrame {
     }
 
     public static String getInput() {
-        JFrame inputFrame = new JFrame("Input");
-        Object result = JOptionPane.showInputDialog(inputFrame, "Enter input value:");
+        /**
+        String value = "";
 
-        return result.toString();
+        JFrame inputFrame = new JFrame("Input");
+        JPanel inputPanel = new JPanel();
+
+        inputPanel.setLayout(null);
+
+        JTextArea inputArea = new JTextArea();
+        inputArea.setSize(100, 100);
+
+        inputPanel.add(inputArea);
+        inputArea.setLocation(0,0);
+
+        JButton okButton = new JButton("OK");
+        okButton.setSize(100,100);
+
+        inputPanel.add(okButton);
+        okButton.setLocation(100,100);
+
+        inputFrame.setContentPane(inputPanel);
+        inputFrame.pack();
+        inputFrame.setSize(300, 200);
+        inputFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        inputFrame.setLocationRelativeTo(null);
+        inputFrame.setLocationRelativeTo(null);
+        inputFrame.setVisible(true);
+
+        return value;
+         **/
+
+        final String[] result = {""};
+
+        JFrame f = new JFrame("Input");
+        return JOptionPane.showInputDialog(f, "Enter Name");
     }
 
     static void addErrors(String error) {

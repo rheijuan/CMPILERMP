@@ -85,18 +85,6 @@ public class ErrorVisitor extends KaonBaseVisitor {
     
     @Override public Object visitPrintFunctionCall(KaonParser.PrintFunctionCallContext ctx) { return visitChildren(ctx); }
     
-    @Override public Object visitMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx) {
-        Kaon.addErrors("Missing '(' token at function call at line " + ctx.getStart().getLine());
-
-        return visitChildren(ctx);
-    }
-    
-    @Override public Object visitMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx) {
-        Kaon.addErrors("Missing ')' token at function call at line " + ctx.getStart().getLine());
-
-        return visitChildren(ctx);
-    }
-    
     @Override public Object visitMissingLParenPrintStatement(KaonParser.MissingLParenPrintStatementContext ctx) {
         Kaon.addErrors("Missing ')' token at function call at line " + ctx.getStart().getLine());
 

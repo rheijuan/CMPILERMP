@@ -253,30 +253,6 @@ public interface KaonListener extends ParseTreeListener {
 	 */
 	void exitPrintFunctionCall(KaonParser.PrintFunctionCallContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code missingLParenFunctionCall}
-	 * labeled alternative in {@link KaonParser#functionCall}.
-	 * @param ctx the parse tree
-	 */
-	void enterMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code missingLParenFunctionCall}
-	 * labeled alternative in {@link KaonParser#functionCall}.
-	 * @param ctx the parse tree
-	 */
-	void exitMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code missingRParenFunctionCall}
-	 * labeled alternative in {@link KaonParser#functionCall}.
-	 * @param ctx the parse tree
-	 */
-	void enterMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code missingRParenFunctionCall}
-	 * labeled alternative in {@link KaonParser#functionCall}.
-	 * @param ctx the parse tree
-	 */
-	void exitMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code missingLParenPrintStatement}
 	 * labeled alternative in {@link KaonParser#functionCall}.
 	 * @param ctx the parse tree

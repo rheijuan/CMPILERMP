@@ -23,10 +23,12 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     private static RiceData returnValue = new RiceData();
     private Scope scope;
     private Map<String, Function> functions;
+    private boolean hasRunTimeError;
 
     public TheVisitor(Scope scope, Map<String, Function> functions) {
         this.scope = scope;
         this.functions = functions;
+        hasRunTimeError = false;
     }
 
     // functionDecl
@@ -141,7 +143,8 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData lhs = this.visit(ctx.expression(0));
         KaonData rhs = this.visit(ctx.expression(1));
         if (lhs == null || rhs == null) {
-            Kaon.appendOutput("lhs " + lhs + " rhs " + rhs);
+            if(!hasRunTimeError)
+                Kaon.appendOutput("lhs " + lhs + " rhs " + rhs);
             throw new KaonException(ctx);
         }
 
@@ -178,6 +181,7 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         KaonData rhs = this.visit(ctx.expression(1));
         if (lhs.isNumber() && rhs.isNumber()) {
             if(rhs.asDouble() == 0.0) {
+                hasRunTimeError = true;
                 Kaon.appendOutput("Divide by zero exception");
             }
             return new KaonData(lhs.asDouble() / rhs.asDouble());
@@ -387,6 +391,7 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
                 try {
                     val = val.asList().get(i);
                 } catch(IndexOutOfBoundsException e) {
+                    hasRunTimeError = true;
                     Kaon.appendOutput("Index Out Of Bounds Exception");
                     Kaon.appendOutput("Index being accessed " + i);
                     Kaon.appendOutput("Length of the array " + val.asList().size());
@@ -469,30 +474,38 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
         if (ctx.indexes() != null) {
             List<ExpressionContext> exps = ctx.indexes().expression();
             val = resolveIndexes(val, exps);
-            Kaon.appendOutput(val + " insideinsideinside vse");
+            if(!hasRunTimeError)
+                Kaon.appendOutput(val + " insideinsideinside vse");
         }
 
-        Kaon.appendOutput(val + "inside vse");
+//        Kaon.appendOutput(val + "inside vse");
         return val;
     }
 
-    // Input '(' String? ')'                    #inputExpression
-    @Override
-    public KaonData visitInputExpression(InputExpressionContext ctx) {
-        TerminalNode inputString = ctx.STRING();
-        try {
-            if (inputString != null) {
-                String text = inputString.getText();
-                text = text.substring(1, text.length() - 1).replaceAll("\\\\(.)", "$1");
-                return new KaonData(new String(Files.readAllBytes(Paths.get(text))));
-            } else {
-                BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
-                return new KaonData(buffer.readLine());
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    // Input '(' String? ')'                    #inputExpression
+//    @Override
+//    public KaonData visitInputExpression(InputExpressionContext ctx) {
+//        String input = Kaon.getInput();
+//        KaonData kaonInput = new KaonData(input);
+//        System.out.println(kaonInput.toString());
+//
+//
+////        TerminalNode inputString = ctx.STRING();
+////        try {
+////            if (inputString != null) {
+////                String text = inputString.getText();
+////                text = text.substring(1, text.length() - 1).replaceAll("\\\\(.)", "$1");
+////                return new KaonData(new String(Files.readAllBytes(Paths.get(text))));
+////            } else {
+////                BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+////                return new KaonData(buffer.readLine());
+////            }
+////        } catch (IOException e) {
+////            throw new RuntimeException(e);
+////        }
+//
+//        return kaonInput;
+//    }
 
 
     // assignment
@@ -500,17 +513,24 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     // ;
     @Override
     public KaonData visitAssignment(AssignmentContext ctx) {
-        KaonData newVal = this.visit(ctx.expression());
-        if (ctx.indexes() != null) {
-            KaonData val = scope.resolve(ctx.IDENTIFIER().getText());
-            List<ExpressionContext> exps = ctx.indexes().expression();
-            setAtIndex(ctx, exps, val, newVal);
-        } else {
+        if(ctx.getText().contains("pudding()")) {
+            KaonData newVal = new KaonData(Kaon.getInput());
             String id = ctx.IDENTIFIER().getText();
-            //System.out.println(ctx.expression().getText());
             scope.assign(id, newVal);
+            System.out.println("New variable hehe " + newVal.toString());
+            return KaonData.VOID;
+        } else {
+            KaonData newVal = this.visit(ctx.expression());
+            if (ctx.indexes() != null) {
+                KaonData val = scope.resolve(ctx.IDENTIFIER().getText());
+                List<ExpressionContext> exps = ctx.indexes().expression();
+                setAtIndex(ctx, exps, val, newVal);
+            } else {
+                String id = ctx.IDENTIFIER().getText();
+                scope.assign(id, newVal);
+            }
+            return KaonData.VOID;
         }
-        return KaonData.VOID;
     }
 
     // Identifier '(' exprList? ')' #identifierFunctionCall
@@ -528,14 +548,16 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
     // Println '(' expression? ')'  #printlnFunctionCall
     @Override
     public KaonData visitPrintlnFunctionCall(PrintlnFunctionCallContext ctx) {
-        Kaon.appendOutput(this.visit(ctx.expression()).toString());
+        if(!hasRunTimeError)
+            Kaon.appendOutput(this.visit(ctx.expression()).toString());
         return KaonData.VOID;
     }
 
     // Print '(' expression ')'     #printFunctionCall
     @Override
     public KaonData visitPrintFunctionCall(PrintFunctionCallContext ctx) {
-        Kaon.appendOutput(this.visit(ctx.expression()).toString());
+        if(!hasRunTimeError)
+            Kaon.appendOutput(this.visit(ctx.expression()).toString());
         return KaonData.VOID;
     }
 
@@ -636,5 +658,9 @@ public class TheVisitor extends KaonBaseVisitor<KaonData> {
             }
         } while (this.visit(ctx.expression()).asBoolean());
         return KaonData.VOID;
+    }
+
+    public void refreshErrors() {
+        this.hasRunTimeError = false;
     }
 }

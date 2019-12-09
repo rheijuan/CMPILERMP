@@ -48,18 +48,58 @@ elseStat
 
 functionDecl
     : FUNC IDENTIFIER '(' idList? ')' LBRACE block RBRACE
+    | missingLBraceFuncDecl
+    | missingRBraceFuncDecl
+    ;
+
+missingLBraceFuncDecl
+    : FUNC IDENTIFIER '(' idList? ')' block RBRACE
+    ;
+
+missingRBraceFuncDecl
+    : FUNC IDENTIFIER '(' idList? ')' LBRACE block
     ;
 
 forStatement
     : FOR IDENTIFIER '=' expression TO expression LBRACE block RBRACE
+    | missingLBraceForLoop
+    | missingRBraceForLoop
+    ;
+
+missingLBraceForLoop
+    : FOR IDENTIFIER '=' expression TO expression block RBRACE
+    ;
+
+missingRBraceForLoop
+    : FOR IDENTIFIER '=' expression TO expression LBRACE block
     ;
 
 whileStatement
     : WHILE expression LBRACE block RBRACE
+    | missingLBraceWhileLoop
+    | missingRBraceWhileLoop
+    ;
+
+missingLBraceWhileLoop
+    : WHILE expression block RBRACE
+    ;
+
+missingRBraceWhileLoop
+    : WHILE expression LBRACE block
     ;
 
 doWhileStatement
     : DO LBRACE block RBRACE WHILE expression SCOLON
+    | missingLBraceDoWhileLoop
+    | missingRBraceDoWhileLoop
+    ;
+
+missingLBraceDoWhileLoop
+    : DO block RBRACE WHILE expression SCOLON
+    ;
+
+missingRBraceDoWhileLoop
+    : DO LBRACE block WHILE expression SCOLON
     ;
 
 functionCall
@@ -67,6 +107,7 @@ functionCall
     | PRINTLN '(' expression? ')'  #printlnFunctionCall
     | PRINT '(' expression ')'     #printFunctionCall
     | PRINT exprList? ')'          #missingLParenPrintStatement
+    | PRINT '(' exprList?          #missingRParenStatement
     ;
 
 idList
@@ -78,26 +119,29 @@ exprList
     ;
 
 expression
-    : '-' expression                                       #unaryMinusExpression
-    | '!' expression                                       #notExpression
-    | <assoc=right> expression '^' expression              #powerExpression
-    | expression op=( '*' | '/' | '%' ) expression         #multExpression
-    | expression op=( '+' | '-' ) expression               #ADDExpression
-    | expression op=( '>=' | '<=' | '>' | '<' ) expression #compExpression
-    | expression op=( '==' | '!=' ) expression             #eqExpression
-    | expression '&&' expression                           #andExpression
-    | expression '||' expression                           #orExpression
-    | expression '?' expression ':' expression             #ternaryExpression
-    | expression IN expression                             #inExpression
-    | NUMBER                                               #numberExpression
-    | BOOL                                                 #boolExpression
-    | NULL                                                 #nullExpression
-    | functionCall indexes?                                #functionCallExpression
-    | list indexes?                                        #listExpression
-    | IDENTIFIER indexes?                                  #identifierExpression
-    | STRING indexes?                                      #stringExpression
-    | '(' expression ')' indexes?                          #expressionExpression
-    | INPUT '(' STRING? ')'                                #inputExpression
+    : '-' expression                                          #unaryMinusExpression
+    | '!' expression                                          #notExpression
+    | <assoc=right> expression '^' expression                 #powerExpression
+    | expression op=( '*' | '/' | '%' ) expression            #multExpression
+    | expression op=( '+' | '-' ) expression                  #ADDExpression
+    | expression ( '++' | '--' | '**' | '//' '%%') expression #excessOperationExpression
+    | expression op=( '>=' | '<=' | '>' | '<' ) expression    #compExpression
+    | expression op=( '==' | '!=' ) expression                #eqExpression
+    | expression '&&' expression                              #andExpression
+    | expression '||' expression                              #orExpression
+    | expression '?' expression ':' expression                #ternaryExpression
+    | expression IN expression                                #inExpression
+    | NUMBER                                                  #numberExpression
+    | BOOL                                                    #boolExpression
+    | NULL                                                    #nullExpression
+    | functionCall indexes?                                   #functionCallExpression
+    | list indexes?                                           #listExpression
+    | IDENTIFIER indexes?                                     #identifierExpression
+    | STRING indexes?                                         #stringExpression
+    | '(' expression ')' indexes?                             #expressionExpression
+    | expression ')'                                          #missingLParenExpression
+    | '(' expression                                          #missingRParenExpression
+    | INPUT '(' STRING? ')'                                   #inputExpression
     ;
 
 indexes

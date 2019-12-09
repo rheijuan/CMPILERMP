@@ -303,30 +303,6 @@ public class KaonBaseListener implements KaonListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterMissingLParenPrintStatement(KaonParser.MissingLParenPrintStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -157,20 +157,6 @@ public interface KaonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPrintFunctionCall(KaonParser.PrintFunctionCallContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code missingLParenFunctionCall}
-	 * labeled alternative in {@link KaonParser#functionCall}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMissingLParenFunctionCall(KaonParser.MissingLParenFunctionCallContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code missingRParenFunctionCall}
-	 * labeled alternative in {@link KaonParser#functionCall}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMissingRParenFunctionCall(KaonParser.MissingRParenFunctionCallContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code missingLParenPrintStatement}
 	 * labeled alternative in {@link KaonParser#functionCall}.
 	 * @param ctx the parse tree
